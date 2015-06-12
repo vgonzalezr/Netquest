@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script>
+    function testFunction( e ) {
+        p.off( 'readyTask' , testFunction );
+///////////////////////////////////////////
+            //code
+///////////////////////////////////////////
+    }
+    p.on( 'readyTask' , testFunction );
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
