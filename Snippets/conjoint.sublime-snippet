@@ -1,0 +1,811 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="type" attr.type="string" for="node" id="type"/><key attr.name="array" attr.type="string" for="node" id="array"/><key attr.name="current" attr.type="string" for="node" id="current"/><key attr.name="condition" attr.type="string" for="node" id="condition"/><key attr.name="value" attr.type="string" for="node" id="value"/><key attr.name="property" attr.type="string" for="node" id="property"/><key attr.name="labels" attr.type="string" for="node" id="labels"/><key attr.name="elements" attr.type="string" for="node" id="elements"/><key attr.name="content" attr.type="string" for="node" id="content"/><key attr.name="code" attr.type="string" for="node" id="code"/><key attr.name="version" attr.type="string" for="graph" id="version"/><key attr.name="start" attr.type="string" for="graph" id="start"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="variable" attr.type="string" for="graph" id="variable"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="label" attr.type="string" for="graph" id="label"/><key attr.name="customCode" attr.type="string" for="graph" id="customCode"/><key attr.name="shuffle" attr.type="boolean" for="graph" id="shuffle"/><key attr.name="schema" attr.type="string" for="node" id="schema"/><graph edgedefault="directed" id="form"><data key="version">2.0</data><data key="start">q0</data><node id="q0"><data key="type">importQuota</data><data key="code"><![CDATA[var q = importQuota("qSexo")]]$NOT_DEFINED></data><data key="name">qSexo</data><data key="variable">q</data></node><edge source="q0" target="g9"/><node id="g9"><desc>CONJOINT</desc><data key="type">group</data><data key="code"/><graph edgedefault="directed" id="g9_graph"><data key="start">t230</data><node id="t230"><desc>INTRO</desc><data key="type">task</data><data key="code"><![CDATA[var t230 = new Task()
+t230[0].cssClass="center"
+t230[0].label="<img src='http://i.imgur.com/YgouHyL.png'>"
+t230[1].label="Nas seguintes telas você verá cartões como esse e deverá selecionar o que você mais gosta de acordo às informações que contenham."
+t230[2].label="Abaixo descreveremos os atributos que terá cada um:"
+t230[3].cssClass="imgExpl"
+t230[3].label="Preço (R\$):"
+t230[4].label="Preço do pacote mostrado."
+t230[5].label="<br />"
+t230[6].label="Produção original local:"
+t230[7].label="O pacote oferece séries de produção original local."
+t230[8].label="<br />"
+t230[9].label="Séries exclusivas:"
+t230[10].label="O pacote oferece séries exclusivas que não estão disponíveis em outros canais."
+t230[11].label="<br />"
+t230[12].label="Filmes exclusivos:"
+t230[13].label="O pacote oferece filmes exclusivos que não estão disponíveis em outros canais."
+t230[14].label="<br />"
+t230[15].label="<br><br>"
+t230[16].label="Clique em <strong>></strong> para começar."
+t230.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"14","cssClass":"\"center\"","label":"\"<img src='http://i.imgur.com/YgouHyL.png'>\""},{"id":"1","label":"\"Nas seguintes telas você verá cartões como esse e deverá selecionar o que você mais gosta de acordo às informações que contenham.\""},{"id":"7","label":"\"Abaixo descreveremos os atributos que terá cada um:\""},{"id":"2","cssClass":"\"imgExpl\"","label":"\"Preço (R\$):\""},{"id":"3","label":"\"Preço do pacote mostrado.\""},{"id":"25","label":"\"<br />\""},{"id":"15","label":"\"Produção original local:\""},{"id":"16","label":"\"O pacote oferece séries de produção original local.\""},{"id":"26","label":"\"<br />\""},{"id":"17","label":"\"Séries exclusivas:\""},{"id":"18","label":"\"O pacote oferece séries exclusivas que não estão disponíveis em outros canais.\""},{"id":"27","label":"\"<br />\""},{"id":"19","label":"\"Filmes exclusivos:\""},{"id":"20","label":"\"O pacote oferece filmes exclusivos que não estão disponíveis em outros canais.\""},{"id":"28","label":"\"<br />\""},{"id":"12","label":"\"<br><br>\""},{"id":"13","label":"\"Clique em <strong>></strong> para começar.\""}]}]]$NOT_DEFINED></data></node><edge source="t230" target="a0"/><node id="a0"><desc>diseno</desc><data key="type">array</data><data key="code"><![CDATA[var diseno = [{"version":1,"set":1,"posicion":1,"atr1":5,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":1,"set":1,"posicion":2,"atr1":4,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":1,"posicion":3,"atr1":3,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":2,"posicion":1,"atr1":2,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":1,"set":2,"posicion":2,"atr1":6,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":1,"set":2,"posicion":3,"atr1":1,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":1,"set":3,"posicion":1,"atr1":5,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":1,"set":3,"posicion":2,"atr1":2,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":1,"set":3,"posicion":3,"atr1":4,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":1,"set":4,"posicion":1,"atr1":3,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":1,"set":4,"posicion":2,"atr1":6,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":4,"posicion":3,"atr1":1,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":1,"set":5,"posicion":1,"atr1":4,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":5,"posicion":2,"atr1":3,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":5,"posicion":3,"atr1":2,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":6,"posicion":1,"atr1":5,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":1,"set":6,"posicion":2,"atr1":6,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":1,"set":6,"posicion":3,"atr1":1,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":7,"posicion":1,"atr1":3,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":1,"set":7,"posicion":2,"atr1":2,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":7,"posicion":3,"atr1":5,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":8,"posicion":1,"atr1":6,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":8,"posicion":2,"atr1":4,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":8,"posicion":3,"atr1":1,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":1,"set":9,"posicion":1,"atr1":4,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":1,"set":9,"posicion":2,"atr1":1,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":9,"posicion":3,"atr1":6,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":1,"set":10,"posicion":1,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":10,"posicion":2,"atr1":5,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":10,"posicion":3,"atr1":3,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":11,"posicion":1,"atr1":2,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":1,"set":11,"posicion":2,"atr1":3,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":11,"posicion":3,"atr1":1,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":1,"set":12,"posicion":1,"atr1":6,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":12,"posicion":2,"atr1":5,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":12,"posicion":3,"atr1":2,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":13,"posicion":1,"atr1":1,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":1,"set":13,"posicion":2,"atr1":5,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":1,"set":13,"posicion":3,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":1,"set":14,"posicion":1,"atr1":5,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":1,"set":14,"posicion":2,"atr1":2,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":1,"set":14,"posicion":3,"atr1":3,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":1,"set":15,"posicion":1,"atr1":6,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":1,"set":15,"posicion":2,"atr1":1,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":1,"set":15,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":2,"set":1,"posicion":1,"atr1":1,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":2,"set":1,"posicion":2,"atr1":5,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":2,"set":1,"posicion":3,"atr1":4,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":2,"set":2,"posicion":1,"atr1":2,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":2,"set":2,"posicion":2,"atr1":6,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":2,"set":2,"posicion":3,"atr1":4,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":3,"posicion":1,"atr1":6,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":3,"posicion":2,"atr1":2,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":2,"set":3,"posicion":3,"atr1":3,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":2,"set":4,"posicion":1,"atr1":4,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":2,"set":4,"posicion":2,"atr1":6,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":2,"set":4,"posicion":3,"atr1":1,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":2,"set":5,"posicion":1,"atr1":4,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":5,"posicion":2,"atr1":5,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":2,"set":5,"posicion":3,"atr1":1,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":2,"set":6,"posicion":1,"atr1":2,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":2,"set":6,"posicion":2,"atr1":6,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":2,"set":6,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":2,"set":7,"posicion":1,"atr1":3,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":2,"set":7,"posicion":2,"atr1":4,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":2,"set":7,"posicion":3,"atr1":2,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":2,"set":8,"posicion":1,"atr1":5,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":8,"posicion":2,"atr1":6,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":2,"set":8,"posicion":3,"atr1":1,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":2,"set":9,"posicion":1,"atr1":3,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":9,"posicion":2,"atr1":2,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":2,"set":9,"posicion":3,"atr1":5,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":2,"set":10,"posicion":1,"atr1":2,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":2,"set":10,"posicion":2,"atr1":6,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":2,"set":10,"posicion":3,"atr1":5,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":2,"set":11,"posicion":1,"atr1":1,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":2,"set":11,"posicion":2,"atr1":4,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":11,"posicion":3,"atr1":5,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":2,"set":12,"posicion":1,"atr1":3,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":2,"set":12,"posicion":2,"atr1":4,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":2,"set":12,"posicion":3,"atr1":1,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":2,"set":13,"posicion":1,"atr1":6,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":13,"posicion":2,"atr1":3,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":2,"set":13,"posicion":3,"atr1":2,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":2,"set":14,"posicion":1,"atr1":4,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":2,"set":14,"posicion":2,"atr1":5,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":14,"posicion":3,"atr1":2,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":2,"set":15,"posicion":1,"atr1":6,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":2,"set":15,"posicion":2,"atr1":3,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":2,"set":15,"posicion":3,"atr1":1,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":3,"set":1,"posicion":1,"atr1":1,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":3,"set":1,"posicion":2,"atr1":5,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":3,"set":1,"posicion":3,"atr1":3,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":3,"set":2,"posicion":1,"atr1":2,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":3,"set":2,"posicion":2,"atr1":4,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":3,"set":2,"posicion":3,"atr1":6,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":3,"set":3,"posicion":1,"atr1":2,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":3,"set":3,"posicion":2,"atr1":5,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":3,"set":3,"posicion":3,"atr1":1,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":3,"set":4,"posicion":1,"atr1":4,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":3,"set":4,"posicion":2,"atr1":6,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":3,"set":4,"posicion":3,"atr1":3,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":3,"set":5,"posicion":1,"atr1":2,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":3,"set":5,"posicion":2,"atr1":1,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":3,"set":5,"posicion":3,"atr1":4,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":3,"set":6,"posicion":1,"atr1":3,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":3,"set":6,"posicion":2,"atr1":4,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":3,"set":6,"posicion":3,"atr1":5,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":3,"set":7,"posicion":1,"atr1":6,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":3,"set":7,"posicion":2,"atr1":1,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":3,"set":7,"posicion":3,"atr1":5,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":3,"set":8,"posicion":1,"atr1":2,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":3,"set":8,"posicion":2,"atr1":3,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":3,"set":8,"posicion":3,"atr1":6,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":3,"set":9,"posicion":1,"atr1":3,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":3,"set":9,"posicion":2,"atr1":4,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":3,"set":9,"posicion":3,"atr1":5,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":3,"set":10,"posicion":1,"atr1":1,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":3,"set":10,"posicion":2,"atr1":4,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":3,"set":10,"posicion":3,"atr1":2,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":3,"set":11,"posicion":1,"atr1":3,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":3,"set":11,"posicion":2,"atr1":2,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":3,"set":11,"posicion":3,"atr1":6,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":3,"set":12,"posicion":1,"atr1":6,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":3,"set":12,"posicion":2,"atr1":1,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":3,"set":12,"posicion":3,"atr1":5,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":3,"set":13,"posicion":1,"atr1":1,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":3,"set":13,"posicion":2,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":3,"set":13,"posicion":3,"atr1":5,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":3,"set":14,"posicion":1,"atr1":1,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":3,"set":14,"posicion":2,"atr1":6,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":3,"set":14,"posicion":3,"atr1":3,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":3,"set":15,"posicion":1,"atr1":2,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":3,"set":15,"posicion":2,"atr1":6,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":3,"set":15,"posicion":3,"atr1":3,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":4,"set":1,"posicion":1,"atr1":3,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":4,"set":1,"posicion":2,"atr1":4,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":4,"set":1,"posicion":3,"atr1":6,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":4,"set":2,"posicion":1,"atr1":2,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":4,"set":2,"posicion":2,"atr1":4,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":4,"set":2,"posicion":3,"atr1":5,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":4,"set":3,"posicion":1,"atr1":4,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":4,"set":3,"posicion":2,"atr1":5,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":4,"set":3,"posicion":3,"atr1":1,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":4,"set":4,"posicion":1,"atr1":2,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":4,"set":4,"posicion":2,"atr1":1,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":4,"set":4,"posicion":3,"atr1":3,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":4,"set":5,"posicion":1,"atr1":6,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":4,"set":5,"posicion":2,"atr1":5,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":4,"set":5,"posicion":3,"atr1":2,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":4,"set":6,"posicion":1,"atr1":5,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":4,"set":6,"posicion":2,"atr1":2,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":4,"set":6,"posicion":3,"atr1":4,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":4,"set":7,"posicion":1,"atr1":1,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":4,"set":7,"posicion":2,"atr1":3,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":4,"set":7,"posicion":3,"atr1":6,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":4,"set":8,"posicion":1,"atr1":3,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":4,"set":8,"posicion":2,"atr1":1,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":4,"set":8,"posicion":3,"atr1":2,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":4,"set":9,"posicion":1,"atr1":4,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":4,"set":9,"posicion":2,"atr1":6,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":4,"set":9,"posicion":3,"atr1":5,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":4,"set":10,"posicion":1,"atr1":3,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":4,"set":10,"posicion":2,"atr1":2,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":4,"set":10,"posicion":3,"atr1":5,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":4,"set":11,"posicion":1,"atr1":1,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":4,"set":11,"posicion":2,"atr1":4,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":4,"set":11,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":4,"set":12,"posicion":1,"atr1":1,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":4,"set":12,"posicion":2,"atr1":6,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":4,"set":12,"posicion":3,"atr1":4,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":4,"set":13,"posicion":1,"atr1":2,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":4,"set":13,"posicion":2,"atr1":5,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":4,"set":13,"posicion":3,"atr1":3,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":4,"set":14,"posicion":1,"atr1":2,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":4,"set":14,"posicion":2,"atr1":1,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":4,"set":14,"posicion":3,"atr1":6,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":4,"set":15,"posicion":1,"atr1":1,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":4,"set":15,"posicion":2,"atr1":6,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":4,"set":15,"posicion":3,"atr1":4,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":5,"set":1,"posicion":1,"atr1":2,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":5,"set":1,"posicion":2,"atr1":1,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":5,"set":1,"posicion":3,"atr1":3,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":5,"set":2,"posicion":1,"atr1":2,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":5,"set":2,"posicion":2,"atr1":5,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":5,"set":2,"posicion":3,"atr1":3,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":5,"set":3,"posicion":1,"atr1":5,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":5,"set":3,"posicion":2,"atr1":4,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":5,"set":3,"posicion":3,"atr1":6,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":5,"set":4,"posicion":1,"atr1":6,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":5,"set":4,"posicion":2,"atr1":4,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":5,"set":4,"posicion":3,"atr1":5,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":5,"set":5,"posicion":1,"atr1":1,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":5,"set":5,"posicion":2,"atr1":4,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":5,"set":5,"posicion":3,"atr1":5,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":5,"set":6,"posicion":1,"atr1":2,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":5,"set":6,"posicion":2,"atr1":4,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":5,"set":6,"posicion":3,"atr1":6,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":5,"set":7,"posicion":1,"atr1":5,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":5,"set":7,"posicion":2,"atr1":3,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":5,"set":7,"posicion":3,"atr1":1,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":5,"set":8,"posicion":1,"atr1":6,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":5,"set":8,"posicion":2,"atr1":1,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":5,"set":8,"posicion":3,"atr1":3,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":5,"set":9,"posicion":1,"atr1":6,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":5,"set":9,"posicion":2,"atr1":2,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":5,"set":9,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":5,"set":10,"posicion":1,"atr1":5,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":5,"set":10,"posicion":2,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":5,"set":10,"posicion":3,"atr1":2,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":5,"set":11,"posicion":1,"atr1":4,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":5,"set":11,"posicion":2,"atr1":2,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":5,"set":11,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":5,"set":12,"posicion":1,"atr1":4,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":5,"set":12,"posicion":2,"atr1":5,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":5,"set":12,"posicion":3,"atr1":1,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":5,"set":13,"posicion":1,"atr1":5,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":5,"set":13,"posicion":2,"atr1":3,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":5,"set":13,"posicion":3,"atr1":6,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":5,"set":14,"posicion":1,"atr1":5,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":5,"set":14,"posicion":2,"atr1":1,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":5,"set":14,"posicion":3,"atr1":6,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":5,"set":15,"posicion":1,"atr1":2,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":5,"set":15,"posicion":2,"atr1":6,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":5,"set":15,"posicion":3,"atr1":4,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":1,"posicion":1,"atr1":4,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":6,"set":1,"posicion":2,"atr1":5,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":6,"set":1,"posicion":3,"atr1":1,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":2,"posicion":1,"atr1":3,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":2,"posicion":2,"atr1":1,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":6,"set":2,"posicion":3,"atr1":2,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":6,"set":3,"posicion":1,"atr1":6,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":3,"posicion":2,"atr1":4,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":3,"posicion":3,"atr1":2,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":6,"set":4,"posicion":1,"atr1":3,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":6,"set":4,"posicion":2,"atr1":1,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":6,"set":4,"posicion":3,"atr1":6,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":5,"posicion":1,"atr1":2,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":6,"set":5,"posicion":2,"atr1":1,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":5,"posicion":3,"atr1":3,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":6,"set":6,"posicion":1,"atr1":4,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":6,"set":6,"posicion":2,"atr1":3,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":6,"set":6,"posicion":3,"atr1":5,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":6,"set":7,"posicion":1,"atr1":6,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":6,"set":7,"posicion":2,"atr1":5,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":7,"posicion":3,"atr1":2,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":8,"posicion":1,"atr1":3,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":6,"set":8,"posicion":2,"atr1":2,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":6,"set":8,"posicion":3,"atr1":5,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":6,"set":9,"posicion":1,"atr1":1,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":6,"set":9,"posicion":2,"atr1":4,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":9,"posicion":3,"atr1":6,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":10,"posicion":1,"atr1":4,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":10,"posicion":2,"atr1":2,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":6,"set":10,"posicion":3,"atr1":5,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":6,"set":11,"posicion":1,"atr1":1,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":11,"posicion":2,"atr1":3,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":6,"set":11,"posicion":3,"atr1":4,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":12,"posicion":1,"atr1":6,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":6,"set":12,"posicion":2,"atr1":2,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":6,"set":12,"posicion":3,"atr1":1,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":13,"posicion":1,"atr1":5,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":6,"set":13,"posicion":2,"atr1":2,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":13,"posicion":3,"atr1":6,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":14,"posicion":1,"atr1":5,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":6,"set":14,"posicion":2,"atr1":1,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":14,"posicion":3,"atr1":3,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":6,"set":15,"posicion":1,"atr1":4,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":6,"set":15,"posicion":2,"atr1":3,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":6,"set":15,"posicion":3,"atr1":6,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":7,"set":1,"posicion":1,"atr1":5,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":7,"set":1,"posicion":2,"atr1":2,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":7,"set":1,"posicion":3,"atr1":1,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":7,"set":2,"posicion":1,"atr1":4,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":7,"set":2,"posicion":2,"atr1":6,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":7,"set":2,"posicion":3,"atr1":1,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":7,"set":3,"posicion":1,"atr1":3,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":7,"set":3,"posicion":2,"atr1":4,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":7,"set":3,"posicion":3,"atr1":6,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":7,"set":4,"posicion":1,"atr1":2,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":7,"set":4,"posicion":2,"atr1":3,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":7,"set":4,"posicion":3,"atr1":1,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":7,"set":5,"posicion":1,"atr1":6,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":7,"set":5,"posicion":2,"atr1":2,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":7,"set":5,"posicion":3,"atr1":5,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":7,"set":6,"posicion":1,"atr1":5,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":7,"set":6,"posicion":2,"atr1":3,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":7,"set":6,"posicion":3,"atr1":4,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":7,"set":7,"posicion":1,"atr1":1,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":7,"set":7,"posicion":2,"atr1":2,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":7,"set":7,"posicion":3,"atr1":4,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":7,"set":8,"posicion":1,"atr1":5,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":7,"set":8,"posicion":2,"atr1":3,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":7,"set":8,"posicion":3,"atr1":6,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":7,"set":9,"posicion":1,"atr1":5,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":7,"set":9,"posicion":2,"atr1":1,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":7,"set":9,"posicion":3,"atr1":2,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":7,"set":10,"posicion":1,"atr1":4,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":7,"set":10,"posicion":2,"atr1":3,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":7,"set":10,"posicion":3,"atr1":6,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":7,"set":11,"posicion":1,"atr1":4,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":7,"set":11,"posicion":2,"atr1":2,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":7,"set":11,"posicion":3,"atr1":3,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":7,"set":12,"posicion":1,"atr1":5,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":7,"set":12,"posicion":2,"atr1":1,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":7,"set":12,"posicion":3,"atr1":2,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":7,"set":13,"posicion":1,"atr1":6,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":7,"set":13,"posicion":2,"atr1":5,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":7,"set":13,"posicion":3,"atr1":1,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":7,"set":14,"posicion":1,"atr1":3,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":7,"set":14,"posicion":2,"atr1":6,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":7,"set":14,"posicion":3,"atr1":4,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":7,"set":15,"posicion":1,"atr1":6,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":7,"set":15,"posicion":2,"atr1":1,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":7,"set":15,"posicion":3,"atr1":4,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":8,"set":1,"posicion":1,"atr1":6,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":8,"set":1,"posicion":2,"atr1":4,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":8,"set":1,"posicion":3,"atr1":2,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":2,"posicion":1,"atr1":3,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":2,"posicion":2,"atr1":2,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":8,"set":2,"posicion":3,"atr1":5,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":8,"set":3,"posicion":1,"atr1":5,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":8,"set":3,"posicion":2,"atr1":1,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":8,"set":3,"posicion":3,"atr1":3,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":8,"set":4,"posicion":1,"atr1":6,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":8,"set":4,"posicion":2,"atr1":2,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":8,"set":4,"posicion":3,"atr1":3,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":8,"set":5,"posicion":1,"atr1":4,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":5,"posicion":2,"atr1":1,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":8,"set":5,"posicion":3,"atr1":2,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":8,"set":6,"posicion":1,"atr1":1,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":8,"set":6,"posicion":2,"atr1":3,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":6,"posicion":3,"atr1":5,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":8,"set":7,"posicion":1,"atr1":4,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":7,"posicion":2,"atr1":6,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":8,"set":7,"posicion":3,"atr1":2,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":8,"set":8,"posicion":1,"atr1":1,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":8,"set":8,"posicion":2,"atr1":5,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":8,"set":8,"posicion":3,"atr1":4,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":9,"posicion":1,"atr1":4,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":8,"set":9,"posicion":2,"atr1":1,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":9,"posicion":3,"atr1":3,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":8,"set":10,"posicion":1,"atr1":6,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":10,"posicion":2,"atr1":5,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":8,"set":10,"posicion":3,"atr1":2,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":8,"set":11,"posicion":1,"atr1":5,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":8,"set":11,"posicion":2,"atr1":3,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":11,"posicion":3,"atr1":4,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":12,"posicion":1,"atr1":6,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":8,"set":12,"posicion":2,"atr1":5,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":8,"set":12,"posicion":3,"atr1":3,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":8,"set":13,"posicion":1,"atr1":6,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":8,"set":13,"posicion":2,"atr1":1,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":8,"set":13,"posicion":3,"atr1":2,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":8,"set":14,"posicion":1,"atr1":3,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":8,"set":14,"posicion":2,"atr1":6,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":8,"set":14,"posicion":3,"atr1":2,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":8,"set":15,"posicion":1,"atr1":4,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":8,"set":15,"posicion":2,"atr1":1,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":8,"set":15,"posicion":3,"atr1":3,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":9,"set":1,"posicion":1,"atr1":5,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":9,"set":1,"posicion":2,"atr1":1,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":9,"set":1,"posicion":3,"atr1":2,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":9,"set":2,"posicion":1,"atr1":6,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":9,"set":2,"posicion":2,"atr1":4,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":9,"set":2,"posicion":3,"atr1":5,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":9,"set":3,"posicion":1,"atr1":5,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":9,"set":3,"posicion":2,"atr1":2,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":9,"set":3,"posicion":3,"atr1":1,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":9,"set":4,"posicion":1,"atr1":3,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":9,"set":4,"posicion":2,"atr1":2,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":9,"set":4,"posicion":3,"atr1":4,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":9,"set":5,"posicion":1,"atr1":3,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":9,"set":5,"posicion":2,"atr1":1,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":9,"set":5,"posicion":3,"atr1":6,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":9,"set":6,"posicion":1,"atr1":4,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":9,"set":6,"posicion":2,"atr1":3,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":9,"set":6,"posicion":3,"atr1":5,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":9,"set":7,"posicion":1,"atr1":1,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":9,"set":7,"posicion":2,"atr1":5,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":9,"set":7,"posicion":3,"atr1":6,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":9,"set":8,"posicion":1,"atr1":6,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":9,"set":8,"posicion":2,"atr1":4,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":9,"set":8,"posicion":3,"atr1":2,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":9,"set":9,"posicion":1,"atr1":1,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":9,"set":9,"posicion":2,"atr1":5,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":9,"set":9,"posicion":3,"atr1":3,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":9,"set":10,"posicion":1,"atr1":6,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":9,"set":10,"posicion":2,"atr1":2,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":9,"set":10,"posicion":3,"atr1":5,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":9,"set":11,"posicion":1,"atr1":4,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":9,"set":11,"posicion":2,"atr1":1,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":9,"set":11,"posicion":3,"atr1":2,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":9,"set":12,"posicion":1,"atr1":3,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":9,"set":12,"posicion":2,"atr1":6,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":9,"set":12,"posicion":3,"atr1":1,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":9,"set":13,"posicion":1,"atr1":2,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":9,"set":13,"posicion":2,"atr1":4,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":9,"set":13,"posicion":3,"atr1":3,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":9,"set":14,"posicion":1,"atr1":4,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":9,"set":14,"posicion":2,"atr1":5,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":9,"set":14,"posicion":3,"atr1":2,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":9,"set":15,"posicion":1,"atr1":5,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":9,"set":15,"posicion":2,"atr1":1,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":9,"set":15,"posicion":3,"atr1":6,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":10,"set":1,"posicion":1,"atr1":5,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":10,"set":1,"posicion":2,"atr1":3,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":10,"set":1,"posicion":3,"atr1":1,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":10,"set":2,"posicion":1,"atr1":5,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":10,"set":2,"posicion":2,"atr1":6,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":10,"set":2,"posicion":3,"atr1":3,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":10,"set":3,"posicion":1,"atr1":2,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":10,"set":3,"posicion":2,"atr1":1,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":10,"set":3,"posicion":3,"atr1":3,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":10,"set":4,"posicion":1,"atr1":2,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":10,"set":4,"posicion":2,"atr1":4,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":10,"set":4,"posicion":3,"atr1":6,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":10,"set":5,"posicion":1,"atr1":4,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":10,"set":5,"posicion":2,"atr1":6,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":10,"set":5,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":1,"atr5":2},{"version":10,"set":6,"posicion":1,"atr1":4,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":10,"set":6,"posicion":2,"atr1":1,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":10,"set":6,"posicion":3,"atr1":6,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":10,"set":7,"posicion":1,"atr1":1,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":10,"set":7,"posicion":2,"atr1":5,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":10,"set":7,"posicion":3,"atr1":6,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":10,"set":8,"posicion":1,"atr1":4,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":10,"set":8,"posicion":2,"atr1":3,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":10,"set":8,"posicion":3,"atr1":2,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":10,"set":9,"posicion":1,"atr1":2,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":10,"set":9,"posicion":2,"atr1":5,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":10,"set":9,"posicion":3,"atr1":4,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":10,"set":10,"posicion":1,"atr1":5,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":10,"set":10,"posicion":2,"atr1":2,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":10,"set":10,"posicion":3,"atr1":1,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":10,"set":11,"posicion":1,"atr1":4,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":10,"set":11,"posicion":2,"atr1":6,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":10,"set":11,"posicion":3,"atr1":3,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":10,"set":12,"posicion":1,"atr1":1,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":10,"set":12,"posicion":2,"atr1":2,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":10,"set":12,"posicion":3,"atr1":5,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":10,"set":13,"posicion":1,"atr1":3,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":10,"set":13,"posicion":2,"atr1":1,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":10,"set":13,"posicion":3,"atr1":5,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":10,"set":14,"posicion":1,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":10,"set":14,"posicion":2,"atr1":3,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":10,"set":14,"posicion":3,"atr1":2,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":10,"set":15,"posicion":1,"atr1":4,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":10,"set":15,"posicion":2,"atr1":2,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":10,"set":15,"posicion":3,"atr1":1,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":11,"set":1,"posicion":1,"atr1":4,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":11,"set":1,"posicion":2,"atr1":3,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":11,"set":1,"posicion":3,"atr1":5,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":11,"set":2,"posicion":1,"atr1":6,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":11,"set":2,"posicion":2,"atr1":2,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":11,"set":2,"posicion":3,"atr1":1,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":11,"set":3,"posicion":1,"atr1":6,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":11,"set":3,"posicion":2,"atr1":3,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":11,"set":3,"posicion":3,"atr1":5,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":11,"set":4,"posicion":1,"atr1":6,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":11,"set":4,"posicion":2,"atr1":5,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":11,"set":4,"posicion":3,"atr1":4,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":11,"set":5,"posicion":1,"atr1":2,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":11,"set":5,"posicion":2,"atr1":1,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":11,"set":5,"posicion":3,"atr1":3,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":11,"set":6,"posicion":1,"atr1":3,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":11,"set":6,"posicion":2,"atr1":1,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":11,"set":6,"posicion":3,"atr1":4,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":11,"set":7,"posicion":1,"atr1":2,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":11,"set":7,"posicion":2,"atr1":5,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":11,"set":7,"posicion":3,"atr1":6,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":11,"set":8,"posicion":1,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":11,"set":8,"posicion":2,"atr1":6,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":11,"set":8,"posicion":3,"atr1":1,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":11,"set":9,"posicion":1,"atr1":6,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":11,"set":9,"posicion":2,"atr1":1,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":11,"set":9,"posicion":3,"atr1":5,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":11,"set":10,"posicion":1,"atr1":2,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":11,"set":10,"posicion":2,"atr1":4,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":11,"set":10,"posicion":3,"atr1":6,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":11,"set":11,"posicion":1,"atr1":3,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":11,"set":11,"posicion":2,"atr1":5,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":11,"set":11,"posicion":3,"atr1":2,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":11,"set":12,"posicion":1,"atr1":3,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":11,"set":12,"posicion":2,"atr1":6,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":11,"set":12,"posicion":3,"atr1":4,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":11,"set":13,"posicion":1,"atr1":3,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":11,"set":13,"posicion":2,"atr1":5,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":11,"set":13,"posicion":3,"atr1":4,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":11,"set":14,"posicion":1,"atr1":2,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":11,"set":14,"posicion":2,"atr1":6,"atr2":4,"atr3":1,"atr4":1,"atr5":1},{"version":11,"set":14,"posicion":3,"atr1":1,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":11,"set":15,"posicion":1,"atr1":1,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":11,"set":15,"posicion":2,"atr1":2,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":11,"set":15,"posicion":3,"atr1":3,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":12,"set":1,"posicion":1,"atr1":3,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":12,"set":1,"posicion":2,"atr1":4,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":12,"set":1,"posicion":3,"atr1":1,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":12,"set":2,"posicion":1,"atr1":4,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":12,"set":2,"posicion":2,"atr1":6,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":12,"set":2,"posicion":3,"atr1":5,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":12,"set":3,"posicion":1,"atr1":4,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":12,"set":3,"posicion":2,"atr1":6,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":12,"set":3,"posicion":3,"atr1":2,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":12,"set":4,"posicion":1,"atr1":4,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":12,"set":4,"posicion":2,"atr1":5,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":12,"set":4,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":12,"set":5,"posicion":1,"atr1":4,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":12,"set":5,"posicion":2,"atr1":1,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":12,"set":5,"posicion":3,"atr1":2,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":12,"set":6,"posicion":1,"atr1":1,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":12,"set":6,"posicion":2,"atr1":4,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":12,"set":6,"posicion":3,"atr1":3,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":12,"set":7,"posicion":1,"atr1":2,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":12,"set":7,"posicion":2,"atr1":5,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":12,"set":7,"posicion":3,"atr1":4,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":12,"set":8,"posicion":1,"atr1":5,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":12,"set":8,"posicion":2,"atr1":2,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":12,"set":8,"posicion":3,"atr1":6,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":12,"set":9,"posicion":1,"atr1":6,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":12,"set":9,"posicion":2,"atr1":3,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":12,"set":9,"posicion":3,"atr1":2,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":12,"set":10,"posicion":1,"atr1":6,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":12,"set":10,"posicion":2,"atr1":5,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":12,"set":10,"posicion":3,"atr1":3,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":12,"set":11,"posicion":1,"atr1":5,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":12,"set":11,"posicion":2,"atr1":6,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":12,"set":11,"posicion":3,"atr1":1,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":12,"set":12,"posicion":1,"atr1":3,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":12,"set":12,"posicion":2,"atr1":1,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":12,"set":12,"posicion":3,"atr1":6,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":12,"set":13,"posicion":1,"atr1":1,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":12,"set":13,"posicion":2,"atr1":6,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":12,"set":13,"posicion":3,"atr1":2,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":12,"set":14,"posicion":1,"atr1":1,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":12,"set":14,"posicion":2,"atr1":5,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":12,"set":14,"posicion":3,"atr1":2,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":12,"set":15,"posicion":1,"atr1":1,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":12,"set":15,"posicion":2,"atr1":4,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":12,"set":15,"posicion":3,"atr1":5,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":13,"set":1,"posicion":1,"atr1":2,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":13,"set":1,"posicion":2,"atr1":4,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":13,"set":1,"posicion":3,"atr1":1,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":13,"set":2,"posicion":1,"atr1":5,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":13,"set":2,"posicion":2,"atr1":3,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":13,"set":2,"posicion":3,"atr1":6,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":13,"set":3,"posicion":1,"atr1":5,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":13,"set":3,"posicion":2,"atr1":3,"atr2":1,"atr3":1,"atr4":2,"atr5":1},{"version":13,"set":3,"posicion":3,"atr1":6,"atr2":4,"atr3":2,"atr4":1,"atr5":1},{"version":13,"set":4,"posicion":1,"atr1":4,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":13,"set":4,"posicion":2,"atr1":2,"atr2":2,"atr3":1,"atr4":1,"atr5":2},{"version":13,"set":4,"posicion":3,"atr1":1,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":13,"set":5,"posicion":1,"atr1":2,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":13,"set":5,"posicion":2,"atr1":6,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":13,"set":5,"posicion":3,"atr1":5,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":13,"set":6,"posicion":1,"atr1":1,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":13,"set":6,"posicion":2,"atr1":4,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":13,"set":6,"posicion":3,"atr1":2,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":13,"set":7,"posicion":1,"atr1":3,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":13,"set":7,"posicion":2,"atr1":4,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":13,"set":7,"posicion":3,"atr1":5,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":13,"set":8,"posicion":1,"atr1":3,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":13,"set":8,"posicion":2,"atr1":1,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":13,"set":8,"posicion":3,"atr1":6,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":13,"set":9,"posicion":1,"atr1":2,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":13,"set":9,"posicion":2,"atr1":4,"atr2":6,"atr3":2,"atr4":1,"atr5":1},{"version":13,"set":9,"posicion":3,"atr1":3,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":13,"set":10,"posicion":1,"atr1":3,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":13,"set":10,"posicion":2,"atr1":6,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":13,"set":10,"posicion":3,"atr1":5,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":13,"set":11,"posicion":1,"atr1":6,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":13,"set":11,"posicion":2,"atr1":5,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":13,"set":11,"posicion":3,"atr1":4,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":13,"set":12,"posicion":1,"atr1":2,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":13,"set":12,"posicion":2,"atr1":3,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":13,"set":12,"posicion":3,"atr1":1,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":13,"set":13,"posicion":1,"atr1":3,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":13,"set":13,"posicion":2,"atr1":1,"atr2":6,"atr3":2,"atr4":1,"atr5":2},{"version":13,"set":13,"posicion":3,"atr1":4,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":13,"set":14,"posicion":1,"atr1":2,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":13,"set":14,"posicion":2,"atr1":6,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":13,"set":14,"posicion":3,"atr1":5,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":13,"set":15,"posicion":1,"atr1":5,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":13,"set":15,"posicion":2,"atr1":1,"atr2":2,"atr3":1,"atr4":2,"atr5":2},{"version":13,"set":15,"posicion":3,"atr1":2,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":14,"set":1,"posicion":1,"atr1":3,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":14,"set":1,"posicion":2,"atr1":1,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":14,"set":1,"posicion":3,"atr1":6,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":2,"posicion":1,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":2,"posicion":2,"atr1":5,"atr2":6,"atr3":1,"atr4":1,"atr5":1},{"version":14,"set":2,"posicion":3,"atr1":6,"atr2":4,"atr3":1,"atr4":2,"atr5":1},{"version":14,"set":3,"posicion":1,"atr1":4,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":14,"set":3,"posicion":2,"atr1":1,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":14,"set":3,"posicion":3,"atr1":5,"atr2":5,"atr3":1,"atr4":1,"atr5":1},{"version":14,"set":4,"posicion":1,"atr1":3,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":14,"set":4,"posicion":2,"atr1":6,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":14,"set":4,"posicion":3,"atr1":2,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":14,"set":5,"posicion":1,"atr1":5,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":5,"posicion":2,"atr1":3,"atr2":3,"atr3":1,"atr4":1,"atr5":2},{"version":14,"set":5,"posicion":3,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":14,"set":6,"posicion":1,"atr1":1,"atr2":2,"atr3":1,"atr4":1,"atr5":1},{"version":14,"set":6,"posicion":2,"atr1":6,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":14,"set":6,"posicion":3,"atr1":2,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":7,"posicion":1,"atr1":1,"atr2":3,"atr3":1,"atr4":2,"atr5":1},{"version":14,"set":7,"posicion":2,"atr1":4,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":7,"posicion":3,"atr1":3,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":14,"set":8,"posicion":1,"atr1":3,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":14,"set":8,"posicion":2,"atr1":2,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":8,"posicion":3,"atr1":4,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":14,"set":9,"posicion":1,"atr1":1,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":14,"set":9,"posicion":2,"atr1":6,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":14,"set":9,"posicion":3,"atr1":2,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":10,"posicion":1,"atr1":4,"atr2":5,"atr3":2,"atr4":2,"atr5":1},{"version":14,"set":10,"posicion":2,"atr1":3,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":10,"posicion":3,"atr1":5,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":14,"set":11,"posicion":1,"atr1":6,"atr2":1,"atr3":1,"atr4":1,"atr5":2},{"version":14,"set":11,"posicion":2,"atr1":3,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":11,"posicion":3,"atr1":5,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":14,"set":12,"posicion":1,"atr1":5,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":14,"set":12,"posicion":2,"atr1":1,"atr2":5,"atr3":2,"atr4":1,"atr5":1},{"version":14,"set":12,"posicion":3,"atr1":2,"atr2":6,"atr3":1,"atr4":2,"atr5":2},{"version":14,"set":13,"posicion":1,"atr1":4,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":14,"set":13,"posicion":2,"atr1":2,"atr2":1,"atr3":1,"atr4":1,"atr5":1},{"version":14,"set":13,"posicion":3,"atr1":1,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":14,"set":14,"posicion":1,"atr1":4,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":14,"set":14,"posicion":2,"atr1":2,"atr2":2,"atr3":2,"atr4":1,"atr5":2},{"version":14,"set":14,"posicion":3,"atr1":6,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":14,"set":15,"posicion":1,"atr1":1,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":14,"set":15,"posicion":2,"atr1":3,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":14,"set":15,"posicion":3,"atr1":5,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":15,"set":1,"posicion":1,"atr1":1,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":15,"set":1,"posicion":2,"atr1":6,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":1,"posicion":3,"atr1":4,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":15,"set":2,"posicion":1,"atr1":4,"atr2":1,"atr3":1,"atr4":2,"atr5":2},{"version":15,"set":2,"posicion":2,"atr1":1,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":15,"set":2,"posicion":3,"atr1":2,"atr2":4,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":3,"posicion":1,"atr1":3,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":15,"set":3,"posicion":2,"atr1":5,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":3,"posicion":3,"atr1":2,"atr2":3,"atr3":2,"atr4":1,"atr5":1},{"version":15,"set":4,"posicion":1,"atr1":6,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":4,"posicion":2,"atr1":2,"atr2":2,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":4,"posicion":3,"atr1":5,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":15,"set":5,"posicion":1,"atr1":3,"atr2":3,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":5,"posicion":2,"atr1":6,"atr2":5,"atr3":1,"atr4":2,"atr5":2},{"version":15,"set":5,"posicion":3,"atr1":4,"atr2":1,"atr3":2,"atr4":1,"atr5":1},{"version":15,"set":6,"posicion":1,"atr1":3,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":6,"posicion":2,"atr1":5,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":6,"posicion":3,"atr1":2,"atr2":3,"atr3":1,"atr4":1,"atr5":1},{"version":15,"set":7,"posicion":1,"atr1":4,"atr2":1,"atr3":2,"atr4":1,"atr5":2},{"version":15,"set":7,"posicion":2,"atr1":6,"atr2":4,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":7,"posicion":3,"atr1":5,"atr2":6,"atr3":1,"atr4":2,"atr5":1},{"version":15,"set":8,"posicion":1,"atr1":1,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":8,"posicion":2,"atr1":3,"atr2":2,"atr3":2,"atr4":1,"atr5":1},{"version":15,"set":8,"posicion":3,"atr1":6,"atr2":3,"atr3":1,"atr4":2,"atr5":2},{"version":15,"set":9,"posicion":1,"atr1":5,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":15,"set":9,"posicion":2,"atr1":4,"atr2":1,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":9,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":10,"posicion":1,"atr1":2,"atr2":5,"atr3":1,"atr4":1,"atr5":2},{"version":15,"set":10,"posicion":2,"atr1":6,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":10,"posicion":3,"atr1":1,"atr2":6,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":11,"posicion":1,"atr1":1,"atr2":4,"atr3":1,"atr4":1,"atr5":2},{"version":15,"set":11,"posicion":2,"atr1":3,"atr2":5,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":11,"posicion":3,"atr1":2,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":12,"posicion":1,"atr1":4,"atr2":6,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":12,"posicion":2,"atr1":6,"atr2":5,"atr3":1,"atr4":2,"atr5":1},{"version":15,"set":12,"posicion":3,"atr1":5,"atr2":3,"atr3":2,"atr4":1,"atr5":2},{"version":15,"set":13,"posicion":1,"atr1":5,"atr2":4,"atr3":2,"atr4":1,"atr5":2},{"version":15,"set":13,"posicion":2,"atr1":2,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":13,"posicion":3,"atr1":1,"atr2":2,"atr3":1,"atr4":2,"atr5":1},{"version":15,"set":14,"posicion":1,"atr1":2,"atr2":2,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":14,"posicion":2,"atr1":6,"atr2":1,"atr3":2,"atr4":2,"atr5":2},{"version":15,"set":14,"posicion":3,"atr1":4,"atr2":6,"atr3":1,"atr4":1,"atr5":2},{"version":15,"set":15,"posicion":1,"atr1":5,"atr2":4,"atr3":1,"atr4":2,"atr5":2},{"version":15,"set":15,"posicion":2,"atr1":1,"atr2":3,"atr3":2,"atr4":2,"atr5":1},{"version":15,"set":15,"posicion":3,"atr1":3,"atr2":5,"atr3":2,"atr4":1,"atr5":2}]]]$NOT_DEFINED></data><data key="variable">diseno</data><data key="labels"><![CDATA[version	set	posicion	atr1	atr2	atr3	atr4	atr5]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	1	1	5	5	2	1	2
+1	1	2	4	4	1	1	1
+1	1	3	3	6	2	2	2
+1	2	1	2	2	1	2	1
+1	2	2	6	4	1	1	2
+1	2	3	1	1	2	2	1
+1	3	1	5	5	2	1	2
+1	3	2	2	1	1	2	1
+1	3	3	4	3	2	1	2
+1	4	1	3	4	2	2	1
+1	4	2	6	2	1	1	1
+1	4	3	1	6	1	2	2
+1	5	1	4	3	1	1	1
+1	5	2	3	6	2	2	2
+1	5	3	2	1	2	2	2
+1	6	1	5	2	1	2	1
+1	6	2	6	4	2	1	2
+1	6	3	1	3	1	1	1
+1	7	1	3	6	1	2	1
+1	7	2	2	1	1	1	1
+1	7	3	5	5	2	2	2
+1	8	1	6	5	2	2	2
+1	8	2	4	1	1	1	1
+1	8	3	1	3	2	1	2
+1	9	1	4	5	2	1	2
+1	9	2	1	4	1	1	1
+1	9	3	6	2	1	2	1
+1	10	1	4	2	2	2	2
+1	10	2	5	3	1	1	1
+1	10	3	3	6	2	2	2
+1	11	1	2	6	2	2	1
+1	11	2	3	2	2	2	2
+1	11	3	1	4	1	1	2
+1	12	1	6	1	1	1	1
+1	12	2	5	4	2	2	2
+1	12	3	2	5	1	1	1
+1	13	1	1	1	1	2	2
+1	13	2	5	3	2	1	2
+1	13	3	4	2	2	2	1
+1	14	1	5	4	2	1	1
+1	14	2	2	6	1	1	2
+1	14	3	3	3	1	2	1
+1	15	1	6	1	2	2	2
+1	15	2	1	3	1	1	1
+1	15	3	3	5	2	1	2
+2	1	1	1	1	1	2	1
+2	1	2	5	2	2	1	2
+2	1	3	4	4	1	1	1
+2	2	1	2	3	2	2	1
+2	2	2	6	6	2	2	1
+2	2	3	4	5	1	1	2
+2	3	1	6	4	1	1	2
+2	3	2	2	2	2	2	1
+2	3	3	3	5	1	2	2
+2	4	1	4	5	2	1	1
+2	4	2	6	2	2	2	2
+2	4	3	1	6	1	1	1
+2	5	1	4	1	1	1	2
+2	5	2	5	6	1	2	1
+2	5	3	1	3	2	2	2
+2	6	1	2	1	1	1	1
+2	6	2	6	2	2	2	1
+2	6	3	3	5	2	1	2
+2	7	1	3	6	2	1	1
+2	7	2	4	4	1	2	2
+2	7	3	2	2	1	2	2
+2	8	1	5	4	1	1	2
+2	8	2	6	6	2	2	1
+2	8	3	1	3	1	1	1
+2	9	1	3	6	1	1	2
+2	9	2	2	1	2	2	2
+2	9	3	5	4	2	2	1
+2	10	1	2	1	2	1	1
+2	10	2	6	3	2	2	2
+2	10	3	5	5	1	2	1
+2	11	1	1	5	2	1	1
+2	11	2	4	3	1	1	2
+2	11	3	5	2	1	2	2
+2	12	1	3	6	2	1	2
+2	12	2	4	4	2	1	1
+2	12	3	1	1	1	2	1
+2	13	1	6	5	1	1	2
+2	13	2	3	3	2	2	1
+2	13	3	2	4	1	2	2
+2	14	1	4	3	2	2	1
+2	14	2	5	2	1	1	2
+2	14	3	2	1	2	2	2
+2	15	1	6	6	1	1	2
+2	15	2	3	1	1	2	1
+2	15	3	1	5	2	1	1
+3	1	1	1	4	1	2	1
+3	1	2	5	5	2	1	2
+3	1	3	3	6	1	2	1
+3	2	1	2	3	1	1	2
+3	2	2	4	6	2	1	2
+3	2	3	6	4	2	2	1
+3	3	1	2	5	2	2	1
+3	3	2	5	2	1	1	1
+3	3	3	1	1	2	2	2
+3	4	1	4	4	2	1	2
+3	4	2	6	6	1	1	1
+3	4	3	3	1	1	2	2
+3	5	1	2	2	2	2	1
+3	5	2	1	5	1	1	1
+3	5	3	4	3	1	1	2
+3	6	1	3	3	2	1	2
+3	6	2	4	2	1	2	2
+3	6	3	5	1	2	2	1
+3	7	1	6	4	1	2	1
+3	7	2	1	5	1	2	2
+3	7	3	5	2	2	1	2
+3	8	1	2	2	1	1	2
+3	8	2	3	5	2	2	1
+3	8	3	6	6	2	1	1
+3	9	1	3	6	1	1	1
+3	9	2	4	4	1	1	2
+3	9	3	5	3	2	2	1
+3	10	1	1	6	1	2	2
+3	10	2	4	3	2	1	1
+3	10	3	2	1	2	2	2
+3	11	1	3	2	1	1	1
+3	11	2	2	4	1	2	2
+3	11	3	6	1	2	2	2
+3	12	1	6	4	2	1	1
+3	12	2	1	5	1	2	1
+3	12	3	5	3	2	1	2
+3	13	1	1	5	1	1	1
+3	13	2	4	2	2	2	2
+3	13	3	5	1	1	1	1
+3	14	1	1	3	2	1	2
+3	14	2	6	6	1	2	1
+3	14	3	3	2	2	2	2
+3	15	1	2	6	2	2	1
+3	15	2	6	1	1	2	2
+3	15	3	3	3	2	1	1
+4	1	1	3	6	1	2	2
+4	1	2	4	4	2	1	1
+4	1	3	6	2	1	2	2
+4	2	1	2	4	2	2	2
+4	2	2	4	5	2	1	1
+4	2	3	5	2	1	1	2
+4	3	1	4	2	1	2	1
+4	3	2	5	1	2	1	1
+4	3	3	1	5	1	1	2
+4	4	1	2	6	2	1	2
+4	4	2	1	1	1	1	2
+4	4	3	3	3	2	2	1
+4	5	1	6	5	1	2	1
+4	5	2	5	1	1	1	1
+4	5	3	2	4	2	2	2
+4	6	1	5	4	1	1	1
+4	6	2	2	6	2	1	2
+4	6	3	4	3	1	2	1
+4	7	1	1	2	2	2	1
+4	7	2	3	3	1	2	2
+4	7	3	6	5	2	1	2
+4	8	1	3	2	1	1	2
+4	8	2	1	4	1	2	2
+4	8	3	2	1	2	2	1
+4	9	1	4	2	1	2	1
+4	9	2	6	3	2	1	1
+4	9	3	5	6	2	1	2
+4	10	1	3	4	1	1	1
+4	10	2	2	6	1	2	1
+4	10	3	5	5	2	2	2
+4	11	1	1	3	2	1	2
+4	11	2	4	1	1	2	2
+4	11	3	3	5	2	1	1
+4	12	1	1	6	1	2	1
+4	12	2	6	2	2	1	2
+4	12	3	4	1	2	1	2
+4	13	1	2	5	1	1	1
+4	13	2	5	4	2	2	2
+4	13	3	3	2	1	2	1
+4	14	1	2	5	1	2	1
+4	14	2	1	6	1	1	2
+4	14	3	6	3	2	2	2
+4	15	1	1	1	2	1	2
+4	15	2	6	3	1	1	1
+4	15	3	4	4	2	2	1
+5	1	1	2	5	1	2	1
+5	1	2	1	4	2	2	1
+5	1	3	3	2	1	1	2
+5	2	1	2	1	2	1	2
+5	2	2	5	6	1	1	2
+5	2	3	3	3	2	2	1
+5	3	1	5	2	1	1	2
+5	3	2	4	4	2	1	1
+5	3	3	6	5	1	2	2
+5	4	1	6	6	2	1	1
+5	4	2	4	5	2	2	1
+5	4	3	5	1	1	2	2
+5	5	1	1	3	2	1	2
+5	5	2	4	2	2	1	2
+5	5	3	5	1	1	2	1
+5	6	1	2	3	2	2	1
+5	6	2	4	4	1	2	1
+5	6	3	6	6	1	1	2
+5	7	1	5	2	2	1	2
+5	7	2	3	6	2	2	2
+5	7	3	1	1	1	2	1
+5	8	1	6	5	2	1	1
+5	8	2	1	1	1	1	2
+5	8	3	3	4	1	2	1
+5	9	1	6	3	1	1	2
+5	9	2	2	6	2	1	1
+5	9	3	3	5	2	2	2
+5	10	1	5	3	1	2	1
+5	10	2	4	2	2	2	2
+5	10	3	2	4	1	1	1
+5	11	1	4	1	2	2	1
+5	11	2	2	2	1	1	1
+5	11	3	3	5	2	2	2
+5	12	1	4	6	2	1	2
+5	12	2	5	3	1	1	1
+5	12	3	1	4	1	2	2
+5	13	1	5	5	2	1	1
+5	13	2	3	1	1	1	2
+5	13	3	6	6	1	2	1
+5	14	1	5	4	2	1	1
+5	14	2	1	2	2	2	2
+5	14	3	6	3	1	2	2
+5	15	1	2	3	2	2	1
+5	15	2	6	1	1	2	2
+5	15	3	4	5	1	1	2
+6	1	1	4	5	2	2	2
+6	1	2	5	6	2	1	1
+6	1	3	1	3	1	2	1
+6	2	1	3	1	1	1	2
+6	2	2	1	4	2	1	1
+6	2	3	2	6	2	2	1
+6	3	1	6	5	1	1	2
+6	3	2	4	3	1	2	1
+6	3	3	2	2	2	1	2
+6	4	1	3	2	2	1	2
+6	4	2	1	6	2	2	2
+6	4	3	6	4	1	2	1
+6	5	1	2	1	1	1	1
+6	5	2	1	3	1	2	1
+6	5	3	3	2	2	1	2
+6	6	1	4	6	2	2	2
+6	6	2	3	1	1	2	2
+6	6	3	5	4	2	1	1
+6	7	1	6	2	2	1	1
+6	7	2	5	1	1	2	1
+6	7	3	2	5	1	1	2
+6	8	1	3	6	2	2	1
+6	8	2	2	5	2	1	2
+6	8	3	5	4	1	2	2
+6	9	1	1	1	2	1	1
+6	9	2	4	4	1	1	2
+6	9	3	6	3	1	2	1
+6	10	1	4	2	1	2	1
+6	10	2	2	4	2	2	2
+6	10	3	5	5	2	1	2
+6	11	1	1	2	1	1	2
+6	11	2	3	3	2	1	1
+6	11	3	4	6	1	2	1
+6	12	1	6	5	2	2	2
+6	12	2	2	1	2	1	1
+6	12	3	1	4	1	2	1
+6	13	1	5	2	2	2	1
+6	13	2	2	6	1	1	2
+6	13	3	6	5	1	1	2
+6	14	1	5	3	1	2	1
+6	14	2	1	4	1	1	2
+6	14	3	3	6	2	2	1
+6	15	1	4	1	2	1	1
+6	15	2	3	4	1	1	2
+6	15	3	6	3	2	2	2
+7	1	1	5	6	1	2	2
+7	1	2	2	3	1	1	1
+7	1	3	1	4	2	2	1
+7	2	1	4	1	1	1	2
+7	2	2	6	2	2	1	2
+7	2	3	1	5	2	2	1
+7	3	1	3	1	1	2	2
+7	3	2	4	6	1	1	1
+7	3	3	6	2	2	1	1
+7	4	1	2	3	2	2	2
+7	4	2	3	4	1	2	2
+7	4	3	1	5	2	1	1
+7	5	1	6	2	2	2	2
+7	5	2	2	5	1	1	1
+7	5	3	5	1	2	2	1
+7	6	1	5	6	2	1	1
+7	6	2	3	1	1	1	2
+7	6	3	4	3	1	2	2
+7	7	1	1	5	2	2	1
+7	7	2	2	2	1	2	1
+7	7	3	4	3	1	1	2
+7	8	1	5	4	2	1	2
+7	8	2	3	6	1	2	2
+7	8	3	6	5	2	1	1
+7	9	1	5	1	1	2	2
+7	9	2	1	3	1	2	2
+7	9	3	2	2	2	1	1
+7	10	1	4	6	2	1	1
+7	10	2	3	2	1	2	1
+7	10	3	6	5	2	1	2
+7	11	1	4	3	2	1	2
+7	11	2	2	6	1	1	1
+7	11	3	3	4	2	2	2
+7	12	1	5	1	2	1	1
+7	12	2	1	4	1	2	2
+7	12	3	2	2	1	2	1
+7	13	1	6	5	1	1	1
+7	13	2	5	1	1	1	2
+7	13	3	1	2	2	2	2
+7	14	1	3	6	2	1	1
+7	14	2	6	5	2	2	2
+7	14	3	4	3	1	2	1
+7	15	1	6	6	2	2	2
+7	15	2	1	2	1	1	2
+7	15	3	4	4	1	2	1
+8	1	1	6	1	1	2	1
+8	1	2	4	5	2	2	2
+8	1	3	2	3	2	1	1
+8	2	1	3	3	2	1	1
+8	2	2	2	4	1	2	2
+8	2	3	5	2	2	1	2
+8	3	1	5	2	1	1	2
+8	3	2	1	3	2	2	1
+8	3	3	3	4	1	1	1
+8	4	1	6	1	2	2	2
+8	4	2	2	5	2	2	2
+8	4	3	3	6	1	1	1
+8	5	1	4	1	2	1	1
+8	5	2	1	2	1	1	1
+8	5	3	2	3	1	2	2
+8	6	1	1	5	1	2	2
+8	6	2	3	4	2	1	1
+8	6	3	5	6	2	2	2
+8	7	1	4	3	2	1	1
+8	7	2	6	1	1	1	2
+8	7	3	2	4	1	2	1
+8	8	1	1	4	1	2	2
+8	8	2	5	6	1	2	2
+8	8	3	4	5	2	1	1
+8	9	1	4	6	1	1	2
+8	9	2	1	2	2	1	1
+8	9	3	3	1	2	2	1
+8	10	1	6	1	2	1	1
+8	10	2	5	3	1	2	2
+8	10	3	2	2	1	2	2
+8	11	1	5	5	1	2	2
+8	11	2	3	4	2	1	1
+8	11	3	4	3	2	1	1
+8	12	1	6	4	2	1	1
+8	12	2	5	1	2	2	2
+8	12	3	3	6	1	1	2
+8	13	1	6	3	1	2	1
+8	13	2	1	6	2	2	2
+8	13	3	2	5	1	1	1
+8	14	1	3	4	2	2	2
+8	14	2	6	2	1	1	1
+8	14	3	2	5	1	2	1
+8	15	1	4	6	2	2	2
+8	15	2	1	1	2	1	2
+8	15	3	3	4	1	1	1
+9	1	1	5	6	1	1	1
+9	1	2	1	1	2	2	1
+9	1	3	2	3	2	2	2
+9	2	1	6	6	2	1	1
+9	2	2	4	2	1	1	2
+9	2	3	5	1	1	2	2
+9	3	1	5	5	1	2	1
+9	3	2	2	3	2	1	1
+9	3	3	1	2	1	2	2
+9	4	1	3	2	2	1	2
+9	4	2	2	4	2	1	1
+9	4	3	4	5	1	2	2
+9	5	1	3	5	2	2	1
+9	5	2	1	4	2	1	2
+9	5	3	6	3	1	2	2
+9	6	1	4	6	1	1	1
+9	6	2	3	5	2	1	1
+9	6	3	5	2	1	2	2
+9	7	1	1	6	2	2	2
+9	7	2	5	3	2	1	1
+9	7	3	6	1	1	2	1
+9	8	1	6	4	2	1	2
+9	8	2	4	6	1	1	1
+9	8	3	2	3	1	2	2
+9	9	1	1	2	2	1	1
+9	9	2	5	1	1	2	1
+9	9	3	3	5	1	2	2
+9	10	1	6	3	2	1	2
+9	10	2	2	1	2	1	2
+9	10	3	5	2	1	2	1
+9	11	1	4	1	2	2	2
+9	11	2	1	6	1	2	1
+9	11	3	2	4	2	1	1
+9	12	1	3	5	1	1	2
+9	12	2	6	6	1	2	1
+9	12	3	1	4	2	1	2
+9	13	1	2	1	2	1	1
+9	13	2	4	2	1	2	1
+9	13	3	3	3	2	2	2
+9	14	1	4	1	1	1	2
+9	14	2	5	4	1	1	1
+9	14	3	2	5	2	2	2
+9	15	1	5	5	2	2	2
+9	15	2	1	4	1	2	1
+9	15	3	6	2	2	1	2
+10	1	1	5	4	2	2	1
+10	1	2	3	1	2	1	1
+10	1	3	1	5	1	2	2
+10	2	1	5	3	2	2	1
+10	2	2	6	6	1	1	2
+10	2	3	3	2	1	1	1
+10	3	1	2	5	1	2	2
+10	3	2	1	6	2	1	2
+10	3	3	3	3	1	1	1
+10	4	1	2	3	1	2	2
+10	4	2	4	6	2	1	2
+10	4	3	6	2	1	2	1
+10	5	1	4	2	1	2	1
+10	5	2	6	1	2	1	1
+10	5	3	3	5	2	1	2
+10	6	1	4	3	1	2	1
+10	6	2	1	2	2	2	2
+10	6	3	6	4	2	1	1
+10	7	1	1	1	1	2	2
+10	7	2	5	5	1	1	1
+10	7	3	6	6	2	1	2
+10	8	1	4	1	2	2	2
+10	8	2	3	2	2	1	1
+10	8	3	2	4	1	2	2
+10	9	1	2	5	1	2	2
+10	9	2	5	2	1	1	1
+10	9	3	4	6	2	2	1
+10	10	1	5	3	1	1	2
+10	10	2	2	4	2	1	2
+10	10	3	1	1	2	2	1
+10	11	1	4	1	1	1	1
+10	11	2	6	6	2	2	2
+10	11	3	3	4	1	2	1
+10	12	1	1	2	2	1	1
+10	12	2	2	3	1	1	2
+10	12	3	5	4	2	2	1
+10	13	1	3	5	1	2	2
+10	13	2	1	6	2	1	2
+10	13	3	5	3	1	2	1
+10	14	1	4	2	2	2	2
+10	14	2	3	5	2	1	1
+10	14	3	2	6	1	1	2
+10	15	1	4	4	1	1	1
+10	15	2	2	1	1	2	1
+10	15	3	1	3	2	2	2
+11	1	1	4	5	1	2	2
+11	1	2	3	3	1	1	1
+11	1	3	5	1	2	2	2
+11	2	1	6	2	1	1	1
+11	2	2	2	6	2	2	1
+11	2	3	1	4	2	1	2
+11	3	1	6	3	2	1	2
+11	3	2	3	4	1	2	1
+11	3	3	5	1	2	1	2
+11	4	1	6	6	2	1	1
+11	4	2	5	2	1	2	1
+11	4	3	4	3	1	2	2
+11	5	1	2	4	2	1	1
+11	5	2	1	5	2	2	2
+11	5	3	3	1	1	1	1
+11	6	1	3	6	1	2	2
+11	6	2	1	2	1	1	2
+11	6	3	4	5	2	2	1
+11	7	1	2	1	2	1	2
+11	7	2	5	3	2	1	1
+11	7	3	6	4	1	2	2
+11	8	1	4	2	2	2	1
+11	8	2	6	3	1	1	2
+11	8	3	1	5	1	2	1
+11	9	1	6	4	1	1	2
+11	9	2	1	6	2	2	1
+11	9	3	5	1	2	1	1
+11	10	1	2	4	1	2	2
+11	10	2	4	6	1	1	2
+11	10	3	6	5	2	2	1
+11	11	1	3	4	2	1	1
+11	11	2	5	2	2	2	2
+11	11	3	2	6	1	1	2
+11	12	1	3	1	1	2	1
+11	12	2	6	5	1	1	1
+11	12	3	4	6	2	2	2
+11	13	1	3	4	2	2	1
+11	13	2	5	2	2	1	2
+11	13	3	4	3	1	1	2
+11	14	1	2	2	1	2	2
+11	14	2	6	4	1	1	1
+11	14	3	1	3	2	2	1
+11	15	1	1	3	1	1	2
+11	15	2	2	6	2	2	1
+11	15	3	3	1	2	1	2
+12	1	1	3	1	2	2	2
+12	1	2	4	6	2	2	2
+12	1	3	1	2	1	1	1
+12	2	1	4	5	1	1	2
+12	2	2	6	3	2	2	1
+12	2	3	5	2	1	2	1
+12	3	1	4	1	1	2	2
+12	3	2	6	5	2	2	1
+12	3	3	2	2	1	1	1
+12	4	1	4	3	1	1	2
+12	4	2	5	4	2	2	2
+12	4	3	3	5	2	1	1
+12	5	1	4	5	1	2	1
+12	5	2	1	1	2	1	1
+12	5	3	2	6	1	2	2
+12	6	1	1	1	2	1	1
+12	6	2	4	5	1	2	1
+12	6	3	3	4	2	1	2
+12	7	1	2	6	1	1	1
+12	7	2	5	3	2	2	2
+12	7	3	4	2	1	2	2
+12	8	1	5	1	2	2	1
+12	8	2	2	3	2	1	2
+12	8	3	6	4	1	2	2
+12	9	1	6	2	1	1	1
+12	9	2	3	3	1	2	2
+12	9	3	2	5	2	2	1
+12	10	1	6	2	2	2	2
+12	10	2	5	5	1	2	1
+12	10	3	3	6	2	1	1
+12	11	1	5	6	1	2	2
+12	11	2	6	1	2	2	1
+12	11	3	1	3	1	1	2
+12	12	1	3	1	2	2	1
+12	12	2	1	4	2	1	2
+12	12	3	6	2	1	2	1
+12	13	1	1	1	2	2	2
+12	13	2	6	6	1	1	2
+12	13	3	2	5	1	2	1
+12	14	1	1	5	1	2	1
+12	14	2	5	3	2	1	1
+12	14	3	2	4	2	2	2
+12	15	1	1	2	2	1	2
+12	15	2	4	4	1	2	2
+12	15	3	5	6	1	2	1
+13	1	1	2	3	1	2	2
+13	1	2	4	5	1	1	1
+13	1	3	1	1	2	2	2
+13	2	1	5	5	2	2	1
+13	2	2	3	6	2	1	2
+13	2	3	6	2	1	2	1
+13	3	1	5	3	2	2	2
+13	3	2	3	1	1	2	1
+13	3	3	6	4	2	1	1
+13	4	1	4	3	1	2	2
+13	4	2	2	2	1	1	2
+13	4	3	1	1	2	2	1
+13	5	1	2	4	2	2	2
+13	5	2	6	2	1	1	1
+13	5	3	5	6	2	2	2
+13	6	1	1	6	1	1	2
+13	6	2	4	4	2	2	1
+13	6	3	2	5	1	2	1
+13	7	1	3	2	2	2	1
+13	7	2	4	1	2	1	2
+13	7	3	5	6	1	2	1
+13	8	1	3	4	1	2	2
+13	8	2	1	2	2	1	2
+13	8	3	6	3	1	2	1
+13	9	1	2	3	1	2	2
+13	9	2	4	6	2	1	1
+13	9	3	3	5	1	2	1
+13	10	1	3	4	1	2	2
+13	10	2	6	1	2	1	1
+13	10	3	5	5	2	2	2
+13	11	1	6	1	1	2	2
+13	11	2	5	5	1	1	2
+13	11	3	4	3	2	2	1
+13	12	1	2	2	2	2	1
+13	12	2	3	3	2	2	2
+13	12	3	1	5	1	1	1
+13	13	1	3	4	1	2	1
+13	13	2	1	6	2	1	2
+13	13	3	4	1	2	2	1
+13	14	1	2	5	1	1	1
+13	14	2	6	1	1	2	2
+13	14	3	5	3	2	2	2
+13	15	1	5	6	2	2	1
+13	15	2	1	2	1	2	2
+13	15	3	2	4	2	1	2
+14	1	1	3	1	1	1	2
+14	1	2	1	4	2	2	1
+14	1	3	6	5	2	2	2
+14	2	1	4	2	2	2	2
+14	2	2	5	6	1	1	1
+14	2	3	6	4	1	2	1
+14	3	1	4	6	1	2	2
+14	3	2	1	3	2	2	1
+14	3	3	5	5	1	1	1
+14	4	1	3	2	1	2	1
+14	4	2	6	4	2	2	1
+14	4	3	2	1	1	1	2
+14	5	1	5	6	2	2	2
+14	5	2	3	3	1	1	2
+14	5	3	4	2	2	2	1
+14	6	1	1	2	1	1	1
+14	6	2	6	5	2	2	1
+14	6	3	2	4	2	2	2
+14	7	1	1	3	1	2	1
+14	7	2	4	2	2	2	2
+14	7	3	3	1	1	1	2
+14	8	1	3	1	2	1	1
+14	8	2	2	3	2	2	2
+14	8	3	4	6	1	2	1
+14	9	1	1	6	1	2	1
+14	9	2	6	1	1	1	2
+14	9	3	2	2	2	2	2
+14	10	1	4	5	2	2	1
+14	10	2	3	4	2	2	2
+14	10	3	5	3	1	1	1
+14	11	1	6	1	1	1	2
+14	11	2	3	2	2	2	2
+14	11	3	5	6	1	2	1
+14	12	1	5	3	2	2	2
+14	12	2	1	5	2	1	1
+14	12	3	2	6	1	2	2
+14	13	1	4	5	1	2	2
+14	13	2	2	1	1	1	1
+14	13	3	1	6	2	2	1
+14	14	1	4	4	2	2	1
+14	14	2	2	2	2	1	2
+14	14	3	6	3	1	2	2
+14	15	1	1	2	1	2	1
+14	15	2	3	3	2	1	2
+14	15	3	5	5	1	2	1
+15	1	1	1	5	1	2	1
+15	1	2	6	6	2	2	2
+15	1	3	4	2	2	1	1
+15	2	1	4	1	1	2	2
+15	2	2	1	5	1	1	2
+15	2	3	2	4	2	2	1
+15	3	1	3	6	1	2	1
+15	3	2	5	4	2	2	2
+15	3	3	2	3	2	1	1
+15	4	1	6	1	2	2	1
+15	4	2	2	2	2	2	2
+15	4	3	5	4	1	1	2
+15	5	1	3	3	2	2	2
+15	5	2	6	5	1	2	2
+15	5	3	4	1	2	1	1
+15	6	1	3	2	2	2	1
+15	6	2	5	4	2	2	2
+15	6	3	2	3	1	1	1
+15	7	1	4	1	2	1	2
+15	7	2	6	4	2	2	2
+15	7	3	5	6	1	2	1
+15	8	1	1	6	2	2	1
+15	8	2	3	2	2	1	1
+15	8	3	6	3	1	2	2
+15	9	1	5	4	1	1	2
+15	9	2	4	1	2	2	1
+15	9	3	3	5	2	2	2
+15	10	1	2	5	1	1	2
+15	10	2	6	2	2	2	1
+15	10	3	1	6	2	2	1
+15	11	1	1	4	1	1	2
+15	11	2	3	5	2	2	2
+15	11	3	2	3	2	2	1
+15	12	1	4	6	2	2	2
+15	12	2	6	5	1	2	1
+15	12	3	5	3	2	1	2
+15	13	1	5	4	2	1	2
+15	13	2	2	1	2	2	2
+15	13	3	1	2	1	2	1
+15	14	1	2	2	2	2	1
+15	14	2	6	1	2	2	2
+15	14	3	4	6	1	1	2
+15	15	1	5	4	1	2	2
+15	15	2	1	3	2	2	1
+15	15	3	3	5	2	1	2
+]]$NOT_DEFINED></data><data key="shuffle">false</data></node><edge source="a0" target="a2"/><node id="a2"><desc>atr1</desc><data key="type">array</data><data key="code"><![CDATA[var atr1 = [{"code":1,"label":"<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/1.jpg' />"},{"code":2,"label":"<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/2.jpg' />"},{"code":3,"label":"<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/3.jpg' />"},{"code":4,"label":"<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/4.jpg' />"},{"code":5,"label":"<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/5.jpg' />"},{"code":6,"label":"<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/6.jpg' />"}]]]$NOT_DEFINED></data><data key="variable">atr1</data><data key="labels"><![CDATA[code	label]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/1.jpg' />
+2	<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/2.jpg' />
+3	<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/3.jpg' />
+4	<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/4.jpg' />
+5	<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/5.jpg' />
+6	<img src='http://ntq.projects.s3.amazonaws.com/cs/2015/CRIT/CRIT_63531/6.jpg' />
+]]$NOT_DEFINED></data><data key="shuffle">false</data></node><edge source="a2" target="a8"/><node id="a8"><desc>atr2</desc><data key="type">array</data><data key="code"><![CDATA[var atr2 = [{"code":1,"label":10},{"code":2,"label":15},{"code":3,"label":22},{"code":4,"label":35},{"code":5,"label":50},{"code":6,"label":60}]]]$NOT_DEFINED></data><data key="variable">atr2</data><data key="labels"><![CDATA[code	label]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	10
+2	15
+3	22
+4	35
+5	50
+6	60
+]]$NOT_DEFINED></data><data key="shuffle">false</data></node><edge source="a8" target="a3"/><node id="a3"><desc>atr3</desc><data key="type">array</data><data key="code"><![CDATA[var atr3 = [{"code":1,"label":"Sim"},{"code":2,"label":"Nao"}]]]$NOT_DEFINED></data><data key="variable">atr3</data><data key="labels"><![CDATA[code	label]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Sim
+2	Nao
+]]$NOT_DEFINED></data><data key="shuffle">false</data></node><edge source="a3" target="a10"/><node id="a10"><desc>atr4</desc><data key="type">array</data><data key="code"><![CDATA[var atr4 = [{"code":1,"label":"Sim"},{"code":2,"label":"Nao"}]]]$NOT_DEFINED></data><data key="variable">atr4</data><data key="labels"><![CDATA[code	label]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Sim
+2	Nao
+]]$NOT_DEFINED></data><data key="shuffle">false</data></node><edge source="a10" target="a11"/><node id="a11"><desc>atr5</desc><data key="type">array</data><data key="code"><![CDATA[var atr5 = [{"code":1,"label":"Sim"},{"code":2,"label":"Nao"}]]]$NOT_DEFINED></data><data key="variable">atr5</data><data key="labels"><![CDATA[code	label]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Sim
+2	Nao
+]]$NOT_DEFINED></data><data key="shuffle">false</data></node><edge source="a11" target="a9"/><node id="a9"><desc>atdesc</desc><data key="type">array</data><data key="code"><![CDATA[var atdesc = [{"desc":""},{"desc":"Preço (R\$)"},{"desc":"Produção original local"},{"desc":"Séries exclusivas"},{"desc":"Filmes exclusivos"}]]]$NOT_DEFINED></data><data key="variable">atdesc</data><data key="labels"><![CDATA[desc]]$NOT_DEFINED></data><data key="elements"><![CDATA[
+Preço (R\$)
+Produção original local
+Séries exclusivas
+Filmes exclusivos
+]]$NOT_DEFINED></data><data key="shuffle">false</data></node><edge source="a9" target="s0"/><node id="s0"><desc>LOOP</desc><data key="type">script</data><data key="code"><![CDATA[var atributos = [atr1,atr2,atr3,atr4,atr5]
+
+
+
+var versiones = diseno[(diseno.length-1)].version
+var questions = diseno[(diseno.length-1)].set
+var positions = diseno[(diseno.length-1)].posicion        
+
+
+
+//Create an array to make a mixedSet
+var arr = []
+for(var i = 1; i<=versiones; i++){
+    arr.push({"label":"Versión "+i, "code":i, "type":"radio"})
+}
+var ms = new MixedSet(arr)
+
+//Get the sizes of each version
+for(var i = 0; i<arr.length; i++){
+    ms.setSelected(arr[i].code)
+    participation.version = ms
+    arr[i].size = q.size()
+    arr[i].target = q.target()
+    arr[i].completed = q.size()*100 / q.target()
+}
+
+//Sort an array by the completed property
+arr.shuffle()
+function sortSpecial(a,b){
+    return a.completed - b.completed
+}
+//Sort by ascending order
+//arr.sort(sortSpecial)
+
+//Save the version which less responses
+ms.setSelected(arr[0].code)
+participation.version = ms
+selectedVersion = arr[0].code
+
+
+function getPos(version,question){
+    var en = false
+    var j = 0
+    while(!en && j<diseno.length){
+        if(diseno[j].version == version && diseno[j].set == question){
+            return j
+        }
+        j++
+    }
+}
+
+
+
+for(var i = 1; i<=questions; i++){
+
+    indx = getPos(selectedVersion, i)
+    question = i
+    \${g10}
+}]]$NOT_DEFINED></data><graph edgedefault="directed" id="s0_graph"><data key="start">g10</data><node id="g10"><data key="type">group</data><data key="code"/><graph edgedefault="directed" id="g10_graph"><data key="start">s37</data><node id="s37"><desc>CONJOINT</desc><data key="type">script</data><data key="code"><![CDATA[//atdesc
+
+var t = new Task()
+t[0].label="Por favor, escolha uma das opções que apresentaremos a seguir:<br>Clique sobre a opção que você mais gosta."
+t[1].label="Versión: "+selectedVersion
+t[1].visible=false
+
+t[2].label="Pregunta: "+question+"/"+questions
+t[2].visible=false
+
+for (var c = 1; c<=positions; c++){
+    t[(c+3)].code=c
+    t[(c+3)].cssClass="carta carta3"
+    
+    t[(c+3)].label=""
+    for(var at = 0; at<atributos.length; at++){
+        desc = atdesc[at].desc
+        item = atributos[at][(diseno[indx+(c-1)]["atr"+(at+1)]-1)].label
+        t[(c+3)].label = t[(c+3)].label + "<span class='desc'>"+ desc +"</span><span class='atributo'>"+ item +"</span><br>"
+    }
+    
+    t[(c+3)].name="CONJOINTV1_"+question
+    t[(c+3)].type="radio"
+}
+t[20].html="<style>\n  \nspan.atributo{color: rgb(232,88,16); font-weight: bold;}  \n/* TEMPLATE CONJOINT */\n\n.carta{\n    padding-top:5px;\n   text-align: center;\n    width:22%;\n    border:1px dashed #ababab;\n    margin:1%;\n    vertical-align: bottom;\n    font-size:14px;\n      display:inline-block;\n}\n.carta img{\n    width:274px!important;\n}\n.carta label{\n    padding: 0 0 1.5em 0;\n    position:relative;\n    top:0;\n    height: 440px;\n}\n\n.desc{\n    font-weight: bold;\n\n}\n.carta span{\n    text-align:left;\n}\n.carta.checked{\n    border:1px solid #E85810;\n    background:#FACDB8;\n}\n.carta.checked label img{\n    border:0;\n}\n.carta label img{\n    border:0;\n}\n\n.carta.radio input[type='radio']{  \n    display: none;\n    /* lo desplazamos fuera de pantalla para IE7 e IE8; con display:none no funciona el input */\n    display:inline-block\\0/;position:absolute\\0/;left:-9999px\\0/;\n    *display:inline-block\n\;*position:absolute;*left:-9999px;\n    \n}\n.carta.radio label{\n    width:100%;\n}\n/* VERSION 2 */\n.cartaConInput{\n    padding-top:5px;\n    float:left;\n    text-align: center;\n    width:22%;\n    border:1px solid #ababab;\n    margin:1%;\n    vertical-align: bottom;\n    font-size:14px;\n}\n.cartaConInput.radio label{\n    width:100%;\n}\n.cartaConInput img{\n    width:100%!important;\n}\n.cartaConInput label{\n    padding: 0 0 1.5em 0;\n    position:relative;\n    top:0;\n    height: 440px;\n}\n.cartaConInput input{\n    position: absolute;\n    bottom: 0px;\n    /* left: 49%; */\n    margin-top: 10px;\n    margin-bottom: 10px;\n    width: 100%;\n}\n\n.cartaConInput span{\n    text-align:center;\n}\n.cartaConInput.checked{\n    border:1px solid #E85810;\n    background: #FACDB8; /* Old browsers */\n    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 94%, #E85810 94%, #E85810 100%); /* FF3.6+ */\n    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(94%,#ffffff), color-stop(94%,#E85810), color-stop(100%,#E85810)); /* Chrome,Safari4+ */\n    background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 94%,#E85810 94%,#E85810 100%); /* Chrome10+,Safari5.1+ */\n    background: -o-linear-gradient(top, #ffffff 0%,#ffffff 94%,#E85810 94%,#E85810 100%); /* Opera 11.10+ */\n    background: -ms-linear-gradient(top, #ffffff 0%,#ffffff 94%,#E85810 94%,#E85810 100%); /* IE10+ */\n    background: linear-gradient(to bottom, #ffffff 0%,#ffffff 94%,#E85810 94%,#E85810 100%); /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#E85810',GradientType=0 ); /* IE6-9 */\n}\n.cartaConInput.checked label img{\n    border:0;\n}\n.cartaConInput label img{\n    border:0;\n}\n\n\n/* VERSION 3 */\n.cartaDrop{\n    padding-top:5px;\n    float:left;\n    text-align: center;\n    width:22%;\n    border:1px solid #ababab;\n    margin:1%;\n    vertical-align: bottom;\n    font-size:14px;\n}\n.cartaDrop.radio label{\n    width:100%;\n}\n.cartaDrop img{\n    width:100%!important;\n}\n.cartaDrop label{\n    padding: 0 0 1.5em 0;\n    position:relative;\n    top:0;\n    height: 440px;\n}\n.cartaDrop.radio input[type='radio']{  \n    display: none;\n    /* lo desplazamos fuera de pantalla para IE7 e IE8; con display:none no funciona el input */\n    display:inline-block\\0/;position:absolute\\0/;left:-9999px\\0/;\n    *display:inline-block;*position:absolute;*left:-9999px;\n    \n}\n\n.cartaDrop span{\n    text-align:center;\n}\n.cartaDrop.checked{\n    border:1px solid #E85810;\n    background: #FACDB8; /* Old browsers */\n}\n.cartaDrop.checked label img{\n    border:0;\n}\n.cartaDrop label img{\n    border:0;\n}\n@media only screen and (max-width: 900px) {  \n    .carta{\n        width:46%;\n    }\n    .cartaConInput label{\n        padding: 0 0 70px 0;\n    }\n}\n@media only screen and (max-width: 450px) {  \n    .carta{\n        width:96%;\n    }\n}\n\n.carta6{width:14%;}\n@media only screen and (max-width: 900px) { .carta6{ width:46%;}}\n@media only screen and (max-width: 450px) { .carta6{ width:96%;}}\n\n.carta5{width:17%;}\n@media only screen and (max-width: 900px) { .carta5{ width:46%;}}\n@media only screen and (max-width: 450px) { .carta5{ width:96%;}}\n\n.carta4{width:22%;}\n@media only screen and (max-width: 900px) { .carta4{ width:46%;}}\n@media only screen and (max-width: 450px) { .carta4{ width:96%;}}\n\n.carta3{width:30%;}\n@media only screen and (max-width: 900px) { .carta3{ width:46%;}}\n@media only screen and (max-width: 450px) { .carta3{ width:96%;}}\n</style>"
+//atdesc
+t.run()]]$NOT_DEFINED></data><graph edgedefault="directed" id="s37_graph"/></node></graph></node></graph></node></graph></node></graph></graphml>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>conjoint</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
