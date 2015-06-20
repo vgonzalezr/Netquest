@@ -7,10 +7,15 @@
 * Abiertas con barra de progreso -> tabTrigger: <strong>abiertas1</strong>
 * Abiertas con barra de progreso (50%) -> tabTrigger: <strong>abiertas2</strong>
 * Conjoint -> tabTrigger: <strong>conjoint</strong>
+* Rotación de grupos con control de cuotas -> tabTrigger: <strong>grupos</strong>
 
-<p>Para incluir los snippets de sublime en windows debes copiar la carpeta <strong>Netquest</strong> en la siguiente ruta:</p>
+<p>Para incluir los snippets de sublime en Windows debes copiar la carpeta <strong>Netquest</strong> en la siguiente ruta:</p>
 
 ```C:\Users\<nombre de usuario>\AppData\Roaming\Sublime Text 2\Packages\User```
+
+<p>Para incluir los snippets de sublime en Ubuntu debes copiar la carpeta <strong>Netquest</strong> en la siguiente ruta:</p>
+
+```/home/<nombre de usuario>/.config/sublime-text-2/Packages/User/```
 
 <img src='http://i.imgur.com/OZxqTlP.png' width='600'>
 
