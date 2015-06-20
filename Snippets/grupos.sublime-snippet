@@ -1,0 +1,63 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="type" attr.type="string" for="node" id="type"/><key attr.name="array" attr.type="string" for="node" id="array"/><key attr.name="current" attr.type="string" for="node" id="current"/><key attr.name="condition" attr.type="string" for="node" id="condition"/><key attr.name="value" attr.type="string" for="node" id="value"/><key attr.name="property" attr.type="string" for="node" id="property"/><key attr.name="labels" attr.type="string" for="node" id="labels"/><key attr.name="elements" attr.type="string" for="node" id="elements"/><key attr.name="content" attr.type="string" for="node" id="content"/><key attr.name="code" attr.type="string" for="node" id="code"/><key attr.name="version" attr.type="string" for="graph" id="version"/><key attr.name="start" attr.type="string" for="graph" id="start"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="variable" attr.type="string" for="graph" id="variable"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="label" attr.type="string" for="graph" id="label"/><key attr.name="customCode" attr.type="string" for="graph" id="customCode"/><key attr.name="shuffle" attr.type="boolean" for="graph" id="shuffle"/><key attr.name="schema" attr.type="string" for="node" id="schema"/><graph edgedefault="directed" id="form"><data key="version">2.0</data><data key="start">q0</data><node id="q0"><desc/><data key="type">importQuota</data><data key="code"><![CDATA[var qCUOTA = importQuota("qCUOTA")]]$NOT_DEFINED></data><data key="name">qCUOTA</data><data key="variable">qCUOTA</data></node><edge source="q0" target="m4"/><node id="m4"><desc>CUOTA</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m4 = [{"code":1,"label":"audio","type":"radio"},{"code":2,"label":"imagen","type":"radio"}]
+var ms = new MixedSet(\$opts_m4)
+/*3 pasos*/
+var cuota = qCUOTA /*1.- Indicar el nombre de la cuota*/
+var arr = \$opts_m4 /*2.- Indicar el nombre del array (Options)*/
+var candidatos = []
+//Confirmamos si puede entrar a la cuota
+for(var i = 0; i<arr.length; i++){
+    ms.setSelected(arr[i].code);
+    participation.CUOTA = ms; /*3.- Indicar el nombre de la variable (Participation name)*/
+    if(  !cuota.isFull()  ){
+        candidatos.push({code:arr[i].code, size:(cuota.target() - cuota.size())});
+    }
+}
+/*Desordenamos el array para asegurar aleatoriedad en caso de empate*/
+candidatos.shuffle()
+/*Colocamos en primer lugar del array la celda que tiene más casos pendientes*/
+candidatos.sort(function(a, b){return b.size-a.size});
+/*Definimos a que cuota entraremos finalmente*/
+if(candidatos.length>0){
+    ms.setSelected(candidatos[0].code)
+}
+participation["CUOTA"] = ms]]$NOT_DEFINED></data><data key="variable">ms</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	audio	radio
+2	imagen	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">CUOTA</data><data key="label">CUOTA</data><data key="customCode"><![CDATA[/*3 pasos*/
+var cuota = qCUOTA /*1.- Indicar el nombre de la cuota*/
+var arr = \$opts_m4 /*2.- Indicar el nombre del array (Options)*/
+
+var candidatos = []
+
+//Confirmamos si puede entrar a la cuota
+for(var i = 0; i<arr.length; i++){
+    ms.setSelected(arr[i].code);
+    participation.CUOTA = ms; /*3.- Indicar el nombre de la variable (Participation name)*/
+    if(  !cuota.isFull()  ){
+        candidatos.push({code:arr[i].code, size:(cuota.target() - cuota.size())});
+    }
+}
+
+/*Desordenamos el array para asegurar aleatoriedad en caso de empate*/
+candidatos.shuffle()
+/*Colocamos en primer lugar del array la celda que tiene más casos pendientes*/
+candidatos.sort(function(a, b){return b.size-a.size});
+
+/*Definimos a que cuota entraremos finalmente*/
+if(candidatos.length>0){
+    ms.setSelected(candidatos[0].code)
+}]]$NOT_DEFINED></data></node><edge source="m4" target="i16"/><node id="i16"><desc>Ejemplo FO</desc><data key="type">if</data><data key="code"><![CDATA[if (candidatos.length == 0) {
+\${s42}
+\${ty8}
+\${sta7}
+\${stp13}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[candidatos.length == 0]]$NOT_DEFINED></data><graph edgedefault="directed" id="i16_graph"><node id="i16_if-true"><desc>i16_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i16_if-true_graph"><data key="start">s42</data><node id="s42"><desc>META INFO</desc><data key="type">script</data><data key="code"><![CDATA[participation.ppi_tp = "qf_1"
+participation.ppi_c = "ok"
+participation.ppi_partner = partner]]$NOT_DEFINED></data><graph edgedefault="directed" id="s42_graph"/></node><edge source="s42" target="ty8"/><node id="ty8"><data key="type">type</data><data key="code"><![CDATA[participation.type = "quotafull grupos completos"]]$NOT_DEFINED></data><data key="value"><![CDATA["quotafull grupos completos"]]$NOT_DEFINED></data></node><edge source="ty8" target="sta7"/><node id="sta7"><data key="type">status</data><data key="code"><![CDATA[participation.status = "end"]]$NOT_DEFINED></data><data key="value"><![CDATA["end"]]$NOT_DEFINED></data></node><edge source="sta7" target="stp13"/><node id="stp13"><desc>EXIT</desc><data key="type">stop</data><data key="code"><![CDATA[return exits[participation.ppi_tp+"_"+participation.ppi_c]]]$NOT_DEFINED></data><data key="value"><![CDATA[exits[participation.ppi_tp+"_"+participation.ppi_c]]]$NOT_DEFINED></data></node></graph></node></graph></node></graph></graphml>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>grupos</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
