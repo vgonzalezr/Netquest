@@ -8,6 +8,7 @@
 * Abiertas con barra de progreso (50%) -> tabTrigger: <strong>abiertas2</strong>
 * Conjoint -> tabTrigger: <strong>conjoint</strong>
 * Rotación de grupos con control de cuotas -> tabTrigger: <strong>grupos</strong>
+* Menciones (TOM) -> tabTrigger: <strong>tom</strong>
 
 <p>Para incluir los snippets de sublime en Windows debes copiar la carpeta <strong>Netquest</strong> en la siguiente ruta:</p>
 
