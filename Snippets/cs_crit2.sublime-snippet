@@ -1,0 +1,93 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="type" attr.type="string" for="node" id="type"/><key attr.name="array" attr.type="string" for="node" id="array"/><key attr.name="current" attr.type="string" for="node" id="current"/><key attr.name="condition" attr.type="string" for="node" id="condition"/><key attr.name="value" attr.type="string" for="node" id="value"/><key attr.name="property" attr.type="string" for="node" id="property"/><key attr.name="labels" attr.type="string" for="node" id="labels"/><key attr.name="elements" attr.type="string" for="node" id="elements"/><key attr.name="content" attr.type="string" for="node" id="content"/><key attr.name="code" attr.type="string" for="node" id="code"/><key attr.name="version" attr.type="string" for="graph" id="version"/><key attr.name="start" attr.type="string" for="graph" id="start"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="variable" attr.type="string" for="graph" id="variable"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="label" attr.type="string" for="graph" id="label"/><key attr.name="customCode" attr.type="string" for="graph" id="customCode"/><key attr.name="shuffle" attr.type="boolean" for="graph" id="shuffle"/><key attr.name="schema" attr.type="string" for="node" id="schema"/><graph edgedefault="directed" id="form"><data key="version">2.0</data><data key="start">g45</data><node id="g45"><desc>CS</desc><data key="type">group</data><data key="code"/><graph edgedefault="directed" id="g45_graph"><data key="start">t290</data><node id="t290"><desc>GSE1</desc><data key="type">task</data><data key="code"><![CDATA[var t290 = new Task()
+t290[0].label="El ingreso total de tu hogar, considerando todos los que aportan, es:"
+t290[1].code=1
+t290[1].label="Más de \$548.000 al mes (o igual a)"
+t290[1].name="GSE1"
+t290[1].type="radio"
+t290[2].code=2
+t290[2].label="Menos de \$548.000 al mes"
+t290[2].name="GSE1"
+t290[2].type="radio"
+t290[3].code=3
+t290[3].label="Prefiero no responder"
+t290[3].name="GSE1"
+t290[3].type="radio"
+t290.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"El ingreso total de tu hogar, considerando todos los que aportan, es:\""},{"id":"2","code":"1","label":"\"Más de \$548.000 al mes (o igual a)\"","name":"\"GSE1\"","type":"\"radio\""},{"id":"5","code":"2","label":"\"Menos de \$548.000 al mes\"","name":"\"GSE1\"","type":"\"radio\""},{"id":"6","code":"3","label":"\"Prefiero no responder\"","name":"\"GSE1\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t290" target="i166"/><node id="i166"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("GSE1", 1)) {
+\${t291}
+\${i167}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("GSE1", 1)]]$NOT_DEFINED></data><graph edgedefault="directed" id="i166_graph"><node id="i166_if-true"><desc>i166_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i166_if-true_graph"><data key="start">t291</data><node id="t291"><desc>GSE2</desc><data key="type">task</data><data key="code"><![CDATA[var t291 = new Task()
+t291[0].label="El ingreso total de tu hogar, considerando todos los que aportan, es:"
+t291[1].code=1
+t291[1].label="Más de \$914.000 al mes (o igual a)"
+t291[1].name="GSE2"
+t291[1].type="radio"
+t291[2].code=2
+t291[2].label="Menos de \$914.000 al mes"
+t291[2].name="GSE2"
+t291[2].type="radio"
+t291.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"El ingreso total de tu hogar, considerando todos los que aportan, es:\""},{"id":"2","code":"1","label":"\"Más de \$914.000 al mes (o igual a)\"","name":"\"GSE2\"","type":"\"radio\""},{"id":"4","code":"2","label":"\"Menos de \$914.000 al mes\"","name":"\"GSE2\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t291" target="i167"/><node id="i167"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("GSE2", 1)) {
+\${t292}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("GSE2", 1)]]$NOT_DEFINED></data><graph edgedefault="directed" id="i167_graph"><node id="i167_if-true"><desc>i167_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i167_if-true_graph"><data key="start">t292</data><node id="t292"><desc>GSE3</desc><data key="type">task</data><data key="code"><![CDATA[var t292 = new Task()
+t292[0].label="El ingreso total de tu hogar, considerando todos los que aportan, es: "
+t292[1].code=1
+t292[1].label="Más de \$1.568.000 al mes (o igual a)"
+t292[1].name="GSE3"
+t292[1].type="radio"
+t292[2].code=2
+t292[2].label="Menos de \$1.568.000 al mes"
+t292[2].name="GSE3"
+t292[2].type="radio"
+t292.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"El ingreso total de tu hogar, considerando todos los que aportan, es: \""},{"id":"2","code":"1","label":"\"Más de \$1.568.000 al mes (o igual a)\"","name":"\"GSE3\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Menos de \$1.568.000 al mes\"","name":"\"GSE3\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node></graph></node></graph></node><edge source="i166" target="i168"/><node id="i168"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("GSE1", 2)) {
+\${t293}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("GSE1", 2)]]$NOT_DEFINED></data><graph edgedefault="directed" id="i168_graph"><node id="i168_if-true"><desc>i168_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i168_if-true_graph"><data key="start">t293</data><node id="t293"><desc>GSE4</desc><data key="type">task</data><data key="code"><![CDATA[var t293 = new Task()
+t293[0].label="El ingreso total de tu hogar, considerando todos los que aportan, es:"
+t293[1].code=1
+t293[1].label="Más de \$194.000 al mes (o igual a)"
+t293[1].name="GSE4"
+t293[1].type="radio"
+t293[2].code=2
+t293[2].label="Menos de \$194.000 al mes"
+t293[2].name="GSE4"
+t293[2].type="radio"
+t293.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"El ingreso total de tu hogar, considerando todos los que aportan, es:\""},{"id":"2","code":"1","label":"\"Más de \$194.000 al mes (o igual a)\"","name":"\"GSE4\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Menos de \$194.000 al mes\"","name":"\"GSE4\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node><edge source="i168" target="m0"/><node id="m0"><desc>CS</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m0 = [{"code":1,"label":"BC1","type":"radio"},{"code":2,"label":"C2","type":"radio"},{"code":3,"label":"C3","type":"radio"},{"code":4,"label":"D","type":"radio"},{"code":5,"label":"E","type":"radio"},{"code":99,"label":"Prefiero no responder","type":"radio"}]
+var ms = new MixedSet(\$opts_m0)
+if(isSelected("GSE3", 1)){
+    ms.setSelected(1)
+}else if (isSelected("GSE3", 2)){
+    ms.setSelected(2)
+}else if (isSelected("GSE2", 2)){
+    ms.setSelected(3)
+}else if (isSelected("GSE4", 1)){
+    ms.setSelected(4)
+}else if (isSelected("GSE4", 2)){
+    ms.setSelected(5)
+}else{
+    ms.setSelected(99)
+}
+participation["CS"] = ms]]$NOT_DEFINED></data><data key="variable">ms</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	BC1	radio
+2	C2	radio
+3	C3	radio
+4	D	radio
+5	E	radio
+99	Prefiero no responder	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">CS</data><data key="label">CS</data><data key="customCode"><![CDATA[if(isSelected("GSE3", 1)){
+    ms.setSelected(1)
+}else if (isSelected("GSE3", 2)){
+    ms.setSelected(2)
+}else if (isSelected("GSE2", 2)){
+    ms.setSelected(3)
+}else if (isSelected("GSE4", 1)){
+    ms.setSelected(4)
+}else if (isSelected("GSE4", 2)){
+    ms.setSelected(5)
+}else{
+    ms.setSelected(99)
+}]]$NOT_DEFINED></data></node></graph></node></graph></graphml>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cs_crit2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

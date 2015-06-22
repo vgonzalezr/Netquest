@@ -1,0 +1,102 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="type" attr.type="string" for="node" id="type"/><key attr.name="array" attr.type="string" for="node" id="array"/><key attr.name="current" attr.type="string" for="node" id="current"/><key attr.name="condition" attr.type="string" for="node" id="condition"/><key attr.name="value" attr.type="string" for="node" id="value"/><key attr.name="property" attr.type="string" for="node" id="property"/><key attr.name="labels" attr.type="string" for="node" id="labels"/><key attr.name="elements" attr.type="string" for="node" id="elements"/><key attr.name="content" attr.type="string" for="node" id="content"/><key attr.name="code" attr.type="string" for="node" id="code"/><key attr.name="version" attr.type="string" for="graph" id="version"/><key attr.name="start" attr.type="string" for="graph" id="start"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="variable" attr.type="string" for="graph" id="variable"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="label" attr.type="string" for="graph" id="label"/><key attr.name="customCode" attr.type="string" for="graph" id="customCode"/><key attr.name="shuffle" attr.type="boolean" for="graph" id="shuffle"/><key attr.name="schema" attr.type="string" for="node" id="schema"/><graph edgedefault="directed" id="form"><data key="version">2.0</data><data key="start">t251</data><node id="t251"><desc>P1</desc><data key="type">task</data><data key="code"><![CDATA[var t251 = new Task()
+t251[0].label="¿Qué marca relacionas con 'felicidad'? <span class='surveyInstruction'>Pedes seleccionar tantas como te vengan a la mente.</span>"
+t251[1].code=1
+t251[1].cssClass="mixedSet3Columnas"
+t251[1].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/1_Coca-Cola.jpg'/>"
+t251[1].minItems=1
+t251[1].name="P1"
+t251[1].style="margin: 0; vertical-align: middle;"
+t251[1].type="checkbox"
+t251[2].code=2
+t251[2].cssClass="mixedSet3Columnas"
+t251[2].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/2_Mc%20Donalds.jpg'/>"
+t251[2].name="P1"
+t251[2].style="margin: 0; vertical-align: middle;"
+t251[2].type="checkbox"
+t251[3].code=3
+t251[3].cssClass="mixedSet3Columnas"
+t251[3].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/3_Apple.jpg'/>"
+t251[3].name="P1"
+t251[3].style="margin: 0; vertical-align: middle;"
+t251[3].type="checkbox"
+t251[4].code=4
+t251[4].cssClass="mixedSet3Columnas"
+t251[4].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/4_Nike.jpg'/>"
+t251[4].name="P1"
+t251[4].style="margin: 0; vertical-align: middle;"
+t251[4].type="checkbox"
+t251[5].code=5
+t251[5].cssClass="mixedSet3Columnas"
+t251[5].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/5_Google.jpg'/>"
+t251[5].name="P1"
+t251[5].style="margin: 0; vertical-align: middle;"
+t251[5].type="checkbox"
+t251[6].code=6
+t251[6].cssClass="mixedSet3Columnas"
+t251[6].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/6_Pepsi.jpg'/>"
+t251[6].name="P1"
+t251[6].style="margin: 0; vertical-align: middle;"
+t251[6].type="checkbox"
+t251[7].code=7
+t251[7].cssClass="mixedSet3Columnas"
+t251[7].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/7_Kellogg%27s.jpg'/>"
+t251[7].name="P1"
+t251[7].style="margin: 0; vertical-align: middle;"
+t251[7].type="checkbox"
+t251[8].code=8
+t251[8].cssClass="mixedSet3Columnas"
+t251[8].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/8_Holanda.jpg'/>"
+t251[8].name="P1"
+t251[8].style="margin: 0; vertical-align: middle;"
+t251[8].type="checkbox"
+t251[9].code=9
+t251[9].cssClass="mixedSet3Columnas"
+t251[9].label="<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/9_Nescaf%C3%A9.jpg'/>"
+t251[9].name="P1"
+t251[9].style="margin: 0; vertical-align: middle;"
+t251[9].type="checkbox"
+t251[10].code=97
+t251[10].cssClass="stopColumnas"
+t251[10].label="Otra marca (especificar)"
+t251[10].name="P1"
+t251[10].type="checkbox_text"
+t251[11].code=98
+t251[11].label="Ninguna"
+t251[11].name="P1"
+t251[11].type="radio"
+t251[12].html="<script type=\"text/javascript\">\n/**\n * Menciones (Respondent)\n * Este inject guarda el numero de menciones especificadas de un\n * grupo de opciones multiples, si se utiliza un radio se entiende\n * que es un \"Ninguno\" y se hace reset sobre las menciones\n * seleccionadas\n *\n * @class auto\n * @author Gerardo Ortiz <gortiz@netquest.com>\n * @version 2.1.0\n */\nvar variable = \"P1\"; // Nombre de la variable\nvar mentions = 1; // Numero de menciones requeridas\n\np.on(\"readyTask\", function retrieveMentions () {\n	p.off(\"readyTask\", retrieveMentions);\n	\n    var current = 0, currentlySelected = [], i = 0;\n    \$('ul#content input[name=\"' + variable + '\"]').on(\"change\", function (event) {\n        var self = \$(event.target),\n			code = !isNaN(+self.val()) ? +self.val() : self.val(),\n            type = self.attr(\"type\");\n            \n        if (!self.is(\":checked\")) return;\n        if (type === \"checkbox\" && current < mentions) {\n            current++;\n            p.set(variable + \"_m\" + current, p.createMS([\n                { \"code\": code, \"type\": \"radio\", \"checked\": true }\n            ]));\n            \n            self.prop(\"disabled\", true);\n        } else if (type === \"radio\") {\n            for (var i = 1; i <= mentions; i++)\n                p.set(variable + \"_m\" + i, null);\n            \n            \$('ul#content input[name=\"' + variable + '\"]:checked').prop(\"disabled\", false);\n            current = 0;\n        }\n    });\n    \n    for (var i = 1; i <= mentions; i++ ) {\n        selected = p.getMS(variable + \"_m\" + i).getSelectedCode() || false;\n        if (selected !== false && p.getMS(variable).isSelected(selected))\n            currentlySelected.push(selected);\n    }\n        \n    \$('ul#content input[name=\"' + variable + '\"]').filter(function () {\n        return currentlySelected.indexOf((!isNaN(+\$(this).val()) ? +\$(this).val() : \$(this).val())) !== -1\n    }).each(function() {\n        current++;\n        \$(this).prop(\"disabled\", true);            \n    });\n});\n</script>"
+t251.setOperation(1,9,"shuffle")
+t251.happiness=[function() {/*
+if (getSize("C0a") < 1)
+    throw "No hemos podido registrar bien tu primera menciòn, por favor vuelve a seleccionarla"
+*/}]
+t251.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Qué marca relacionas con 'felicidad'? <span class='surveyInstruction'>Pedes seleccionar tantas como te vengan a la mente.</span>\""},{"id":"2","code":"1","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/1_Coca-Cola.jpg'/>\"","minItems":"1","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"3","code":"2","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/2_Mc%20Donalds.jpg'/>\"","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"4","code":"3","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/3_Apple.jpg'/>\"","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"5","code":"4","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/4_Nike.jpg'/>\"","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"6","code":"5","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/5_Google.jpg'/>\"","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"7","code":"6","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/6_Pepsi.jpg'/>\"","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"8","code":"7","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/7_Kellogg%27s.jpg'/>\"","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"9","code":"8","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/8_Holanda.jpg'/>\"","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"10","code":"9","cssClass":"\"mixedSet3Columnas\"","label":"\"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/9_Nescaf%C3%A9.jpg'/>\"","name":"\"P1\"","style":"\"margin: 0; vertical-align: middle;\"","type":"\"checkbox\""},{"id":"11","code":"97","cssClass":"\"stopColumnas\"","label":"\"Otra marca (especificar)\"","name":"\"P1\"","type":"\"checkbox_text\""},{"id":"13","code":"98","label":"\"Ninguna\"","name":"\"P1\"","type":"\"radio\""},{"id":"12","html":"=\"<script type=\\\\\"text/javascript\\\\\">\\\n/**\\\n * Menciones (Respondent)\\\n * Este inject guarda el numero de menciones especificadas de un\\\n * grupo de opciones multiples, si se utiliza un radio se entiende\\\n * que es un \\\\\"Ninguno\\\\\" y se hace reset sobre las menciones\\\n * seleccionadas\\\n *\\\n * @class auto\\\n * @author Gerardo Ortiz <gortiz@netquest.com>\\\n * @version 2.1.0\\\n */\\\nvar variable = \\\\\"P1\\\\\"; // Nombre de la variable\\\nvar mentions = 1; // Numero de menciones requeridas\\\n\\\np.on(\\\\\"readyTask\\\\\", function retrieveMentions () {\\\n\tp.off(\\\\\"readyTask\\\\\", retrieveMentions);\\\n\t\\\n    var current = 0, currentlySelected = [], i = 0;\\\n    \$('ul#content input[name=\\\\\"' + variable + '\\\\\"]').on(\\\\\"change\\\\\", function (event) {\\\n        var self = \$(event.target),\\\n\t\t\tcode = !isNaN(+self.val()) ? +self.val() : self.val(),\\\n            type = self.attr(\\\\\"type\\\\\");\\\n            \\\n        if (!self.is(\\\\\":checked\\\\\")) return;\\\n        if (type === \\\\\"checkbox\\\\\" && current < mentions) {\\\n            current++;\\\n            p.set(variable + \\\\\"_m\\\\\" + current, p.createMS([\\\n                { \\\\\"code\\\\\": code, \\\\\"type\\\\\": \\\\\"radio\\\\\", \\\\\"checked\\\\\": true }\\\n            ]));\\\n            \\\n            self.prop(\\\\\"disabled\\\\\", true);\\\n        } else if (type === \\\\\"radio\\\\\") {\\\n            for (var i = 1; i <= mentions; i++)\\\n                p.set(variable + \\\\\"_m\\\\\" + i, null);\\\n            \\\n            \$('ul#content input[name=\\\\\"' + variable + '\\\\\"]:checked').prop(\\\\\"disabled\\\\\", false);\\\n            current = 0;\\\n        }\\\n    });\\\n    \\\n    for (var i = 1; i <= mentions; i++ ) {\\\n        selected = p.getMS(variable + \\\\\"_m\\\\\" + i).getSelectedCode() || false;\\\n        if (selected !== false && p.getMS(variable).isSelected(selected))\\\n            currentlySelected.push(selected);\\\n    }\\\n        \\\n    \$('ul#content input[name=\\\\\"' + variable + '\\\\\"]').filter(function () {\\\n        return currentlySelected.indexOf((!isNaN(+\$(this).val()) ? +\$(this).val() : \$(this).val())) !== -1\\\n    }).each(function() {\\\n        current++;\\\n        \$(this).prop(\\\\\"disabled\\\\\", true);            \\\n    });\\\n});\\\n</script>\""}],"happiness":["/*\r\nif (getSize(\"C0a\") < 1)\r\n    throw \"No hemos podido registrar bien tu primera menciòn, por favor vuelve a seleccionarla\"\r\n*/"],"operations":[{"name":"setOperation","action":"shuffle","start":"2","end":"10"}]}]]$NOT_DEFINED></data></node><edge source="t251" target="m0"/><node id="m0"><desc>P1_m1</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m0 = [{"code":1,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/1_Coca-Cola.jpg'/>","type":"radio"},{"code":2,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/2_Mc%20Donalds.jpg'/>","type":"radio"},{"code":3,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/3_Apple.jpg'/>","type":"radio"},{"code":4,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/4_Nike.jpg'/>","type":"radio"},{"code":5,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/5_Google.jpg'/>","type":"radio"},{"code":6,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/6_Pepsi.jpg'/>","type":"radio"},{"code":7,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/7_Kellogg%27s.jpg'/>","type":"radio"},{"code":8,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/8_Holanda.jpg'/>","type":"radio"},{"code":9,"label":"<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/9_Nescaf%C3%A9.jpg'/>","type":"radio"},{"code":97,"label":"Otra marca","type":"radio"},{"code":98,"label":"Ninguna","type":"radio"}]
+var ms = new MixedSet(\$opts_m0)
+ms.setSelected(getSelectedCode("P1_m1"))
+participation["P1_m1"] = ms]]$NOT_DEFINED></data><data key="variable">ms</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/1_Coca-Cola.jpg'/>	radio
+2	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/2_Mc%20Donalds.jpg'/>	radio
+3	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/3_Apple.jpg'/>	radio
+4	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/4_Nike.jpg'/>	radio
+5	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/5_Google.jpg'/>	radio
+6	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/6_Pepsi.jpg'/>	radio
+7	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/7_Kellogg%27s.jpg'/>	radio
+8	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/8_Holanda.jpg'/>	radio
+9	<img src='http://d1a4teo5tb48mz.cloudfront.net/mx/millward/MWBMXP_47891/c0/9_Nescaf%C3%A9.jpg'/>	radio
+97	Otra marca	radio
+98	Ninguna	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">P1_m1</data><data key="label">PRimera mencion</data><data key="customCode"><![CDATA[ms.setSelected(getSelectedCode("P1_m1"))]]$NOT_DEFINED></data></node><edge source="m0" target="i0"/><node id="i0"><data key="type">if</data><data key="code"><![CDATA[if (surveyMode < 2) {
+\${t252}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[surveyMode < 2]]$NOT_DEFINED></data><graph edgedefault="directed" id="i0_graph"><node id="i0_if-true"><desc>i0_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i0_if-true_graph"><data key="start">t252</data><node id="t252"><desc>TEST</desc><data key="type">task</data><data key="code"><![CDATA[var t252 = new Task()
+t252[0].cssClass="em"
+t252[0].label="Sólo para test"
+t252[1].label="Tu primera mencion fue:"
+t252[2].label=getSelectedLabel("P1_m1")
+t252.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"3","cssClass":"\"em\"","label":"\"Sólo para test\""},{"id":"1","label":"\"Tu primera mencion fue:\""},{"id":"2","label":"=getSelectedLabel(\"P1_m1\")"}]}]]$NOT_DEFINED></data></node></graph></node></graph></node></graph></graphml>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>tom</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
