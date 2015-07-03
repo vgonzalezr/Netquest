@@ -12,6 +12,11 @@
 * CS CRIT 2 (Tramos de ingreso) -> tabTrigger: <strong>cs_crit2</strong>
 * RDG Syntax -> tabTrigger: <strong>rdg</strong>
 
+<h3>Macros</h3>
+
+* SPSS-Syntax http://goo.gl/6p4QCr
+
+
 <p>Para incluir los snippets de sublime en Windows debes copiar la carpeta <strong>Netquest</strong> en la siguiente ruta:</p>
 
 ```C:\Users\<nombre de usuario>\AppData\Roaming\Sublime Text 2\Packages\User```

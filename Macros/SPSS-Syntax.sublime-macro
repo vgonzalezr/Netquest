@@ -1,0 +1,633 @@
+[
+	{
+		"args":
+		{
+			"extend": false,
+			"to": "eof"
+		},
+		"command": "move_to"
+	},
+	{
+		"args":
+		{
+			"characters": "\n\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "/*Seleccionamos sólo los completes*/"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "SELECT IF(type='complete')."
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\nEXECUTE.\n\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "/**/"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "Guardamos"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " el"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " "
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "archivo"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " en"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " la"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " ruta"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " deseada"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "SAVE"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " OUTFILE"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "="
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"contents": "'$0'"
+		},
+		"command": "insert_snippet"
+	},
+	{
+		"args":
+		{
+			"characters": "ruta"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\\"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "nombre_arc"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "hivo"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": ".sav"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "."
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n\n/***"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "/"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "Guardamos"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " el"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " archivo"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " en"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " excekl"
+		},
+		"command": "insert"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args":
+		{
+			"characters": "l"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "SAVE"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " TRANSLATE"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": " OUTFILE"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "="
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"contents": "'$0'"
+		},
+		"command": "insert_snippet"
+	},
+	{
+		"args":
+		{
+			"characters": "ruta"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\\nomb"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "re_archi"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "vo"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": ".sav"
+		},
+		"command": "insert"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args":
+		{
+			"characters": "slx"
+		},
+		"command": "insert"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args":
+		{
+			"characters": "sx"
+		},
+		"command": "insert"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args":
+		{
+			"characters": "xlsx"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "."
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args": null,
+		"command": "reindent"
+	},
+	{
+		"args":
+		{
+			"characters": "/TYPE"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "=XLS"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n/VER"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "SIO"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "N=12"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n/MAP"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "/REPLACE"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "FIELDNAME"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "/"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args": null,
+		"command": "reindent"
+	},
+	{
+		"args":
+		{
+			"characters": "/CELLS=VALUES"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "\n\n"
+		},
+		"command": "insert"
+	},
+	{
+		"args": null,
+		"command": "unindent"
+	},
+	{
+		"args":
+		{
+			"characters": "/*Mostramos las etiquetas y opciones de variables en pantalla*/"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "\nDISPLAY DICTIONARY."
+		},
+		"command": "insert"
+	}
+]
