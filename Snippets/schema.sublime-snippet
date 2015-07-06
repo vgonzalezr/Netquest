@@ -1,0 +1,59 @@
+<snippet>
+	<content><![CDATA[
+{
+    "title": "Schema",
+    "type": "object",
+    "HEADER": "codes",
+    "MIXEDSET-CONTENT": "codes",
+    "BAD": "{bad}",
+    "NULL": ".",
+    "SET": 1,
+    "UNDEFINED": ".",
+    "UNSET": 0,
+    "filters":{"participation":{"properties":{"type":"complete"}}},
+    "additionalProperties": true,
+    "description": "",
+    "maxLength": 1000,
+    "metadata": {
+        "key": {
+            "type": "string",
+            "label": "key"
+        },
+        "numericalId": {
+            "type": "integer",
+            "label": "numericalId"
+        },
+        "startTime": {
+            "type": "date",
+            "label": "startTime"
+        },
+        "endTime": {
+            "type": "date",
+            "label": "endTime"
+        },
+        "duration": {
+            "type": "integer",
+            "label": "duration"
+        }
+    },
+    "properties": {
+        "status": {
+            "type": "string",
+            "label": "status"
+        },
+        "type": {
+            "type": "string",
+            "label": "type"
+        },
+        "CodPanelista": {
+            "type": "string",
+            "label": "CodPanelista",
+            "maxLength": 16,
+            "minLength": 16
+        },
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>schema</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

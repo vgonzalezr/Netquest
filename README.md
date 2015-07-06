@@ -11,6 +11,7 @@
 * Menciones (TOM) -> tabTrigger: <strong>tom</strong>
 * CS CRIT 2 (Tramos de ingreso) -> tabTrigger: <strong>cs_crit2</strong>
 * RDG Syntax -> tabTrigger: <strong>rdg</strong>
+* Schema -> tabTrigger: <strong>schema</strong>
 
 <h3>Macros</h3>
 
