@@ -1,0 +1,206 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="type" attr.type="string" for="node" id="type"/><key attr.name="array" attr.type="string" for="node" id="array"/><key attr.name="current" attr.type="string" for="node" id="current"/><key attr.name="condition" attr.type="string" for="node" id="condition"/><key attr.name="value" attr.type="string" for="node" id="value"/><key attr.name="property" attr.type="string" for="node" id="property"/><key attr.name="labels" attr.type="string" for="node" id="labels"/><key attr.name="elements" attr.type="string" for="node" id="elements"/><key attr.name="content" attr.type="string" for="node" id="content"/><key attr.name="code" attr.type="string" for="node" id="code"/><key attr.name="version" attr.type="string" for="graph" id="version"/><key attr.name="start" attr.type="string" for="graph" id="start"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="variable" attr.type="string" for="graph" id="variable"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="label" attr.type="string" for="graph" id="label"/><key attr.name="customCode" attr.type="string" for="graph" id="customCode"/><key attr.name="shuffle" attr.type="boolean" for="graph" id="shuffle"/><key attr.name="schema" attr.type="string" for="node" id="schema"/><graph edgedefault="directed" id="form"><data key="version">2.0</data><data key="start">g0</data><node id="g0"><desc>CS CL</desc><data key="type">group</data><data key="code"/><graph edgedefault="directed" id="g0_graph"><data key="start">m0</data><node id="m0"><desc>CS</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m0 = [{"code":1,"label":"ABC1","type":"radio"},{"code":2,"label":"C2","type":"radio"},{"code":3,"label":"C3","type":"radio"},{"code":4,"label":"D","type":"radio"},{"code":5,"label":"E","type":"radio"}]
+var ms_NSE = new MixedSet(\$opts_m0)
+if(participation.cl_socialclass2013_sr!=null && participation.cl_socialclass2013_sr!=""){
+    ms_NSE.setSelected(parseInt(participation.cl_socialclass2013_sr))
+}
+participation["CS"] = ms_NSE]]$NOT_DEFINED></data><data key="variable">ms_NSE</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	ABC1	radio
+2	C2	radio
+3	C3	radio
+4	D	radio
+5	E	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">CS</data><data key="label">CS</data><data key="customCode"><![CDATA[if(participation.cl_socialclass2013_sr!=null && participation.cl_socialclass2013_sr!=""){
+    ms_NSE.setSelected(parseInt(participation.cl_socialclass2013_sr))
+}]]$NOT_DEFINED></data></node><edge source="m0" target="i90"/><node id="i90"><data key="type">if</data><data key="code"><![CDATA[if (participation.cl_socialclass2013_sr==null || participation.cl_socialclass2013_sr=="") {
+\${t10}
+\${t21}
+\${m1}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[participation.cl_socialclass2013_sr==null || participation.cl_socialclass2013_sr==""]]$NOT_DEFINED></data><graph edgedefault="directed" id="i90_graph"><node id="i90_if-true"><desc>i90_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i90_if-true_graph"><data key="start">t10</data><node id="t10"><desc>Educa_Sust</desc><data key="type">task</data><data key="code"><![CDATA[var t10 = new Task()
+t10[0].label="¿Cúal es el nivel educacional de la persona que aporta los ingresos principales en tu hogar?"
+t10[1].code=1
+t10[1].label="Post Grado (Master, Doctor o equivalente)"
+t10[1].name="CS1"
+t10[1].type="radio"
+t10[2].code=2
+t10[2].label="Universitaria Completa"
+t10[2].name="CS1"
+t10[2].type="radio"
+t10[3].code=3
+t10[3].label="Técnica Completa /Universitaria Incompleta"
+t10[3].name="CS1"
+t10[3].type="radio"
+t10[4].code=4
+t10[4].label="Técnica Incompleta"
+t10[4].name="CS1"
+t10[4].type="radio"
+t10[5].code=5
+t10[5].label="Media Completa"
+t10[5].name="CS1"
+t10[5].type="radio"
+t10[6].code=6
+t10[6].label="Media Incompleta"
+t10[6].name="CS1"
+t10[6].type="radio"
+t10[7].code=7
+t10[7].label="Básica Completa"
+t10[7].name="CS1"
+t10[7].type="radio"
+t10[8].code=8
+t10[8].label="Básica Incompleta"
+t10[8].name="CS1"
+t10[8].type="radio"
+t10[9].code=9
+t10[9].label="Sin Estudios"
+t10[9].name="CS1"
+t10[9].type="radio"
+t10.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Cúal es el nivel educacional de la persona que aporta los ingresos principales en tu hogar?\""},{"id":"2","code":"1","label":"\"Post Grado (Master, Doctor o equivalente)\"","name":"\"CS1\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Universitaria Completa\"","name":"\"CS1\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Técnica Completa /Universitaria Incompleta\"","name":"\"CS1\"","type":"\"radio\""},{"id":"5","code":"4","label":"\"Técnica Incompleta\"","name":"\"CS1\"","type":"\"radio\""},{"id":"6","code":"5","label":"\"Media Completa\"","name":"\"CS1\"","type":"\"radio\""},{"id":"7","code":"6","label":"\"Media Incompleta\"","name":"\"CS1\"","type":"\"radio\""},{"id":"8","code":"7","label":"\"Básica Completa\"","name":"\"CS1\"","type":"\"radio\""},{"id":"9","code":"8","label":"\"Básica Incompleta\"","name":"\"CS1\"","type":"\"radio\""},{"id":"10","code":"9","label":"\"Sin Estudios\"","name":"\"CS1\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t10" target="t21"/><node id="t21"><desc>Trabajo_Sust</desc><data key="type">task</data><data key="code"><![CDATA[var t21 = new Task()
+t21[0].label="¿En cúal de las siguientes opciones clasificarías la actividad laboral de la persona que aporta los ingresos principales en tu hogar?"
+t21[1].code=1
+t21[1].label="No trabaja"
+t21[1].name="CS2"
+t21[1].type="radio"
+t21[2].code=2
+t21[2].label="Trabajos menores ocasionales e  informales (lavado, aseo, servicio doméstico ocasional,<br> “pololos”, cuidador de autos, limosna)"
+t21[2].name="CS2"
+t21[2].type="radio"
+t21[3].label="<br>"
+t21[4].code=3
+t21[4].label="Oficio menor, obrero no calificado, jornalero, servicio doméstico con contrato"
+t21[4].name="CS2"
+t21[4].type="radio"
+t21[5].label="<br>"
+t21[6].code=4
+t21[6].label="Obrero calificado, capataz, microempresario (kiosko, taxi, comercio menor, ambulante)"
+t21[6].name="CS2"
+t21[6].type="radio"
+t21[7].label="<br>"
+t21[8].code=5
+t21[8].label="Empleado administrativo medio y bajo, vendedor, secretaria, jefe de sección. Técnico especializado.<br> Profesional independiente de carreras técnicas (contador, analista de sistemas, diseñador, <br>músico). Profesor Primario o Secundario"
+t21[8].name="CS2"
+t21[8].type="radio"
+t21[9].label="<br>"
+t21[10].code=6
+t21[10].label="Ejecutivo medio (gerente, sub-gerente),  gerente general de empresa media o pequeña. <br>Profesional independiente de carreras tradicionales (abogado, médico, arquitecto, ingeniero, agrónomo)"
+t21[10].name="CS2"
+t21[10].type="radio"
+t21[11].label="<br>"
+t21[12].code=7
+t21[12].label="Alto ejecutivo (gerente general) de empresa grande. Directores de grandes empresas. <br>Empresarios propietarios de empresas medianas y grandes. Profesionales  independientes  de gran prestigio"
+t21[12].name="CS2"
+t21[12].type="radio"
+t21.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿En cúal de las siguientes opciones clasificarías la actividad laboral de la persona que aporta los ingresos principales en tu hogar?\""},{"id":"2","code":"1","label":"\"No trabaja\"","name":"\"CS2\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Trabajos menores ocasionales e  informales (lavado, aseo, servicio doméstico ocasional,<br> “pololos”, cuidador de autos, limosna)\"","name":"\"CS2\"","type":"\"radio\""},{"id":"4","label":"\"<br>\""},{"id":"5","code":"3","label":"\"Oficio menor, obrero no calificado, jornalero, servicio doméstico con contrato\"","name":"\"CS2\"","type":"\"radio\""},{"id":"6","label":"\"<br>\""},{"id":"7","code":"4","label":"\"Obrero calificado, capataz, microempresario (kiosko, taxi, comercio menor, ambulante)\"","name":"\"CS2\"","type":"\"radio\""},{"id":"8","label":"\"<br>\""},{"id":"9","code":"5","label":"\"Empleado administrativo medio y bajo, vendedor, secretaria, jefe de sección. Técnico especializado.<br> Profesional independiente de carreras técnicas (contador, analista de sistemas, diseñador, <br>músico). Profesor Primario o Secundario\"","name":"\"CS2\"","type":"\"radio\""},{"id":"10","label":"\"<br>\""},{"id":"11","code":"6","label":"\"Ejecutivo medio (gerente, sub-gerente),  gerente general de empresa media o pequeña. <br>Profesional independiente de carreras tradicionales (abogado, médico, arquitecto, ingeniero, agrónomo)\"","name":"\"CS2\"","type":"\"radio\""},{"id":"12","label":"\"<br>\""},{"id":"13","code":"7","label":"\"Alto ejecutivo (gerente general) de empresa grande. Directores de grandes empresas. <br>Empresarios propietarios de empresas medianas y grandes. Profesionales  independientes  de gran prestigio\"","name":"\"CS2\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t21" target="m1"/><node id="m1"><desc>CS</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m1 = [{"code":1,"label":"ABC1","type":"radio"},{"code":2,"label":"C2","type":"radio"},{"code":3,"label":"C3","type":"radio"},{"code":4,"label":"D","type":"radio"},{"code":5,"label":"E","type":"radio"}]
+var ms_NSE = new MixedSet(\$opts_m1)
+if (isSelected("CS1",1) && isSelected("CS2",1)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",1) && isSelected("CS2",5)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",1) && isSelected("CS2",6)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",1) && isSelected("CS2",7)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",2) && isSelected("CS2",1)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",2) && isSelected("CS2",6)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",2) && isSelected("CS2",7)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",3) && isSelected("CS2",7)) {ms_NSE.setSelected(1)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",7)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",1) && isSelected("CS2",4)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",2) && isSelected("CS2",4)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",2) && isSelected("CS2",5)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",3) && isSelected("CS2",1)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",3) && isSelected("CS2",4)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",3) && isSelected("CS2",5)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",3) && isSelected("CS2",6)) {ms_NSE.setSelected(2)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",6)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",6) && isSelected("CS2",6)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",6) && isSelected("CS2",7)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",7) && isSelected("CS2",7)) {ms_NSE.setSelected(2)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",7)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",1) && isSelected("CS2",2)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",1) && isSelected("CS2",3)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",2) && isSelected("CS2",2)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",2) && isSelected("CS2",3)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",3) && isSelected("CS2",2)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",3) && isSelected("CS2",3)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",1)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",4)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",5)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",6) && isSelected("CS2",5)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",7) && isSelected("CS2",5)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",7) && isSelected("CS2",6)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",5)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",6)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",2)) {ms_NSE.setSelected(4)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",3)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",6) && isSelected("CS2",1)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",6) && isSelected("CS2",2)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",6) && isSelected("CS2",3)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",6) && isSelected("CS2",4)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",7) && isSelected("CS2",3)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",7) && isSelected("CS2",4)) {ms_NSE.setSelected(4)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",4)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",7) && isSelected("CS2",1)) {ms_NSE.setSelected(5)}
+if (isSelected("CS1",7) && isSelected("CS2",2)) {ms_NSE.setSelected(5)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",1)) {ms_NSE.setSelected(5)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",2)) {ms_NSE.setSelected(5)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",3)) {ms_NSE.setSelected(5)}
+participation["CS"] = ms_NSE]]$NOT_DEFINED></data><data key="variable">ms_NSE</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	ABC1	radio
+2	C2	radio
+3	C3	radio
+4	D	radio
+5	E	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">CS</data><data key="label">CS</data><data key="customCode"><![CDATA[if (isSelected("CS1",1) && isSelected("CS2",1)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",1) && isSelected("CS2",5)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",1) && isSelected("CS2",6)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",1) && isSelected("CS2",7)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",2) && isSelected("CS2",1)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",2) && isSelected("CS2",6)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",2) && isSelected("CS2",7)) {ms_NSE.setSelected(1)}
+if (isSelected("CS1",3) && isSelected("CS2",7)) {ms_NSE.setSelected(1)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",7)) {ms_NSE.setSelected(1)}
+
+if (isSelected("CS1",1) && isSelected("CS2",4)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",2) && isSelected("CS2",4)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",2) && isSelected("CS2",5)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",3) && isSelected("CS2",1)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",3) && isSelected("CS2",4)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",3) && isSelected("CS2",5)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",3) && isSelected("CS2",6)) {ms_NSE.setSelected(2)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",6)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",6) && isSelected("CS2",6)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",6) && isSelected("CS2",7)) {ms_NSE.setSelected(2)}
+if (isSelected("CS1",7) && isSelected("CS2",7)) {ms_NSE.setSelected(2)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",7)) {ms_NSE.setSelected(2)}
+
+if (isSelected("CS1",1) && isSelected("CS2",2)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",1) && isSelected("CS2",3)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",2) && isSelected("CS2",2)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",2) && isSelected("CS2",3)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",3) && isSelected("CS2",2)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",3) && isSelected("CS2",3)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",1)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",4)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",5)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",6) && isSelected("CS2",5)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",7) && isSelected("CS2",5)) {ms_NSE.setSelected(3)}
+if (isSelected("CS1",7) && isSelected("CS2",6)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",5)) {ms_NSE.setSelected(3)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",6)) {ms_NSE.setSelected(3)}
+
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",2)) {ms_NSE.setSelected(4)}
+if (isSelectedIn("CS1",[4,5]) && isSelected("CS2",3)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",6) && isSelected("CS2",1)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",6) && isSelected("CS2",2)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",6) && isSelected("CS2",3)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",6) && isSelected("CS2",4)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",7) && isSelected("CS2",3)) {ms_NSE.setSelected(4)}
+if (isSelected("CS1",7) && isSelected("CS2",4)) {ms_NSE.setSelected(4)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",4)) {ms_NSE.setSelected(4)}
+
+if (isSelected("CS1",7) && isSelected("CS2",1)) {ms_NSE.setSelected(5)}
+if (isSelected("CS1",7) && isSelected("CS2",2)) {ms_NSE.setSelected(5)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",1)) {ms_NSE.setSelected(5)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",2)) {ms_NSE.setSelected(5)}
+if (isSelectedIn("CS1",[8,9]) && isSelected("CS2",3)) {ms_NSE.setSelected(5)}]]$NOT_DEFINED></data></node></graph></node></graph></node></graph></node></graph></graphml>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cs_cl</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
