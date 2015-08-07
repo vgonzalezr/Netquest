@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+<!--Incluir como injection en el header del cuestionario-->
+<!--NO OLVIDAR COLOCAR LA VISIBILIDAD ( =surveyMode < 2 )-->
+<script>
+    setTimeout(function() {
+        if (jQuery('.testingContainer').length > 0) {
+            jQuery('.testingContainer').slideToggle('fast', function() {
+                jQuery('.hide-console').css({'bottom': '10px'}).html("Mostrar Consola");
+            });
+        }
+        else
+        {
+            console.log("El elemento no existe");
+        }
+    }, 100);
+
+    shortcut.add("Ctrl+Shift+c", function() {
+        console.log("shortcut");
+        jQuery('.testingContainer').slideToggle('fast', function() {
+
+            if (jQuery('.testingContainer').css('display') == 'none') {
+                jQuery('.hide-console').css({'bottom': '10px'}).html("Mostrar Consola");
+            }
+            else
+            {
+                jQuery('.hide-console').css({'bottom': '145px'}).html("Ocultar Consola");
+            }
+        });
+    });
+</script>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hideConsole</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

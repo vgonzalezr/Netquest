@@ -13,6 +13,8 @@
 * CS CRIT 2 (Tramos de ingreso) -> tabTrigger: <strong>cs_crit2</strong>
 * RDG Syntax -> tabTrigger: <strong>rdg</strong>
 * Schema -> tabTrigger: <strong>schema</strong>
+* persistentHeader -> tabTrigger: <strong>persistentHeader</strong>
+* hideConsole -> tabTrigger: <strong>hideConsole</strong>
 
 <h3>Macros</h3>
 

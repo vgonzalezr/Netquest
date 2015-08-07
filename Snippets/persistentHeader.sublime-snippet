@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+<!--Incluir en una injection en el header del cuestionario-->
+<style type="text/css">
+.sm2-persistentHeader .th-item,
+.sm2-persistentHeader .th-item .td-item,
+.sm2-persistentHeader .th-item.tableFloatingHeader .td-item,
+.sm2-persistentHeader .th-item .td-item p {
+    background-color: #E85810 !important;
+    color: #FFF !important;
+}
+</style>
+<script type="text/javascript">
+    
+    function headersReady() {
+        p.off("readyTask", headersReady)
+        jQuery(".table-item").persistentHeader();
+    }
+    
+    p.on( "readyTask" , headersReady );
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>persistentHeader</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
