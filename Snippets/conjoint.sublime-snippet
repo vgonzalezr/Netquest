@@ -750,7 +750,7 @@ function sortSpecial(a,b){
     return a.completed - b.completed
 }
 //Sort by ascending order
-//arr.sort(sortSpecial)
+arr.sort(sortSpecial)
 
 //Save the version which less responses
 ms.setSelected(arr[0].code)
