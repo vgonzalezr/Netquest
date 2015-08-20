@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="type" attr.type="string" for="node" id="type"/><key attr.name="array" attr.type="string" for="node" id="array"/><key attr.name="current" attr.type="string" for="node" id="current"/><key attr.name="condition" attr.type="string" for="node" id="condition"/><key attr.name="value" attr.type="string" for="node" id="value"/><key attr.name="property" attr.type="string" for="node" id="property"/><key attr.name="labels" attr.type="string" for="node" id="labels"/><key attr.name="elements" attr.type="string" for="node" id="elements"/><key attr.name="content" attr.type="string" for="node" id="content"/><key attr.name="code" attr.type="string" for="node" id="code"/><key attr.name="version" attr.type="string" for="graph" id="version"/><key attr.name="start" attr.type="string" for="graph" id="start"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="variable" attr.type="string" for="graph" id="variable"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="label" attr.type="string" for="graph" id="label"/><key attr.name="customCode" attr.type="string" for="graph" id="customCode"/><key attr.name="shuffle" attr.type="boolean" for="graph" id="shuffle"/><key attr.name="schema" attr.type="string" for="node" id="schema"/><graph edgedefault="directed" id="form"><data key="version">2.0</data><data key="start">i93</data><node id="i93"><data key="type">if</data><data key="code"><![CDATA[if (surveyMode < 2) {
+${t252}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[surveyMode < 2]]$NOT_DEFINED></data><graph edgedefault="directed" id="i93_graph"><node id="i93_if-true"><desc>i93_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i93_if-true_graph"><data key="start">t252</data><node id="t252"><desc>TEST</desc><data key="type">task</data><data key="code"><![CDATA[var t252 = new Task()
+t252[0].cssClass="em"
+t252[0].label="Esta pantalla sólo aparece en modo test"
+t252.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","cssClass":"\"em\"","label":"\"Esta pantalla sólo aparece en modo test\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node></graph></graphml>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>testTask</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

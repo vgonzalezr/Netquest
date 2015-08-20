@@ -15,6 +15,8 @@
 * Schema -> tabTrigger: <strong>schema</strong>
 * persistentHeader -> tabTrigger: <strong>persistentHeader</strong>
 * hideConsole -> tabTrigger: <strong>hideConsole</strong>
+* testTask -> tabTrigger: <strong>testTask</strong>
+* video -> tabTrigger: <strong>video</strong>
 
 <h3>Macros</h3>
 
