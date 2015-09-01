@@ -1,0 +1,806 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="type" attr.type="string" for="node" id="type"/><key attr.name="array" attr.type="string" for="node" id="array"/><key attr.name="current" attr.type="string" for="node" id="current"/><key attr.name="condition" attr.type="string" for="node" id="condition"/><key attr.name="value" attr.type="string" for="node" id="value"/><key attr.name="property" attr.type="string" for="node" id="property"/><key attr.name="labels" attr.type="string" for="node" id="labels"/><key attr.name="elements" attr.type="string" for="node" id="elements"/><key attr.name="content" attr.type="string" for="node" id="content"/><key attr.name="code" attr.type="string" for="node" id="code"/><key attr.name="version" attr.type="string" for="graph" id="version"/><key attr.name="start" attr.type="string" for="graph" id="start"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="variable" attr.type="string" for="graph" id="variable"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="label" attr.type="string" for="graph" id="label"/><key attr.name="customCode" attr.type="string" for="graph" id="customCode"/><key attr.name="shuffle" attr.type="boolean" for="graph" id="shuffle"/><key attr.name="schema" attr.type="string" for="node" id="schema"/><graph edgedefault="directed" id="form"><data key="version">2.0</data><data key="start">g9</data><node id="g9"><desc>NSE</desc><data key="type">group</data><data key="code"/><graph edgedefault="directed" id="g9_graph"><data key="start">m5</data><node id="m5"><desc>CS</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m5 = [{"code":1,"label":"Nivel 1: E","type":"radio"},{"code":2,"label":"Nivel 2: D2","type":"radio"},{"code":3,"label":"Nivel 3: D1","type":"radio"},{"code":4,"label":"Nivel 4: C3","type":"radio"},{"code":5,"label":"Nivel 5: C2","type":"radio"},{"code":6,"label":"Nivel 6: C1","type":"radio"},{"code":7,"label":"Nivel 7: AB","type":"radio"}]
+var ms = new MixedSet(\$opts_m5)
+if(participation.ar_socialclass_V2_sr!=null && participation.ar_socialclass_V2_sr!=""){
+    ms.setSelected(parseInt(participation.ar_socialclass_V2_sr))
+}
+participation["CS"] = ms]]$NOT_DEFINED></data><data key="variable">ms</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Nivel 1: E	radio
+2	Nivel 2: D2	radio
+3	Nivel 3: D1	radio
+4	Nivel 4: C3	radio
+5	Nivel 5: C2	radio
+6	Nivel 6: C1	radio
+7	Nivel 7: AB	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">CS</data><data key="label">CS</data><data key="customCode"><![CDATA[if(participation.ar_socialclass_V2_sr!=null && participation.ar_socialclass_V2_sr!=""){
+    ms.setSelected(parseInt(participation.ar_socialclass_V2_sr))
+}]]$NOT_DEFINED></data></node><edge source="m5" target="i19"/><node id="i19"><data key="type">if</data><data key="code"><![CDATA[if (participation.ar_socialclass_V2_sr==null || participation.ar_socialclass_V2_sr=="") {
+\${t40}
+\${m0}
+\${e4}
+\${t41}
+\${copy_copy_t10}
+\${m3}
+\${t43}
+\${i6}
+\${i14}
+\${i15}
+\${i16}
+\${i17}
+\${i18}
+\${t54}
+\${m4}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[participation.ar_socialclass_V2_sr==null || participation.ar_socialclass_V2_sr==""]]$NOT_DEFINED></data><graph edgedefault="directed" id="i19_graph"><node id="i19_if-true"><desc>i19_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i19_if-true_graph"><data key="start">t40</data><node id="t40"><desc>CS1-CS2</desc><data key="type">task</data><data key="code"><![CDATA[var t40 = new Task()
+t40[0].label="¿Incluyéndote a tí, cuántas personas en total viven en tu hogar?"
+t40[1].minimum=1
+t40[1].name="CS1"
+t40[1].type="number"
+t40[2].label=" "
+t40[3].label="¿Incluyéndote a tí, cuántas de ellas aportan ingresos para los gastos del hogar?"
+t40[4].minimum=1
+t40[4].name="CS2"
+t40[4].type="number"
+t40[5].label=" "
+t40.happiness=[function() {if(participation.CS2>participation.CS1) {
+    throw "El número de personas que aportan ingresos del hogar es mayor que el de personas en el hogar"
+}}]
+t40.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Incluyéndote a tí, cuántas personas en total viven en tu hogar?\""},{"id":"2","minimum":"1","name":"\"CS1\"","type":"\"number\""},{"id":"3","label":"\" \""},{"id":"4","label":"\"¿Incluyéndote a tí, cuántas de ellas aportan ingresos para los gastos del hogar?\""},{"id":"5","minimum":"1","name":"\"CS2\"","type":"\"number\""},{"id":"6","label":"\" \""}],"happiness":["if(participation.CS2>participation.CS1) {\r\n    throw \"El número de personas que aportan ingresos del hogar es mayor que el de personas en el hogar\"\r\n}"]}]]$NOT_DEFINED></data></node><edge source="t40" target="m0"/><node id="m0"><desc>C2</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m0 = [{"code":1,"label":"Vivo sólo/a","type":"radio"},{"code":2,"label":2,"type":"radio"},{"code":3,"label":3,"type":"radio"},{"code":4,"label":4,"type":"radio"},{"code":5,"label":5,"type":"radio"},{"code":6,"label":6,"type":"radio"},{"code":7,"label":"7 o más","type":"radio"}]
+var ms_Pershog = new MixedSet(\$opts_m0)
+if (participation.CS1==1) {
+    ms_Pershog.setSelected(1)
+} else if (participation.CS1==2) {
+    ms_Pershog.setSelected(2)
+} else if (participation.CS1==3) {
+    ms_Pershog.setSelected(3)
+} else if (participation.CS1==4) {
+    ms_Pershog.setSelected(4)
+} else if (participation.CS1==5) {
+    ms_Pershog.setSelected(5)
+} else if (participation.CS1==6) {
+    ms_Pershog.setSelected(6)
+} else if (participation.CS1>=7) {
+    ms_Pershog.setSelected(7)
+}
+participation["C2"] = ms_Pershog]]$NOT_DEFINED></data><data key="variable">ms_Pershog</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Vivo sólo/a	radio
+2	2	radio
+3	3	radio
+4	4	radio
+5	5	radio
+6	6	radio
+7	7 o más	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">C2</data><data key="label">C2</data><data key="customCode"><![CDATA[if (participation.CS1==1) {    
+    ms_Pershog.setSelected(1)
+} else if (participation.CS1==2) {
+    ms_Pershog.setSelected(2)
+} else if (participation.CS1==3) {
+    ms_Pershog.setSelected(3)
+} else if (participation.CS1==4) {
+    ms_Pershog.setSelected(4)
+} else if (participation.CS1==5) {
+    ms_Pershog.setSelected(5)
+} else if (participation.CS1==6) {
+    ms_Pershog.setSelected(6)
+} else if (participation.CS1>=7) {
+    ms_Pershog.setSelected(7)
+}]]$NOT_DEFINED></data></node><edge source="m0" target="e4"/><node id="e4"><data key="type">if-else</data><data key="code"><![CDATA[if (isSelected("C2",1)) {
+\${m1}
+\${m2}
+} else {
+\${t256}
+\${t257}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("C2",1)]]$NOT_DEFINED></data><graph edgedefault="directed" id="e4_graph"><node id="e4_if-true"><desc>e4_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="e4_if-true_graph"><data key="start">m1</data><node id="m1"><desc>C7</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m1 = [{"code":1,"label":"Yo","type":"radio"},{"code":2,"label":"Otra persona","type":"radio"},{"code":3,"label":"Comparto la responsabilidad con otra/s persona/s","type":"radio"}]
+var ms_C7 = new MixedSet(\$opts_m1)
+ms_C7.setSelected(1)
+participation["C7"] = ms_C7]]$NOT_DEFINED></data><data key="variable">ms_C7</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Yo	radio
+2	Otra persona	radio
+3	Comparto la responsabilidad con otra/s persona/s	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">C7</data><data key="label">C7</data><data key="customCode"><![CDATA[ms_C7.setSelected(1)]]$NOT_DEFINED></data></node><edge source="m1" target="m2"/><node id="m2"><desc>C8</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m2 = [{"code":1,"label":"Yo","type":"radio"},{"code":2,"label":"Otra persona","type":"radio"},{"code":3,"label":"Comparto la responsabilidad con otra/s persona/s","type":"radio"}]
+var ms_C8 = new MixedSet(\$opts_m2)
+ms_C8.setSelected(1)
+participation["C8"] = ms_C8]]$NOT_DEFINED></data><data key="variable">ms_C8</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Yo	radio
+2	Otra persona	radio
+3	Comparto la responsabilidad con otra/s persona/s	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">C8</data><data key="label">C8</data><data key="customCode"><![CDATA[ms_C8.setSelected(1)]]$NOT_DEFINED></data></node></graph></node><node id="e4_if-false"><desc>e4_if-false</desc><data key="type">if-false</data><graph edgedefault="directed" id="e4_if-false_graph"><data key="start">t256</data><node id="t256"><desc>Responsable</desc><data key="type">task</data><data key="code"><![CDATA[var t256 = new Task()
+t256[0].label="¿Quién es la persona responsable de la mayoría de las decisiones de compra en tu hogar?"
+t256[1].code=1
+t256[1].label="Yo"
+t256[1].name="C7"
+t256[1].type="radio"
+t256[2].code=2
+t256[2].label="Otra persona"
+t256[2].name="C7"
+t256[2].type="radio"
+t256[3].code=3
+t256[3].label="Comparto la responsabilidad con otra/s persona/s"
+t256[3].name="C7"
+t256[3].type="radio"
+t256.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Quién es la persona responsable de la mayoría de las decisiones de compra en tu hogar?\""},{"id":"2","code":"1","label":"\"Yo\"","name":"\"C7\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Otra persona\"","name":"\"C7\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Comparto la responsabilidad con otra/s persona/s\"","name":"\"C7\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t256" target="t257"/><node id="t257"><desc>Resp Ingr</desc><data key="type">task</data><data key="code"><![CDATA[var t257 = new Task()
+t257[0].label="Y ¿quién es la persona que aporta los ingresos principales en tu hogar?"
+t257[1].code=1
+t257[1].label="Yo"
+t257[1].name="C8"
+t257[1].type="radio"
+t257[2].code=2
+t257[2].label="Otra persona"
+t257[2].name="C8"
+t257[2].type="radio"
+t257[3].code=3
+t257[3].label="Comparto la responsabilidad con otra/s persona/s"
+t257[3].name="C8"
+t257[3].type="radio"
+t257.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"Y ¿quién es la persona que aporta los ingresos principales en tu hogar?\""},{"id":"2","code":"1","label":"\"Yo\"","name":"\"C8\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Otra persona\"","name":"\"C8\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Comparto la responsabilidad con otra/s persona/s\"","name":"\"C8\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node><edge source="e4" target="t41"/><node id="t41"><desc>info</desc><data key="type">task</data><data key="code"><![CDATA[var t41 = new Task()
+t41[0].label="Las siguientes preguntas se refieren al <span class=\"important2\">principal sostén del hogar</span>, definido como aquella persona que aporta más dinero para mantener/sostener el hogar (podés ser vos mismo/a)."
+t41.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"Las siguientes preguntas se refieren al <span class=\\\\\"important2\\\\\">principal sostén del hogar</span>, definido como aquella persona que aporta más dinero para mantener/sostener el hogar (podés ser vos mismo/a).\""}]}]]$NOT_DEFINED></data></node><edge source="t41" target="copy_copy_t10"/><node id="copy_copy_t10"><desc>CS3_alt</desc><data key="type">task</data><data key="code"><![CDATA[var copy_copy_t10 = new Task()
+copy_copy_t10[0].label="¿Cuál es el máximo nivel de estudios que alcanzó el principal sostén del hogar?"
+copy_copy_t10[1].code=1
+copy_copy_t10[1].label="Sin estudios"
+copy_copy_t10[1].name="C10"
+copy_copy_t10[1].type="radio"
+copy_copy_t10[2].code=2
+copy_copy_t10[2].label="Primaria incompleta"
+copy_copy_t10[2].name="C10"
+copy_copy_t10[2].type="radio"
+copy_copy_t10[3].code=3
+copy_copy_t10[3].label="Primaria completa"
+copy_copy_t10[3].name="C10"
+copy_copy_t10[3].type="radio"
+copy_copy_t10[4].code=4
+copy_copy_t10[4].label="Secundaria incompleta"
+copy_copy_t10[4].name="C10"
+copy_copy_t10[4].type="radio"
+copy_copy_t10[5].code=5
+copy_copy_t10[5].label="Secundaria completa"
+copy_copy_t10[5].name="C10"
+copy_copy_t10[5].type="radio"
+copy_copy_t10[6].code=6
+copy_copy_t10[6].label="Terciaria incompleta"
+copy_copy_t10[6].name="C10"
+copy_copy_t10[6].type="radio"
+copy_copy_t10[7].code=7
+copy_copy_t10[7].label="Terciaria completa"
+copy_copy_t10[7].name="C10"
+copy_copy_t10[7].type="radio"
+copy_copy_t10[8].code=8
+copy_copy_t10[8].label="Universitaria incompleta"
+copy_copy_t10[8].name="C10"
+copy_copy_t10[8].type="radio"
+copy_copy_t10[9].code=9
+copy_copy_t10[9].label="Universitaria completa"
+copy_copy_t10[9].name="C10"
+copy_copy_t10[9].type="radio"
+copy_copy_t10[10].code=10
+copy_copy_t10[10].label="Postgrado"
+copy_copy_t10[10].name="C10"
+copy_copy_t10[10].type="radio"
+copy_copy_t10.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Cuál es el máximo nivel de estudios que alcanzó el principal sostén del hogar?\""},{"id":"2","code":"1","label":"\"Sin estudios\"","name":"\"C10\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Primaria incompleta\"","name":"\"C10\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Primaria completa\"","name":"\"C10\"","type":"\"radio\""},{"id":"5","code":"4","label":"\"Secundaria incompleta\"","name":"\"C10\"","type":"\"radio\""},{"id":"6","code":"5","label":"\"Secundaria completa\"","name":"\"C10\"","type":"\"radio\""},{"id":"7","code":"6","label":"\"Terciaria incompleta\"","name":"\"C10\"","type":"\"radio\""},{"id":"8","code":"7","label":"\"Terciaria completa\"","name":"\"C10\"","type":"\"radio\""},{"id":"9","code":"8","label":"\"Universitaria incompleta\"","name":"\"C10\"","type":"\"radio\""},{"id":"10","code":"9","label":"\"Universitaria completa\"","name":"\"C10\"","type":"\"radio\""},{"id":"11","code":"10","label":"\"Postgrado\"","name":"\"C10\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="copy_copy_t10" target="m3"/><node id="m3"><desc>CS3</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m3 = [{"code":1,"label":"Sin estudios / Primaria incompleta","type":"radio"},{"code":2,"label":"Primaria completa / Secundaria incompleta","type":"radio"},{"code":3,"label":"Secundaria completa / Terciaria o Universitaria incompleta","type":"radio"},{"code":4,"label":"Terciaria o Universitaria completa","type":"radio"}]
+var ms_CS3 = new MixedSet(\$opts_m3)
+if (isSelectedIn("C10",[1,2]))	{
+	ms_CS3.setSelected(1)
+}
+if (isSelectedIn("C10",[3,4]))	{
+	ms_CS3.setSelected(2)
+}
+if (isSelectedIn("C10",[5,6,8])) {
+	ms_CS3.setSelected(3)
+}
+if (isSelectedIn("C10",[7,9,10])) {
+	ms_CS3.setSelected(4)
+}
+participation["CS3"] = ms_CS3]]$NOT_DEFINED></data><data key="variable">ms_CS3</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Sin estudios / Primaria incompleta	radio
+2	Primaria completa / Secundaria incompleta	radio
+3	Secundaria completa / Terciaria o Universitaria incompleta	radio
+4	Terciaria o Universitaria completa	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">CS3</data><data key="label">CS3</data><data key="customCode"><![CDATA[if (isSelectedIn("C10",[1,2]))	{
+	ms_CS3.setSelected(1)
+}
+if (isSelectedIn("C10",[3,4]))	{
+	ms_CS3.setSelected(2)
+}
+if (isSelectedIn("C10",[5,6,8])) {
+	ms_CS3.setSelected(3)
+}
+if (isSelectedIn("C10",[7,9,10])) {
+	ms_CS3.setSelected(4)
+}]]$NOT_DEFINED></data></node><edge source="m3" target="t43"/><node id="t43"><desc>CS4</desc><data key="type">task</data><data key="code"><![CDATA[var t43 = new Task()
+t43[0].label="¿Actualmente el principal sostén del hogar tiene alguna actividad o trabajo?"
+t43[1].code=1
+t43[1].label="Sí"
+t43[1].name="CS4"
+t43[1].type="radio"
+t43[2].code=2
+t43[2].label="No"
+t43[2].name="CS4"
+t43[2].type="radio"
+t43.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Actualmente el principal sostén del hogar tiene alguna actividad o trabajo?\""},{"id":"2","code":"1","label":"\"Sí\"","name":"\"CS4\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"No\"","name":"\"CS4\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t43" target="i6"/><node id="i6"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("CS4",2)) {
+\${t44}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("CS4",2)]]$NOT_DEFINED></data><graph edgedefault="directed" id="i6_graph"><node id="i6_if-true"><desc>i6_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i6_if-true_graph"><data key="start">t44</data><node id="t44"><desc>CS5</desc><data key="type">task</data><data key="code"><![CDATA[var t44 = new Task()
+t44[0].label="El principal sostén del hogar no está trabajando actualmente porque…"
+t44[1].code=1
+t44[1].label="Tiene algunas rentas de alquileres, inversiones o negocios donde no trabaja"
+t44[1].name="CS5"
+t44[1].type="radio"
+t44[2].code=2
+t44[2].label="Tiene una beca de estudios o de investigación"
+t44[2].name="CS5"
+t44[2].type="radio"
+t44[3].code=3
+t44[3].label="Recibe dinero de familiares o allegados que no viven en el hogar"
+t44[3].name="CS5"
+t44[3].type="radio"
+t44[4].code=4
+t44[4].label="Tiene una pensión"
+t44[4].name="CS5"
+t44[4].type="radio"
+t44[5].code=5
+t44[5].label="Está jubilado de alguna actividad o trabajo"
+t44[5].name="CS5"
+t44[5].type="radio"
+t44[6].code=6
+t44[6].label="Está desocupado"
+t44[6].name="CS5"
+t44[6].type="radio"
+t44[7].code=7
+t44[7].label="Tiene un plan Trabajar, Jefes o similar"
+t44[7].name="CS5"
+t44[7].type="radio"
+t44[8].code=8
+t44[8].label=" Se dedica a tareas domésticas, no remuneradas"
+t44[8].name="CS5"
+t44[8].type="radio"
+t44.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"El principal sostén del hogar no está trabajando actualmente porque…\""},{"id":"2","code":"1","label":"\"Tiene algunas rentas de alquileres, inversiones o negocios donde no trabaja\"","name":"\"CS5\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Tiene una beca de estudios o de investigación\"","name":"\"CS5\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Recibe dinero de familiares o allegados que no viven en el hogar\"","name":"\"CS5\"","type":"\"radio\""},{"id":"5","code":"4","label":"\"Tiene una pensión\"","name":"\"CS5\"","type":"\"radio\""},{"id":"6","code":"5","label":"\"Está jubilado de alguna actividad o trabajo\"","name":"\"CS5\"","type":"\"radio\""},{"id":"7","code":"6","label":"\"Está desocupado\"","name":"\"CS5\"","type":"\"radio\""},{"id":"8","code":"7","label":"\"Tiene un plan Trabajar, Jefes o similar\"","name":"\"CS5\"","type":"\"radio\""},{"id":"9","code":"8","label":"\" Se dedica a tareas domésticas, no remuneradas\"","name":"\"CS5\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node><edge source="i6" target="i14"/><node id="i14"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("CS4",1)) {
+\${t45}
+\${t46}
+\${t47}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("CS4",1)]]$NOT_DEFINED></data><graph edgedefault="directed" id="i14_graph"><node id="i14_if-true"><desc>i14_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i14_if-true_graph"><data key="start">t45</data><node id="t45"><desc>CS6 pres.</desc><data key="type">task</data><data key="code"><![CDATA[var t45 = new Task()
+t45[0].label="¿Cuál es la principal actividad o trabajo del principal sostén del hogar?"
+t45[1].code=1
+t45[1].label="Como dueño o socio de una empresa, negocio, estudio o comercio"
+t45[1].name="CS6"
+t45[1].type="radio"
+t45[2].code=2
+t45[2].label="En una institución social o de bien público"
+t45[2].name="CS6"
+t45[2].type="radio"
+t45[3].code=3
+t45[3].label="En una empresa, fábrica, negocio, estudio o comercio"
+t45[3].name="CS6"
+t45[3].type="radio"
+t45[4].code=4
+t45[4].label="Con una persona que le da trabajo"
+t45[4].name="CS6"
+t45[4].type="radio"
+t45[5].code=5
+t45[5].label="En casas de familias"
+t45[5].name="CS6"
+t45[5].type="radio"
+t45[6].code=6
+t45[6].label="En una dependencia, organismo, empresa o banco público"
+t45[6].name="CS6"
+t45[6].type="radio"
+t45[7].code=7
+t45[7].label="Trabajando solo, por su cuenta, sin empleados"
+t45[7].name="CS6"
+t45[7].type="radio"
+t45.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Cuál es la principal actividad o trabajo del principal sostén del hogar?\""},{"id":"2","code":"1","label":"\"Como dueño o socio de una empresa, negocio, estudio o comercio\"","name":"\"CS6\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"En una institución social o de bien público\"","name":"\"CS6\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"En una empresa, fábrica, negocio, estudio o comercio\"","name":"\"CS6\"","type":"\"radio\""},{"id":"5","code":"4","label":"\"Con una persona que le da trabajo\"","name":"\"CS6\"","type":"\"radio\""},{"id":"6","code":"5","label":"\"En casas de familias\"","name":"\"CS6\"","type":"\"radio\""},{"id":"7","code":"6","label":"\"En una dependencia, organismo, empresa o banco público\"","name":"\"CS6\"","type":"\"radio\""},{"id":"8","code":"7","label":"\"Trabajando solo, por su cuenta, sin empleados\"","name":"\"CS6\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t45" target="t46"/><node id="t46"><desc>CS7</desc><data key="type">task</data><data key="code"><![CDATA[var t46 = new Task()
+t46[0].label="¿Qué tipo de posición ocupa el principal sostén del hogar?"
+t46[1].code=1
+t46[1].label="Directivo"
+t46[1].name="CS7"
+t46[1].type="radio"
+t46[2].code=2
+t46[2].label="Jefe"
+t46[2].name="CS7"
+t46[2].type="radio"
+t46[3].code=3
+t46[3].label="Trabajador"
+t46[3].name="CS7"
+t46[3].type="radio"
+t46.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Qué tipo de posición ocupa el principal sostén del hogar?\""},{"id":"2","code":"1","label":"\"Directivo\"","name":"\"CS7\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Jefe\"","name":"\"CS7\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Trabajador\"","name":"\"CS7\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t46" target="t47"/><node id="t47"><desc>CS8</desc><data key="type">task</data><data key="code"><![CDATA[var t47 = new Task()
+t47[0].label="¿Qué tipo de calificaciones se requieren para la ocupación que el principal sostén del hogar tiene?"
+t47[1].code=1
+t47[1].label="Profesional "
+t47[1].name="CS8"
+t47[1].type="radio"
+t47[2].code=2
+t47[2].label="Técnico"
+t47[2].name="CS8"
+t47[2].type="radio"
+t47[3].code=3
+t47[3].label="Operativo"
+t47[3].name="CS8"
+t47[3].type="radio"
+t47[4].code=4
+t47[4].label="No calificado"
+t47[4].name="CS8"
+t47[4].type="radio"
+t47.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Qué tipo de calificaciones se requieren para la ocupación que el principal sostén del hogar tiene?\""},{"id":"2","code":"1","label":"\"Profesional \"","name":"\"CS8\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Técnico\"","name":"\"CS8\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Operativo\"","name":"\"CS8\"","type":"\"radio\""},{"id":"5","code":"4","label":"\"No calificado\"","name":"\"CS8\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node><edge source="i14" target="i15"/><node id="i15"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("CS5",6)) {
+\${t48}
+\${t49}
+\${t50}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("CS5",6)]]$NOT_DEFINED></data><graph edgedefault="directed" id="i15_graph"><node id="i15_if-true"><desc>i15_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i15_if-true_graph"><data key="start">t48</data><node id="t48"><desc>CS6 pasado</desc><data key="type">task</data><data key="code"><![CDATA[var t48 = new Task()
+t48[0].label="¿Cuál era la última actividad o trabajo del principal sostén del hogar?"
+t48[1].code=1
+t48[1].label="Como dueño o socio de una empresa, negocio, estudio o comercio"
+t48[1].name="CS6"
+t48[1].type="radio"
+t48[2].code=2
+t48[2].label="En una institución social o de bien público"
+t48[2].name="CS6"
+t48[2].type="radio"
+t48[3].code=3
+t48[3].label="En una empresa, fábrica, negocio, estudio o comercio"
+t48[3].name="CS6"
+t48[3].type="radio"
+t48[4].code=4
+t48[4].label="Con una persona que le da trabajo"
+t48[4].name="CS6"
+t48[4].type="radio"
+t48[5].code=5
+t48[5].label="En casas de familias"
+t48[5].name="CS6"
+t48[5].type="radio"
+t48[6].code=6
+t48[6].label="En una dependencia, organismo, empresa o banco público"
+t48[6].name="CS6"
+t48[6].type="radio"
+t48[7].code=7
+t48[7].label="Trabajando solo, por su cuenta, sin empleados"
+t48[7].name="CS6"
+t48[7].type="radio"
+t48.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Cuál era la última actividad o trabajo del principal sostén del hogar?\""},{"id":"2","code":"1","label":"\"Como dueño o socio de una empresa, negocio, estudio o comercio\"","name":"\"CS6\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"En una institución social o de bien público\"","name":"\"CS6\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"En una empresa, fábrica, negocio, estudio o comercio\"","name":"\"CS6\"","type":"\"radio\""},{"id":"5","code":"4","label":"\"Con una persona que le da trabajo\"","name":"\"CS6\"","type":"\"radio\""},{"id":"6","code":"5","label":"\"En casas de familias\"","name":"\"CS6\"","type":"\"radio\""},{"id":"7","code":"6","label":"\"En una dependencia, organismo, empresa o banco público\"","name":"\"CS6\"","type":"\"radio\""},{"id":"8","code":"7","label":"\"Trabajando solo, por su cuenta, sin empleados\"","name":"\"CS6\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t48" target="t49"/><node id="t49"><desc>CS7</desc><data key="type">task</data><data key="code"><![CDATA[var t49 = new Task()
+t49[0].label="¿Qué tipo de posición ocupaba el principal sostén del hogar?"
+t49[1].code=1
+t49[1].label="Directivo"
+t49[1].name="CS7"
+t49[1].type="radio"
+t49[2].code=2
+t49[2].label="Jefe"
+t49[2].name="CS7"
+t49[2].type="radio"
+t49[3].code=3
+t49[3].label="Trabajador"
+t49[3].name="CS7"
+t49[3].type="radio"
+t49.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Qué tipo de posición ocupaba el principal sostén del hogar?\""},{"id":"2","code":"1","label":"\"Directivo\"","name":"\"CS7\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Jefe\"","name":"\"CS7\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Trabajador\"","name":"\"CS7\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t49" target="t50"/><node id="t50"><desc>CS8</desc><data key="type">task</data><data key="code"><![CDATA[var t50 = new Task()
+t50[0].label="¿Qué tipo de calificaciones se requieren para la ocupación que el principal sostén del hogar tenía?"
+t50[1].code=1
+t50[1].label="Profesional "
+t50[1].name="CS8"
+t50[1].type="radio"
+t50[2].code=2
+t50[2].label="Técnico"
+t50[2].name="CS8"
+t50[2].type="radio"
+t50[3].code=3
+t50[3].label="Operativo"
+t50[3].name="CS8"
+t50[3].type="radio"
+t50[4].code=4
+t50[4].label="No calificado"
+t50[4].name="CS8"
+t50[4].type="radio"
+t50.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Qué tipo de calificaciones se requieren para la ocupación que el principal sostén del hogar tenía?\""},{"id":"2","code":"1","label":"\"Profesional \"","name":"\"CS8\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Técnico\"","name":"\"CS8\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Operativo\"","name":"\"CS8\"","type":"\"radio\""},{"id":"5","code":"4","label":"\"No calificado\"","name":"\"CS8\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node><edge source="i15" target="i16"/><node id="i16"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("CS4",1) && (isSelected("CS7",1) || isSelected("CS7",2) || isSelected("CS6",1))) {
+\${t51}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("CS4",1) && (isSelected("CS7",1) || isSelected("CS7",2) || isSelected("CS6",1))]]$NOT_DEFINED></data><graph edgedefault="directed" id="i16_graph"><node id="i16_if-true"><desc>i16_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i16_if-true_graph"><data key="start">t51</data><node id="t51"><desc>CS9</desc><data key="type">task</data><data key="code"><![CDATA[var t51 = new Task()
+t51[0].label="¿Cuántas personas conforman la empresa donde trabaja el principal sostén del hogar?"
+t51[1].code=1
+t51[1].label="Hasta 5 personas"
+t51[1].name="CS9"
+t51[1].type="radio"
+t51[2].code=2
+t51[2].label="Entre 6 y 40"
+t51[2].name="CS9"
+t51[2].type="radio"
+t51[3].code=3
+t51[3].label="Entre 41 y 200"
+t51[3].name="CS9"
+t51[3].type="radio"
+t51[4].code=4
+t51[4].label="Más de 200 personas"
+t51[4].name="CS9"
+t51[4].type="radio"
+t51.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Cuántas personas conforman la empresa donde trabaja el principal sostén del hogar?\""},{"id":"2","code":"1","label":"\"Hasta 5 personas\"","name":"\"CS9\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"Entre 6 y 40\"","name":"\"CS9\"","type":"\"radio\""},{"id":"4","code":"3","label":"\"Entre 41 y 200\"","name":"\"CS9\"","type":"\"radio\""},{"id":"5","code":"4","label":"\"Más de 200 personas\"","name":"\"CS9\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node><edge source="i16" target="i17"/><node id="i17"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("CS4",1) && isSelected("CS6",7)) {
+\${t52}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("CS4",1) && isSelected("CS6",7)]]$NOT_DEFINED></data><graph edgedefault="directed" id="i17_graph"><node id="i17_if-true"><desc>i17_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i17_if-true_graph"><data key="start">t52</data><node id="t52"><desc>CS10</desc><data key="type">task</data><data key="code"><![CDATA[var t52 = new Task()
+t52[0].label="Entre <span class=\"important2\">todas</span> las ocupaciones o actividades laborales que pudiera tener actualmente, trabaja al menos 35 horas en la semana?"
+t52[1].code=1
+t52[1].label="Sí"
+t52[1].name="CS10"
+t52[1].type="radio"
+t52[2].code=2
+t52[2].label="No"
+t52[2].name="CS10"
+t52[2].type="radio"
+t52.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"Entre <span class=\\\\\"important2\\\\\">todas</span> las ocupaciones o actividades laborales que pudiera tener actualmente, trabaja al menos 35 horas en la semana?\""},{"id":"2","code":"1","label":"\"Sí\"","name":"\"CS10\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"No\"","name":"\"CS10\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node><edge source="i17" target="i18"/><node id="i18"><data key="type">if</data><data key="code"><![CDATA[if (isSelected("CS4",1) || isSelectedIn("CS5",[1,2,3,6,8])) {
+\${t53}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[isSelected("CS4",1) || isSelectedIn("CS5",[1,2,3,6,8])]]$NOT_DEFINED></data><graph edgedefault="directed" id="i18_graph"><node id="i18_if-true"><desc>i18_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="i18_if-true_graph"><data key="start">t53</data><node id="t53"><desc>CS11</desc><data key="type">task</data><data key="code"><![CDATA[var t53 = new Task()
+t53[0].label="Por último, ¿el principal sostén del hogar tiene actualmente algún tipo de cobertura médica, ya sea una obra social o mutual (incluye PAMI) o bien una empresa de medicina prepaga?"
+t53[1].code=1
+t53[1].label="Sí"
+t53[1].name="CS11"
+t53[1].type="radio"
+t53[2].code=2
+t53[2].label="No"
+t53[2].name="CS11"
+t53[2].type="radio"
+t53.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"Por último, ¿el principal sostén del hogar tiene actualmente algún tipo de cobertura médica, ya sea una obra social o mutual (incluye PAMI) o bien una empresa de medicina prepaga?\""},{"id":"2","code":"1","label":"\"Sí\"","name":"\"CS11\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"No\"","name":"\"CS11\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node><edge source="i18" target="t54"/><node id="t54"><desc>CS12</desc><data key="type">task</data><data key="code"><![CDATA[var t54 = new Task()
+t54[0].label="¿Tenés algún baño en el interior de tu casa?"
+t54[1].code=1
+t54[1].label="Sí"
+t54[1].name="CS12"
+t54[1].type="radio"
+t54[2].code=2
+t54[2].label="No"
+t54[2].name="CS12"
+t54[2].type="radio"
+t54.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Tenés algún baño en el interior de tu casa?\""},{"id":"2","code":"1","label":"\"Sí\"","name":"\"CS12\"","type":"\"radio\""},{"id":"3","code":"2","label":"\"No\"","name":"\"CS12\"","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="t54" target="m4"/><node id="m4"><desc>CS</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_m4 = [{"code":1,"label":"Nivel 1: E","type":"radio"},{"code":2,"label":"Nivel 2: D2","type":"radio"},{"code":3,"label":"Nivel 3: D1","type":"radio"},{"code":4,"label":"Nivel 4: C3","type":"radio"},{"code":5,"label":"Nivel 5: C2","type":"radio"},{"code":6,"label":"Nivel 6: C1","type":"radio"},{"code":7,"label":"Nivel 7: AB","type":"radio"}]
+var ms = new MixedSet(\$opts_m4)
+var rim_a=[]
+//Entrar primero por número de CS1-1
+//Entrar segundo por número de CS2-1 y vigilar con el máx length del array.
+rim_a[0]=[3]
+rim_a[1]=[2,3]
+rim_a[2]=[1,2,3]
+rim_a[3]=[1,2,3,3]
+rim_a[4]=[1,1,2,3,3]
+rim_a[5]=[1,1,2,2,3,3]
+rim_a[6]=[1,1,2,2,3,3,3]
+rim_a[7]=[1,1,1,2,2,3,3,3]
+rim_a[8]=[1,1,1,2,2,2,3,3]
+rim_a[9]=[1,1,1,1,2,2,3,3]
+rim_a[10]=[1,1,1,1,2,2,2,3]
+rim_a[11]=[1,1,1,1,2,2,2,2]
+rim_a[12]=[1,1,1,1,1,2,2,2]
+rim_a[13]=[1,1,1,1,1,2,2,2]
+rim_a[14]=[1,1,1,1,1,1,2,2]
+var a=participation.CS1
+var b=participation.CS2
+if(a>15){a=15;}
+if(b>rim_a[(a-1)].length){b=rim_a[(a-1)].length}
+var rim=rim_a[(a-1)][(b-1)]
+var est=participation.CS3.getSelectedCode()
+//ARRAYS
+var c=[]
+c[1]=[]
+c[2]=[]
+c[3]=[]
+c[4]=[]
+var nivel=0
+//Empleados actualmente ocupados  [“2” a “6” en P6]
+if(isSelected("CS4",1) && getSelectedCode("CS6")>=2 && getSelectedCode("CS6")<=6){
+	c[4][1]=[5,5,6,4,4,5,4,5,5,5,5,5,5,4,4,4,4,3,3]
+	c[4][2]=[6,6,6,5,4,5,5,5,5,6,5,5,5,5,4,4,4,3,3]
+	c[4][3]=[6,6,7,5,5,6,5,6,6,6,6,6,6,5,5,5,5,4,4]
+	c[3][1]=[5,5,5,4,3,4,4,4,4,5,4,4,4,4,3,3,3,2,2]
+	c[3][2]=[5,5,6,4,4,5,4,5,5,5,5,5,5,4,4,4,4,3,3]
+	c[3][3]=[6,6,6,5,4,5,5,5,5,6,5,5,5,5,4,4,4,3,3]
+	c[2][1]=[4,4,5,3,3,4,3,4,4,4,4,4,4,3,3,3,3,2,2]
+	c[2][2]=[5,5,5,4,3,4,4,5,4,5,4,5,4,4,3,4,3,3,2]
+	c[2][3]=[5,5,6,4,4,5,4,5,5,5,5,5,5,4,4,4,4,3,3]
+	c[1][1]=[4,4,4,3,3,3,3,4,3,4,3,4,3,3,3,3,2,2,1]
+	c[1][2]=[4,5,5,3,3,4,3,4,4,4,4,4,4,3,3,3,3,2,2]
+	c[1][3]=[5,5,5,4,4,4,4,5,4,5,4,5,4,4,4,4,3,3,2]
+	//Directivos
+	if(isSelected("CS7",1)){
+		//Empledos 1 o 2
+		if(isSelectedIn("CS9",[1,2])){
+			nivel=c[est][rim][(getSelectedCode("CS9")-1)]
+		}
+		else if(isSelectedIn("CS9",[3,4])){
+			nivel=c[est][rim][2]
+		}
+	}else if(isSelected("CS7",2)){
+			if(isSelected("CS9",1) && isSelected("CS11",1)){nivel=c[est][rim][3]}
+			if(isSelected("CS9",1) && isSelected("CS11",2)){nivel=c[est][rim][4]}
+			if(isSelected("CS9",2) && isSelected("CS11",1)){nivel=c[est][rim][5]}
+			if(isSelected("CS9",2) && isSelected("CS11",2)){nivel=c[est][rim][6]}
+			if(isSelected("CS9",3) && isSelected("CS11",1)){nivel=c[est][rim][7]}
+			if(isSelected("CS9",3) && isSelected("CS11",2)){nivel=c[est][rim][8]}
+			if(isSelected("CS9",4) && isSelected("CS11",1)){nivel=c[est][rim][9]}
+			if(isSelected("CS9",4) && isSelected("CS11",2)){nivel=c[est][rim][10]}
+	}else if(isSelected("CS7",3)){
+			if(isSelected("CS8",1) && isSelected("CS11",1)){nivel=c[est][rim][11]}
+			if(isSelected("CS8",1) && isSelected("CS11",2)){nivel=c[est][rim][12]}
+			if(isSelected("CS8",2) && isSelected("CS11",1)){nivel=c[est][rim][13]}
+			if(isSelected("CS8",2) && isSelected("CS11",2)){nivel=c[est][rim][14]}
+			if(isSelected("CS8",3) && isSelected("CS11",1)){nivel=c[est][rim][15]}
+			if(isSelected("CS8",3) && isSelected("CS11",2)){nivel=c[est][rim][16]}
+			if(isSelected("CS8",4) && isSelected("CS11",1)){nivel=c[est][rim][17]}
+			if(isSelected("CS8",4) && isSelected("CS11",2)){nivel=c[est][rim][18]}
+	}
+}
+else if(isSelected("CS4",1) && isSelected("CS6",1)){
+	//Empleadores actualmente ocupados [“1” en P6]
+	c[4][1]=[5,5,6,6]
+	c[4][2]=[6,6,6,6]
+	c[4][3]=[6,6,7,7]
+	c[3][1]=[5,5,5,5]
+	c[3][2]=[5,5,6,6]
+	c[3][3]=[6,6,6,6]
+	c[2][1]=[4,4,5,5]
+	c[2][2]=[5,5,5,5]
+	c[2][3]=[5,5,6,6]
+	c[1][1]=[4,4,4,4]
+	c[1][2]=[4,5,5,5]
+	c[1][3]=[5,5,5,5]
+	nivel=c[est][rim][(getSelectedCode("CS9")-1)]
+}
+else if(isSelected("CS4",1) && isSelected("CS6",7)){
+	//Cuenta propia actualmente ocupados  [“7” en P6]
+	c[4][1]=[6,5,5,5,5,5,4,4,4,3,3,2,3,3,3,2]
+	c[4][2]=[6,6,5,5,5,5,5,4,4,4,3,3,4,3,3,3]
+	c[4][3]=[6,6,6,6,6,6,5,5,5,4,4,3,4,4,4,3]
+	c[3][1]=[5,5,4,4,4,4,4,3,3,3,2,2,3,2,2,2]
+	c[3][2]=[6,5,5,5,5,5,4,4,4,3,3,2,3,3,3,2]
+	c[3][3]=[6,6,5,5,5,5,5,4,4,4,3,3,4,3,3,3]
+	c[2][1]=[5,4,4,4,4,4,3,3,3,2,2,2,2,2,2,1]
+	c[2][2]=[5,5,5,4,5,4,4,3,3,3,2,2,3,3,2,2]
+	c[2][3]=[6,5,5,5,5,5,4,4,4,3,3,3,3,3,3,2]
+	c[1][1]=[4,4,4,3,4,3,3,3,2,2,2,1,2,2,1,1]
+	c[1][2]=[5,5,4,4,4,4,3,3,3,2,2,2,3,2,2,1]
+	c[1][3]=[5,5,5,4,5,4,4,4,3,3,3,2,3,3,2,2]
+	if(isSelected("CS8",1) && isSelected("CS10",1) && isSelected("CS11",1)){nivel=c[est][rim][0]}
+	if(isSelected("CS8",1) && isSelected("CS10",1) && isSelected("CS11",2)){nivel=c[est][rim][1]}
+	if(isSelected("CS8",1) && isSelected("CS10",2) && isSelected("CS11",1)){nivel=c[est][rim][2]}
+	if(isSelected("CS8",1) && isSelected("CS10",2) && isSelected("CS11",2)){nivel=c[est][rim][3]}
+	if(isSelected("CS8",2) && isSelected("CS10",1) && isSelected("CS11",1)){nivel=c[est][rim][4]}
+	if(isSelected("CS8",2) && isSelected("CS10",1) && isSelected("CS11",2)){nivel=c[est][rim][5]}
+	if(isSelected("CS8",2) && isSelected("CS10",2) && isSelected("CS11",1)){nivel=c[est][rim][6]}
+	if(isSelected("CS8",2) && isSelected("CS10",2) && isSelected("CS11",2)){nivel=c[est][rim][7]}
+	if(isSelected("CS8",3) && isSelected("CS10",1) && isSelected("CS11",1)){nivel=c[est][rim][8]}
+	if(isSelected("CS8",3) && isSelected("CS10",1) && isSelected("CS11",2)){nivel=c[est][rim][9]}
+	if(isSelected("CS8",3) && isSelected("CS10",2) && isSelected("CS11",1)){nivel=c[est][rim][10]}
+	if(isSelected("CS8",3) && isSelected("CS10",2) && isSelected("CS11",2)){nivel=c[est][rim][11]}
+	if(isSelected("CS8",4) && isSelected("CS10",1) && isSelected("CS11",1)){nivel=c[est][rim][12]}
+	if(isSelected("CS8",4) && isSelected("CS10",1) && isSelected("CS11",2)){nivel=c[est][rim][13]}
+	if(isSelected("CS8",4) && isSelected("CS10",2) && isSelected("CS11",1)){nivel=c[est][rim][14]}
+	if(isSelected("CS8",4) && isSelected("CS10",2) && isSelected("CS11",2)){nivel=c[est][rim][15]}
+}
+else if(isSelected("CS4",2) && isSelected("CS5",6)){
+	//Desocupados [“2” en P4]
+	c[4][1]=[5,4,3,2,5,3,2,5]
+	c[4][2]=[5,4,3,2,5,4,3,5]
+	c[4][3]=[6,5,4,3,6,4,3,6]
+	c[3][1]=[4,3,2,1,4,3,2,4]
+	c[3][2]=[5,4,3,2,5,3,2,5]
+	c[3][3]=[5,4,3,2,5,4,3,5]
+	c[2][1]=[4,3,2,1,4,2,1,4]
+	c[2][2]=[4,3,2,2,4,3,2,4]
+	c[2][3]=[5,4,3,2,5,3,2,5]
+	c[1][1]=[4,2,1,1,4,2,1,4]
+	c[1][2]=[4,3,2,1,4,3,1,4]
+	c[1][3]=[5,3,2,2,5,3,2,5]
+	if(isSelected("CS6",7) && isSelected("CS8",1)){nivel=c[est][rim][0]}
+	if(isSelected("CS6",7) && isSelected("CS8",2)){nivel=c[est][rim][1]}
+	if(isSelected("CS6",7) && isSelected("CS8",3)){nivel=c[est][rim][2]}
+	if(isSelected("CS6",7) && isSelected("CS8",4)){nivel=c[est][rim][3]}
+	if(isSelectedIn("CS6",[2,3,4,5,6]) && isSelected("CS7",1)){nivel=c[est][rim][4]}
+	if(isSelectedIn("CS6",[2,3,4,5,6]) && isSelected("CS7",2)){nivel=c[est][rim][5]}
+	if(isSelectedIn("CS6",[2,3,4,5,6]) && isSelected("CS7",3)){nivel=c[est][rim][6]}
+	if(isSelected("CS6",1)){nivel=c[est][rim][7]}
+}
+else if(isSelected("CS4",2) && isSelectedIn("CS5",[1,2,3,4,5])){
+	//Inactivos  [“3” y “4” en P4]
+	c[4][1]=[4,6,5,5,4]
+	c[4][2]=[5,6,5,5,4]
+	c[4][3]=[5,7,6,6,5]
+	c[3][1]=[3,6,5,4,4]
+	c[3][2]=[4,6,5,4,4]
+	c[3][3]=[4,7,6,5,5]
+	c[2][1]=[2,5,4,4,3]
+	c[2][2]=[3,5,4,4,3]
+	c[2][3]=[3,6,5,5,4]
+	c[1][1]=[1,3,3,3,2]
+	c[1][2]=[2,3,3,3,2]
+	c[1][3]=[2,4,4,4,3]
+	if(isSelectedIn("CS5",[4,5])){nivel=c[est][rim][0]}
+	if(isSelected("CS5",1) && isSelected("CS11",1)){nivel=c[est][rim][1]}
+	if(isSelected("CS5",1) && isSelected("CS11",2)){nivel=c[est][rim][2]}
+	else if(!isSelected("CS5",7)){
+		if(isSelected("CS11",1)){nivel=c[est][rim][3]}
+		if(isSelected("CS11",2)){nivel=c[est][rim][4]}
+	}
+}
+else if(isSelected("CS5",7) || isSelected("CS12",2)){
+	//Quienes viven de un subsidio (cómo único ingreso) o carecen de baño en su casa se clasifican en el nivel 1.
+	nivel=1
+}
+if(nivel!=0){
+	ms.setSelected(nivel)
+}
+participation["CS"] = ms]]$NOT_DEFINED></data><data key="variable">ms</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	Nivel 1: E	radio
+2	Nivel 2: D2	radio
+3	Nivel 3: D1	radio
+4	Nivel 4: C3	radio
+5	Nivel 5: C2	radio
+6	Nivel 6: C1	radio
+7	Nivel 7: AB	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">CS</data><data key="label">CS</data><data key="customCode"><![CDATA[var rim_a=[] 
+//Entrar primero por número de CS1-1
+//Entrar segundo por número de CS2-1 y vigilar con el máx length del array.
+rim_a[0]=[3]
+rim_a[1]=[2,3] 
+rim_a[2]=[1,2,3]
+rim_a[3]=[1,2,3,3]
+rim_a[4]=[1,1,2,3,3]
+rim_a[5]=[1,1,2,2,3,3] 
+rim_a[6]=[1,1,2,2,3,3,3]
+rim_a[7]=[1,1,1,2,2,3,3,3]
+rim_a[8]=[1,1,1,2,2,2,3,3]
+rim_a[9]=[1,1,1,1,2,2,3,3]
+rim_a[10]=[1,1,1,1,2,2,2,3]
+rim_a[11]=[1,1,1,1,2,2,2,2]
+rim_a[12]=[1,1,1,1,1,2,2,2]
+rim_a[13]=[1,1,1,1,1,2,2,2]
+rim_a[14]=[1,1,1,1,1,1,2,2]
+
+var a=participation.CS1
+var b=participation.CS2
+if(a>15){a=15;}
+if(b>rim_a[(a-1)].length){b=rim_a[(a-1)].length}
+
+var rim=rim_a[(a-1)][(b-1)]
+
+var est=participation.CS3.getSelectedCode()
+
+//ARRAYS
+var c=[]
+c[1]=[]
+c[2]=[]
+c[3]=[]
+c[4]=[]
+var nivel=0
+
+//Empleados actualmente ocupados  [“2” a “6” en P6]
+if(isSelected("CS4",1) && getSelectedCode("CS6")>=2 && getSelectedCode("CS6")<=6){
+	c[4][1]=[5,5,6,4,4,5,4,5,5,5,5,5,5,4,4,4,4,3,3]
+	c[4][2]=[6,6,6,5,4,5,5,5,5,6,5,5,5,5,4,4,4,3,3]
+	c[4][3]=[6,6,7,5,5,6,5,6,6,6,6,6,6,5,5,5,5,4,4]
+	c[3][1]=[5,5,5,4,3,4,4,4,4,5,4,4,4,4,3,3,3,2,2]
+	c[3][2]=[5,5,6,4,4,5,4,5,5,5,5,5,5,4,4,4,4,3,3]
+	c[3][3]=[6,6,6,5,4,5,5,5,5,6,5,5,5,5,4,4,4,3,3]
+	c[2][1]=[4,4,5,3,3,4,3,4,4,4,4,4,4,3,3,3,3,2,2]
+	c[2][2]=[5,5,5,4,3,4,4,5,4,5,4,5,4,4,3,4,3,3,2]
+	c[2][3]=[5,5,6,4,4,5,4,5,5,5,5,5,5,4,4,4,4,3,3]
+	c[1][1]=[4,4,4,3,3,3,3,4,3,4,3,4,3,3,3,3,2,2,1]
+	c[1][2]=[4,5,5,3,3,4,3,4,4,4,4,4,4,3,3,3,3,2,2]
+	c[1][3]=[5,5,5,4,4,4,4,5,4,5,4,5,4,4,4,4,3,3,2]
+	
+	//Directivos
+	if(isSelected("CS7",1)){
+		//Empledos 1 o 2
+		if(isSelectedIn("CS9",[1,2])){
+			nivel=c[est][rim][(getSelectedCode("CS9")-1)]
+		}
+		else if(isSelectedIn("CS9",[3,4])){
+			nivel=c[est][rim][2]
+		}
+	}else if(isSelected("CS7",2)){
+			if(isSelected("CS9",1) && isSelected("CS11",1)){nivel=c[est][rim][3]}
+			if(isSelected("CS9",1) && isSelected("CS11",2)){nivel=c[est][rim][4]}
+			if(isSelected("CS9",2) && isSelected("CS11",1)){nivel=c[est][rim][5]}
+			if(isSelected("CS9",2) && isSelected("CS11",2)){nivel=c[est][rim][6]}
+			if(isSelected("CS9",3) && isSelected("CS11",1)){nivel=c[est][rim][7]}
+			if(isSelected("CS9",3) && isSelected("CS11",2)){nivel=c[est][rim][8]}
+			if(isSelected("CS9",4) && isSelected("CS11",1)){nivel=c[est][rim][9]}
+			if(isSelected("CS9",4) && isSelected("CS11",2)){nivel=c[est][rim][10]}
+	}else if(isSelected("CS7",3)){
+			if(isSelected("CS8",1) && isSelected("CS11",1)){nivel=c[est][rim][11]}
+			if(isSelected("CS8",1) && isSelected("CS11",2)){nivel=c[est][rim][12]}
+			if(isSelected("CS8",2) && isSelected("CS11",1)){nivel=c[est][rim][13]}
+			if(isSelected("CS8",2) && isSelected("CS11",2)){nivel=c[est][rim][14]}
+			if(isSelected("CS8",3) && isSelected("CS11",1)){nivel=c[est][rim][15]}
+			if(isSelected("CS8",3) && isSelected("CS11",2)){nivel=c[est][rim][16]}
+			if(isSelected("CS8",4) && isSelected("CS11",1)){nivel=c[est][rim][17]}
+			if(isSelected("CS8",4) && isSelected("CS11",2)){nivel=c[est][rim][18]}		
+	}
+}
+else if(isSelected("CS4",1) && isSelected("CS6",1)){
+	//Empleadores actualmente ocupados [“1” en P6]
+	c[4][1]=[5,5,6,6]
+	c[4][2]=[6,6,6,6]
+	c[4][3]=[6,6,7,7]
+	c[3][1]=[5,5,5,5]
+	c[3][2]=[5,5,6,6]
+	c[3][3]=[6,6,6,6]
+	c[2][1]=[4,4,5,5]
+	c[2][2]=[5,5,5,5]
+	c[2][3]=[5,5,6,6]
+	c[1][1]=[4,4,4,4]
+	c[1][2]=[4,5,5,5]
+	c[1][3]=[5,5,5,5]
+	nivel=c[est][rim][(getSelectedCode("CS9")-1)]
+}
+else if(isSelected("CS4",1) && isSelected("CS6",7)){
+	//Cuenta propia actualmente ocupados  [“7” en P6]
+	c[4][1]=[6,5,5,5,5,5,4,4,4,3,3,2,3,3,3,2]
+	c[4][2]=[6,6,5,5,5,5,5,4,4,4,3,3,4,3,3,3]
+	c[4][3]=[6,6,6,6,6,6,5,5,5,4,4,3,4,4,4,3]
+	c[3][1]=[5,5,4,4,4,4,4,3,3,3,2,2,3,2,2,2]
+	c[3][2]=[6,5,5,5,5,5,4,4,4,3,3,2,3,3,3,2]
+	c[3][3]=[6,6,5,5,5,5,5,4,4,4,3,3,4,3,3,3]
+	c[2][1]=[5,4,4,4,4,4,3,3,3,2,2,2,2,2,2,1]
+	c[2][2]=[5,5,5,4,5,4,4,3,3,3,2,2,3,3,2,2]
+	c[2][3]=[6,5,5,5,5,5,4,4,4,3,3,3,3,3,3,2]
+	c[1][1]=[4,4,4,3,4,3,3,3,2,2,2,1,2,2,1,1]
+	c[1][2]=[5,5,4,4,4,4,3,3,3,2,2,2,3,2,2,1]
+	c[1][3]=[5,5,5,4,5,4,4,4,3,3,3,2,3,3,2,2]
+	if(isSelected("CS8",1) && isSelected("CS10",1) && isSelected("CS11",1)){nivel=c[est][rim][0]}
+	if(isSelected("CS8",1) && isSelected("CS10",1) && isSelected("CS11",2)){nivel=c[est][rim][1]}
+	if(isSelected("CS8",1) && isSelected("CS10",2) && isSelected("CS11",1)){nivel=c[est][rim][2]}
+	if(isSelected("CS8",1) && isSelected("CS10",2) && isSelected("CS11",2)){nivel=c[est][rim][3]}
+	if(isSelected("CS8",2) && isSelected("CS10",1) && isSelected("CS11",1)){nivel=c[est][rim][4]}
+	if(isSelected("CS8",2) && isSelected("CS10",1) && isSelected("CS11",2)){nivel=c[est][rim][5]}
+	if(isSelected("CS8",2) && isSelected("CS10",2) && isSelected("CS11",1)){nivel=c[est][rim][6]}
+	if(isSelected("CS8",2) && isSelected("CS10",2) && isSelected("CS11",2)){nivel=c[est][rim][7]}
+	if(isSelected("CS8",3) && isSelected("CS10",1) && isSelected("CS11",1)){nivel=c[est][rim][8]}
+	if(isSelected("CS8",3) && isSelected("CS10",1) && isSelected("CS11",2)){nivel=c[est][rim][9]}
+	if(isSelected("CS8",3) && isSelected("CS10",2) && isSelected("CS11",1)){nivel=c[est][rim][10]}
+	if(isSelected("CS8",3) && isSelected("CS10",2) && isSelected("CS11",2)){nivel=c[est][rim][11]}
+	if(isSelected("CS8",4) && isSelected("CS10",1) && isSelected("CS11",1)){nivel=c[est][rim][12]}
+	if(isSelected("CS8",4) && isSelected("CS10",1) && isSelected("CS11",2)){nivel=c[est][rim][13]}
+	if(isSelected("CS8",4) && isSelected("CS10",2) && isSelected("CS11",1)){nivel=c[est][rim][14]}
+	if(isSelected("CS8",4) && isSelected("CS10",2) && isSelected("CS11",2)){nivel=c[est][rim][15]}
+}
+else if(isSelected("CS4",2) && isSelected("CS5",6)){
+		
+	//Desocupados [“2” en P4]
+	c[4][1]=[5,4,3,2,5,3,2,5]
+	c[4][2]=[5,4,3,2,5,4,3,5]
+	c[4][3]=[6,5,4,3,6,4,3,6]
+	c[3][1]=[4,3,2,1,4,3,2,4]
+	c[3][2]=[5,4,3,2,5,3,2,5]
+	c[3][3]=[5,4,3,2,5,4,3,5]
+	c[2][1]=[4,3,2,1,4,2,1,4]
+	c[2][2]=[4,3,2,2,4,3,2,4]
+	c[2][3]=[5,4,3,2,5,3,2,5]
+	c[1][1]=[4,2,1,1,4,2,1,4]
+	c[1][2]=[4,3,2,1,4,3,1,4]
+	c[1][3]=[5,3,2,2,5,3,2,5]
+	
+	if(isSelected("CS6",7) && isSelected("CS8",1)){nivel=c[est][rim][0]}
+	if(isSelected("CS6",7) && isSelected("CS8",2)){nivel=c[est][rim][1]}
+	if(isSelected("CS6",7) && isSelected("CS8",3)){nivel=c[est][rim][2]}
+	if(isSelected("CS6",7) && isSelected("CS8",4)){nivel=c[est][rim][3]}
+	if(isSelectedIn("CS6",[2,3,4,5,6]) && isSelected("CS7",1)){nivel=c[est][rim][4]}
+	if(isSelectedIn("CS6",[2,3,4,5,6]) && isSelected("CS7",2)){nivel=c[est][rim][5]}
+	if(isSelectedIn("CS6",[2,3,4,5,6]) && isSelected("CS7",3)){nivel=c[est][rim][6]}
+	if(isSelected("CS6",1)){nivel=c[est][rim][7]}
+}
+else if(isSelected("CS4",2) && isSelectedIn("CS5",[1,2,3,4,5])){
+	//Inactivos  [“3” y “4” en P4]
+	c[4][1]=[4,6,5,5,4]
+	c[4][2]=[5,6,5,5,4]
+	c[4][3]=[5,7,6,6,5]
+	c[3][1]=[3,6,5,4,4]
+	c[3][2]=[4,6,5,4,4]
+	c[3][3]=[4,7,6,5,5]
+	c[2][1]=[2,5,4,4,3]
+	c[2][2]=[3,5,4,4,3]
+	c[2][3]=[3,6,5,5,4]
+	c[1][1]=[1,3,3,3,2]
+	c[1][2]=[2,3,3,3,2]
+	c[1][3]=[2,4,4,4,3]
+	
+	if(isSelectedIn("CS5",[4,5])){nivel=c[est][rim][0]}
+	if(isSelected("CS5",1) && isSelected("CS11",1)){nivel=c[est][rim][1]}
+	if(isSelected("CS5",1) && isSelected("CS11",2)){nivel=c[est][rim][2]}
+	else if(!isSelected("CS5",7)){
+		if(isSelected("CS11",1)){nivel=c[est][rim][3]}
+		if(isSelected("CS11",2)){nivel=c[est][rim][4]}
+	}
+}
+else if(isSelected("CS5",7) || isSelected("CS12",2)){
+	//Quienes viven de un subsidio (cómo único ingreso) o carecen de baño en su casa se clasifican en el nivel 1.
+	nivel=1
+}
+
+if(nivel!=0){
+	ms.setSelected(nivel)
+}]]$NOT_DEFINED></data></node></graph></node></graph></node></graph></node></graph></graphml>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cs_ar</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

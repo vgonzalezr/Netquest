@@ -10,6 +10,8 @@
 * Rotación de grupos con control de cuotas -> tabTrigger: <strong>grupos</strong>
 * Menciones (TOM) -> tabTrigger: <strong>tom</strong>
 * CS CL -> tabTrigger: <strong>cs_cl</strong>
+* CS BR -> tabTrigger: <strong>cs_br</strong>
+* CS AR -> tabTrigger: <strong>cs_ar</strong>
 * CS CRIT 2 (Tramos de ingreso) -> tabTrigger: <strong>cs_crit2</strong>
 * RDG Syntax -> tabTrigger: <strong>rdg</strong>
 * Schema -> tabTrigger: <strong>schema</strong>
