@@ -1,0 +1,698 @@
+<snippet>
+	<content><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="type" attr.type="string" for="node" id="type"/><key attr.name="array" attr.type="string" for="node" id="array"/><key attr.name="current" attr.type="string" for="node" id="current"/><key attr.name="condition" attr.type="string" for="node" id="condition"/><key attr.name="value" attr.type="string" for="node" id="value"/><key attr.name="property" attr.type="string" for="node" id="property"/><key attr.name="labels" attr.type="string" for="node" id="labels"/><key attr.name="elements" attr.type="string" for="node" id="elements"/><key attr.name="content" attr.type="string" for="node" id="content"/><key attr.name="code" attr.type="string" for="node" id="code"/><key attr.name="version" attr.type="string" for="graph" id="version"/><key attr.name="start" attr.type="string" for="graph" id="start"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="variable" attr.type="string" for="graph" id="variable"/><key attr.name="name" attr.type="string" for="graph" id="name"/><key attr.name="label" attr.type="string" for="graph" id="label"/><key attr.name="customCode" attr.type="string" for="graph" id="customCode"/><key attr.name="shuffle" attr.type="boolean" for="graph" id="shuffle"/><key attr.name="schema" attr.type="string" for="node" id="schema"/><graph edgedefault="directed" id="form"><data key="version">2.0</data><data key="start">ar_nse</data><node id="ar_nse"><desc>CS: AR (2015)</desc><data key="type">group</data><data key="code"/><graph edgedefault="directed" id="ar_nse_graph"><data key="start">ar_nse_ppi</data><node id="ar_nse_ppi"><desc>PPI</desc><data key="type">script</data><data key="code"><![CDATA[// Nombre de variable que cargamos desde PPI para asignar la clase social
+var ar_nse_ppi = "ar_socialclass_2015_sr";
+
+// Nombre de variable donde se guarda el nivel social calculado
+// Ej. NSE = participation.NSE
+var ar_nse_varname = "CS"
+
+// Nombre de las variables de la bateria, algunos estudios
+// especifican los nombre de variables de estas mismas preguntas
+// Verifique que no colisionen las variables con otras en el mismo
+// estudio
+var ar_nse_vars = {
+    CS1:  "CS1",  // # Personas
+    CS2:  "CS2",  // # Personas con ingresos
+    CS3:  "CS3",  // Estudios
+    CS4:  "CS4",  // Trabajo
+    CS5a: "CS5a", // Trabajo principal aportante
+    CS5b: "CS5b", // Ultimo trabajo principal aportante
+    CS6:  "CS6",  // # Personas trabajaban a su cargo
+    CS7:  "CS7",  // Tipo conocimiento trabajo
+    CS8:  "CS8",  // # Personas trabajan a su cargo
+    CS9:  "CS9",  // Horas laborales
+    CS10: "CS10", // Cobertura medica
+    CSAL: "CSAL"  // Algoritmo
+}
+
+// Validamos si tenemos la variable importada de PPI o hacer la evaluacion
+// 'en vivo'
+var ar_nse_do = !((ar_nse_ppi || "") !== "" && (participation[ar_nse_ppi] || "") !== "")]]$NOT_DEFINED></data><graph edgedefault="directed" id="ar_nse_ppi_graph"/></node><edge source="ar_nse_ppi" target="ar_nse_if"/><node id="ar_nse_if"><data key="type">if</data><data key="code"><![CDATA[if (ar_nse_do&& !participation.isRdgMode) {
+\${ar_nse_script}
+\${ar_nse_ifelse}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[ar_nse_do&& !participation.isRdgMode]]$NOT_DEFINED></data><graph edgedefault="directed" id="ar_nse_if_graph"><node id="ar_nse_if_if-true"><desc>ar_nse_if_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="ar_nse_if_if-true_graph"><data key="start">ar_nse_script</data><node id="ar_nse_script"><desc>logic</desc><data key="type">script</data><data key="code"><![CDATA[// Bloque que se pregunta a todos
+\${ar_nse_todos}
+
+var Personas          = participation[ar_nse_vars.CS1],
+    PersonasIngresos  = participation[ar_nse_vars.CS2],
+    Estudios          = participation.getMixedSet(ar_nse_vars.CS3).getSelectedCode(),
+    Trabajo           = participation.getMixedSet(ar_nse_vars.CS4).getSelectedCode();
+        
+// Generamos constantes para ubicar mas facilmente la definicion de algoritmos
+var AL_EMPLEADOS_ACTUALMENTE_OCUPADOS    = 1,
+    AL_EMPLEADORES_ACTUALMENTE_OCUPADOS  = 2,
+    AL_CUENTAPROPIA_ACTUALMENTE_OCUPADOS = 3,
+    AL_DESOCUPADOS                       = 4,
+    AL_INACTIVOS                         = 5;
+    
+var algoritmo = 0;
+
+if ([1, 2].contains(Trabajo)) {
+    
+    // Actualmente trabaja pasa a P5a
+    if (Trabajo === 1) {
+        \${ar_nse_cs5a}
+    }
+    
+    // Esta buscando trabajo, pasa a P5b
+    else if (Trabajo === 2) {
+        \${ar_nse_cs5b}
+    }
+}
+
+var Ocupacion         = participation.getMixedSet(ar_nse_vars.CS5a).getSelectedCode() || 0,
+    OcupacionAnterior = participation.getMixedSet(ar_nse_vars.CS5b).getSelectedCode() || 0;
+
+// Jubilado y pensionado, no se pregunta mas y es algoritmo grilla: Desocupados 
+if (OcupacionAnterior === 1) {
+    algoritmo = AL_DESOCUPADOS;
+}
+
+// Si trabaja o trabajo preguntamos P6
+if (Ocupacion === 2 || OcupacionAnterior === 2) {
+    \${ar_nse_cs6}
+}
+
+var Posicion = participation.getMixedSet(ar_nse_vars.CS6).getSelectedCode() || 0;
+
+// Busca trabajo y era un Directivo, Jefe o supervisor es grilla: Desocupados
+if ((Ocupacion === 2 || OcupacionAnterior === 2) && Trabajo === 2 && [1, 2].contains(Posicion)) {
+    algoritmo = AL_DESOCUPADOS;
+}
+
+// Pase a P7
+if (Ocupacion === 3 || OcupacionAnterior === 3 || Posicion === 3) {
+    \${ar_nse_cs7}
+
+    // Algoritmo grilla Desocupados
+    if (Trabajo === 2
+    && (OcupacionAnterior === 2
+        || (OcupacionAnterior === 2 && Posicion === 3) || OcupacionAnterior === 3)) {
+        algoritmo = AL_DESOCUPADOS;
+    }
+}
+
+// Pase a P8
+if (Ocupacion === 1 || (Trabajo === 1 && [1, 2].contains(Posicion))) {
+    \${ar_nse_cs8}
+
+    if (Ocupacion === 1) {
+        algoritmo = AL_EMPLEADORES_ACTUALMENTE_OCUPADOS;
+    } else if (Posicion) {
+        algoritmo = AL_EMPLEADOS_ACTUALMENTE_OCUPADOS;
+    }
+}
+
+if (Trabajo === 1 && (Ocupacion === 3 || OcupacionAnterior === 3)) {
+    \${ar_nse_cs9}
+}
+
+
+if (Trabajo === 4
+ || (Trabajo === 1 && (Ocupacion === 3 || OcupacionAnterior === 3))
+ || (Ocupacion === 2 && Posicion === 3)
+ || (Trabajo === 1 && Posicion === 2)) {
+    \${ar_nse_cs10}
+    
+    //  Agoritmo grilla Empleados Ocupados
+    if (Trabajo === 1 && (Ocupacion === 2 || (Ocupacion === 2 && [2, 3].contains(Posicion)))) {
+        algoritmo = AL_EMPLEADOS_ACTUALMENTE_OCUPADOS;
+    }
+    // Algoritmo grilla Cuenta propia Ocupados
+    else if (Trabajo === 1 && Ocupacion === 3) {
+        algoritmo = AL_CUENTAPROPIA_ACTUALMENTE_OCUPADOS;
+    }
+    // Algoritmo grilla Inactivos-Otros inactivos
+    else {
+        algoritmo = AL_INACTIVOS;
+    }
+}
+// P4-3 Algoritmo Jublilados
+if (Trabajo === 3) {
+    algoritmo = AL_INACTIVOS;
+}
+
+participation[ar_nse_vars.CSAL] = algoritmo;]]$NOT_DEFINED></data><graph edgedefault="directed" id="ar_nse_script_graph"><data key="start">ar_nse_todos</data><node id="ar_nse_todos"><desc>Todos</desc><data key="type">script</data><data key="code"><![CDATA[\${ar_nse_cs1}
+
+// Recodificamos para evitar una pregunta que no tiene mas alternativas
+// que solo ser 1 si solo vive una persona en casa
+if (participation[ar_nse_vars.CS1] > 1) {
+    \${ar_nse_cs2}
+} else {
+    participation[ar_nse_vars.CS2] = 1;
+}
+
+\${ar_nse_cs3}
+\${ar_nse_cs4}]]$NOT_DEFINED></data><graph edgedefault="directed" id="ar_nse_todos_graph"><data key="start">ar_nse_cs1</data><node id="ar_nse_cs1"><desc>CS1</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs1 = new Task()
+ar_nse_cs1[0].label="¿Cuántas personas viven en tu hogar, incluyéndote a vos mismo?"
+ar_nse_cs1[1].maximum=15
+ar_nse_cs1[1].minimum=1
+ar_nse_cs1[1].name=ar_nse_vars.CS1
+ar_nse_cs1[1].type="number"
+ar_nse_cs1.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Cuántas personas viven en tu hogar, incluyéndote a vos mismo?\""},{"id":"2","maximum":"15","minimum":"1","name":"=ar_nse_vars.CS1","type":"\"number\""}]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs1" target="ar_nse_cs2"/><node id="ar_nse_cs2"><desc>CS2</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs2 = new Task()
+ar_nse_cs2[0].label="¿Y cuántas de ellas tienen ingresos de algún tipo, tanto del trabajo personal como de otras fuentes? <span class='surveyInstruction'>Por \"ingresos de otras fuentes\" entendemos alquileres, becas, ayuda familiar, subsidios por desocupación, renta financiera o inversión en negocios en los que no trabaja.</span>"
+ar_nse_cs2[1].maximum=8
+ar_nse_cs2[1].minimum=1
+ar_nse_cs2[1].name=ar_nse_vars.CS2
+ar_nse_cs2[1].type="number"
+ar_nse_cs2.happiness=[function() {var vivenHogar = participation.CS1 || 1,
+    aportan    = participation.CS2 || 0;
+
+if (aportan > vivenHogar) {
+    throw "Viven " + vivenHogar + " y aportan " + aportan;
+}}]
+ar_nse_cs2.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Y cuántas de ellas tienen ingresos de algún tipo, tanto del trabajo personal como de otras fuentes? <span class='surveyInstruction'>Por \\\\\"ingresos de otras fuentes\\\\\" entendemos alquileres, becas, ayuda familiar, subsidios por desocupación, renta financiera o inversión en negocios en los que no trabaja.</span>\""},{"id":"2","maximum":"8","minimum":"1","name":"=ar_nse_vars.CS2","type":"\"number\""}],"happiness":["var vivenHogar = participation.CS1 || 1,\r\n    aportan    = participation.CS2 || 0;\r\n\r\nif (aportan > vivenHogar) {\r\n    throw \"Viven \" + vivenHogar + \" y aportan \" + aportan;\r\n}"]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs2" target="ar_nse_cs3"/><node id="ar_nse_cs3"><desc>CS3</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs3 = new Task()
+ar_nse_cs3[0].cssClass="font-weigth: normal;"
+ar_nse_cs3[0].label="Las preguntas que siguen se refieren exclusivamente a la persona que más aporta para los gastos de tu hogar. Si hay dos o más aportantes piensa solo en una de ellas, la persona que más aporta.  "
+ar_nse_cs3[0].style="margin-bottom: 2em;"
+ar_nse_cs3[1].label="¿Cuál es el máximo nivel de estudios que alcanzó la persona que más aporta?"
+ar_nse_cs3[2].code=1
+ar_nse_cs3[2].label="Sin estudios"
+ar_nse_cs3[2].name=ar_nse_vars.CS3
+ar_nse_cs3[2].type="radio"
+ar_nse_cs3[3].code=2
+ar_nse_cs3[3].label="Primaria incompleta"
+ar_nse_cs3[3].name=ar_nse_vars.CS3
+ar_nse_cs3[3].type="radio"
+ar_nse_cs3[4].code=3
+ar_nse_cs3[4].label="Primaria completa"
+ar_nse_cs3[4].name=ar_nse_vars.CS3
+ar_nse_cs3[4].type="radio"
+ar_nse_cs3[5].code=4
+ar_nse_cs3[5].label="Secundaria incompleta"
+ar_nse_cs3[5].name=ar_nse_vars.CS3
+ar_nse_cs3[5].type="radio"
+ar_nse_cs3[6].code=5
+ar_nse_cs3[6].label="Secundaria completa "
+ar_nse_cs3[6].name=ar_nse_vars.CS3
+ar_nse_cs3[6].type="radio"
+ar_nse_cs3[7].code=6
+ar_nse_cs3[7].label="Terciaria o Universitaria incompleta"
+ar_nse_cs3[7].name=ar_nse_vars.CS3
+ar_nse_cs3[7].type="radio"
+ar_nse_cs3[8].code=7
+ar_nse_cs3[8].label="Terciaria completa (con título)"
+ar_nse_cs3[8].name=ar_nse_vars.CS3
+ar_nse_cs3[8].type="radio"
+ar_nse_cs3[9].code=8
+ar_nse_cs3[9].label="Universitaria completa (con título)"
+ar_nse_cs3[9].name=ar_nse_vars.CS3
+ar_nse_cs3[9].type="radio"
+ar_nse_cs3[10].code=9
+ar_nse_cs3[10].label="Posgrado"
+ar_nse_cs3[10].name=ar_nse_vars.CS3
+ar_nse_cs3[10].type="radio"
+ar_nse_cs3.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","cssClass":"\"font-weigth: normal;\"","label":"\"Las preguntas que siguen se refieren exclusivamente a la persona que más aporta para los gastos de tu hogar. Si hay dos o más aportantes piensa solo en una de ellas, la persona que más aporta.  \"","style":"\"margin-bottom: 2em;\""},{"id":"2","label":"\"¿Cuál es el máximo nivel de estudios que alcanzó la persona que más aporta?\""},{"id":"3","code":"1","label":"\"Sin estudios\"","name":"=ar_nse_vars.CS3","type":"\"radio\""},{"id":"4","code":"2","label":"\"Primaria incompleta\"","name":"=ar_nse_vars.CS3","type":"\"radio\""},{"id":"5","code":"3","label":"\"Primaria completa\"","name":"=ar_nse_vars.CS3","type":"\"radio\""},{"id":"6","code":"4","label":"\"Secundaria incompleta\"","name":"=ar_nse_vars.CS3","type":"\"radio\""},{"id":"7","code":"5","label":"\"Secundaria completa \"","name":"=ar_nse_vars.CS3","type":"\"radio\""},{"id":"8","code":"6","label":"\"Terciaria o Universitaria incompleta\"","name":"=ar_nse_vars.CS3","type":"\"radio\""},{"id":"9","code":"7","label":"\"Terciaria completa (con título)\"","name":"=ar_nse_vars.CS3","type":"\"radio\""},{"id":"10","code":"8","label":"\"Universitaria completa (con título)\"","name":"=ar_nse_vars.CS3","type":"\"radio\""},{"id":"11","code":"9","label":"\"Posgrado\"","name":"=ar_nse_vars.CS3","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs3" target="ar_nse_cs4"/><node id="ar_nse_cs4"><desc>CS4</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs4 = new Task()
+ar_nse_cs4[0].label="¿Actualmente esta persona está trabajando?"
+ar_nse_cs4[1].code=1
+ar_nse_cs4[1].label="Sí, actualmente trabaja"
+ar_nse_cs4[1].name=ar_nse_vars.CS4
+ar_nse_cs4[1].type="radio"
+ar_nse_cs4[2].code=2
+ar_nse_cs4[2].label="No trabaja pero está buscando activamente trabajo (desocupado)"
+ar_nse_cs4[2].name=ar_nse_vars.CS4
+ar_nse_cs4[2].type="radio"
+ar_nse_cs4[3].code=3
+ar_nse_cs4[3].label="No, es jubilado y/o pensionado"
+ar_nse_cs4[3].name=ar_nse_vars.CS4
+ar_nse_cs4[3].type="radio"
+ar_nse_cs4[4].code=4
+ar_nse_cs4[4].label="No trabaja pero tiene otra fuente de ingresos (alquileres, becas, ayuda familiar, subsidios por desocupación, renta financiera o inversión en negocios en los que no trabaja)"
+ar_nse_cs4[4].name=ar_nse_vars.CS4
+ar_nse_cs4[4].type="radio"
+ar_nse_cs4.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Actualmente esta persona está trabajando?\""},{"id":"2","code":"1","label":"\"Sí, actualmente trabaja\"","name":"=ar_nse_vars.CS4","type":"\"radio\""},{"id":"3","code":"2","label":"\"No trabaja pero está buscando activamente trabajo (desocupado)\"","name":"=ar_nse_vars.CS4","type":"\"radio\""},{"id":"4","code":"3","label":"\"No, es jubilado y/o pensionado\"","name":"=ar_nse_vars.CS4","type":"\"radio\""},{"id":"5","code":"4","label":"\"No trabaja pero tiene otra fuente de ingresos (alquileres, becas, ayuda familiar, subsidios por desocupación, renta financiera o inversión en negocios en los que no trabaja)\"","name":"=ar_nse_vars.CS4","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node><edge source="ar_nse_todos" target="ar_nse_cs5a"/><node id="ar_nse_cs5a"><desc>CS5a</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs5a = new Task()
+ar_nse_cs5a[0].label="El trabajo del principal aportante del hogar es..."
+ar_nse_cs5a[1].code=1
+ar_nse_cs5a[1].label="Como dueño o socio de una empresa, estudio o comercio (grande, mediana o chica hasta con 1 empleado)"
+ar_nse_cs5a[1].name=ar_nse_vars.CS5a
+ar_nse_cs5a[1].type="radio"
+ar_nse_cs5a[2].code=2
+ar_nse_cs5a[2].label="En algún organismo público o empresa privada de cualquier tipo, como fábrica, taller, oficina, obra, comercio o con una persona que le da trabajo"
+ar_nse_cs5a[2].name=ar_nse_vars.CS5a
+ar_nse_cs5a[2].type="radio"
+ar_nse_cs5a[3].code=3
+ar_nse_cs5a[3].label="Trabajando solo, por su cuenta, sin empleados"
+ar_nse_cs5a[3].name=ar_nse_vars.CS5a
+ar_nse_cs5a[3].type="radio"
+ar_nse_cs5a.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"El trabajo del principal aportante del hogar es...\""},{"id":"2","code":"1","label":"\"Como dueño o socio de una empresa, estudio o comercio (grande, mediana o chica hasta con 1 empleado)\"","name":"=ar_nse_vars.CS5a","type":"\"radio\""},{"id":"3","code":"2","label":"\"En algún organismo público o empresa privada de cualquier tipo, como fábrica, taller, oficina, obra, comercio o con una persona que le da trabajo\"","name":"=ar_nse_vars.CS5a","type":"\"radio\""},{"id":"4","code":"3","label":"\"Trabajando solo, por su cuenta, sin empleados\"","name":"=ar_nse_vars.CS5a","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs5a" target="ar_nse_cs5b"/><node id="ar_nse_cs5b"><desc>CS5b</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs5b = new Task()
+ar_nse_cs5b[0].label="El último trabajo del principal aportante del hogar era..."
+ar_nse_cs5b[1].code=1
+ar_nse_cs5b[1].label="Como dueño o socio de una empresa, estudio o comercio (grande, mediana o chica hasta con 1 empleado)"
+ar_nse_cs5b[1].name=ar_nse_vars.CS5b
+ar_nse_cs5b[1].type="radio"
+ar_nse_cs5b[2].code=2
+ar_nse_cs5b[2].label="En algún organismo público o empresa privada de cualquier tipo, como fábrica, taller, oficina, obra, comercio o con una persona que le da trabajo"
+ar_nse_cs5b[2].name=ar_nse_vars.CS5b
+ar_nse_cs5b[2].type="radio"
+ar_nse_cs5b[3].code=3
+ar_nse_cs5b[3].label="Trabajan solo, por su cuenta, sin empleados"
+ar_nse_cs5b[3].name=ar_nse_vars.CS5b
+ar_nse_cs5b[3].type="radio"
+ar_nse_cs5b.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"El último trabajo del principal aportante del hogar era...\""},{"id":"2","code":"1","label":"\"Como dueño o socio de una empresa, estudio o comercio (grande, mediana o chica hasta con 1 empleado)\"","name":"=ar_nse_vars.CS5b","type":"\"radio\""},{"id":"3","code":"2","label":"\"En algún organismo público o empresa privada de cualquier tipo, como fábrica, taller, oficina, obra, comercio o con una persona que le da trabajo\"","name":"=ar_nse_vars.CS5b","type":"\"radio\""},{"id":"4","code":"3","label":"\"Trabajan solo, por su cuenta, sin empleados\"","name":"=ar_nse_vars.CS5b","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs5b" target="ar_nse_cs6"/><node id="ar_nse_cs6"><desc>CS6</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs6 = new Task()
+ar_nse_cs6[0].label="¿Tiene (o tenía) personas a su cargo…?  <span class='surveyInstruction'>Señala cuál es su función en la jerarquía.</span>"
+ar_nse_cs6[1].code=1
+ar_nse_cs6[1].label="<strong>Directivo</strong><br>Incluye Director o alta Gerencia de empresa privada. Ministros, Secretarios o Directores del Estado Nacional o Provincial. Altos Jefes de las FFAA o seguridad. Intendentes. Jueces y Secretarios del PJ. Legisladores nacionales y provinciales.  "
+ar_nse_cs6[1].name=ar_nse_vars.CS6
+ar_nse_cs6[1].type="radio"
+ar_nse_cs6[2].code=2
+ar_nse_cs6[2].label="<strong>Jefe o supervisor</strong><br>Incluye Jefe o Supervisor en empresas privadas. Jefe en empresas públicas o en el Estado Nacional, Provincial, Municipal, Poder Judicial y Legislativo. Oficial subalterno de las FFAA o seguridad."
+ar_nse_cs6[2].name=ar_nse_vars.CS6
+ar_nse_cs6[2].type="radio"
+ar_nse_cs6[3].code=3
+ar_nse_cs6[3].label="Trabajador sin personal a su cargo"
+ar_nse_cs6[3].name=ar_nse_vars.CS6
+ar_nse_cs6[3].type="radio"
+ar_nse_cs6.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Tiene (o tenía) personas a su cargo…?  <span class='surveyInstruction'>Señala cuál es su función en la jerarquía.</span>\""},{"id":"2","code":"1","label":"\"<strong>Directivo</strong><br>Incluye Director o alta Gerencia de empresa privada. Ministros, Secretarios o Directores del Estado Nacional o Provincial. Altos Jefes de las FFAA o seguridad. Intendentes. Jueces y Secretarios del PJ. Legisladores nacionales y provinciales.  \"","name":"=ar_nse_vars.CS6","type":"\"radio\""},{"id":"3","code":"2","label":"\"<strong>Jefe o supervisor</strong><br>Incluye Jefe o Supervisor en empresas privadas. Jefe en empresas públicas o en el Estado Nacional, Provincial, Municipal, Poder Judicial y Legislativo. Oficial subalterno de las FFAA o seguridad.\"","name":"=ar_nse_vars.CS6","type":"\"radio\""},{"id":"4","code":"3","label":"\"Trabajador sin personal a su cargo\"","name":"=ar_nse_vars.CS6","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs6" target="ar_nse_cs7"/><node id="ar_nse_cs7"><desc>CS7</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs7 = new Task()
+ar_nse_cs7[0].label="¿Qué tipo de conocimiento exige ese trabajo?  <span class='surveyInstruction'>Por favor si tienes dudas lee atentamente las aclaraciones.</span>"
+ar_nse_cs7[1].code=1
+ar_nse_cs7[1].label="<strong>Profesional</strong><br>Casi siempre con título universitario de carrera universitaria larga, o con conocimientos de alta complejidad, también altos oficiales de las FFAA y de Seguridad, Directores de cine y artistas destacados… "
+ar_nse_cs7[1].name=ar_nse_vars.CS7
+ar_nse_cs7[1].type="radio"
+ar_nse_cs7[2].code=2
+ar_nse_cs7[2].label="<strong>Técnico</strong><br>Casi siempre con título terciario, profesorado o universitario de carreras cortas: docente primario y secundario, técnico informático o electromecánico, oficiales medios de las FFAA y de seguridad, kinesiólogo, partero, enfermero, diseñador…"
+ar_nse_cs7[2].name=ar_nse_vars.CS7
+ar_nse_cs7[2].type="radio"
+ar_nse_cs7[3].code=3
+ar_nse_cs7[3].label="<strong>Especializado</strong><br>Tareas operativas o administrativas que demandan un conocimiento específico para su desarrollo, adquirido por educación formal o por experiencia: empleado administrativo, vendedor especializado en un rubro que requiere conocimientos específicos, suboficial de las FFAA y de seguridad o agentes, auxiliares de la salud, plomero, electricista, yesero, soldador, tornero…"
+ar_nse_cs7[3].name=ar_nse_vars.CS7
+ar_nse_cs7[3].type="radio"
+ar_nse_cs7[4].code=4
+ar_nse_cs7[4].label="<strong>No especializado</strong><br>Tareas que no requieren conocimiento previo, o no más que una breve instrucción inicial: tareas de limpieza en cualquier ámbito, peón, carga, vendedor no especializado o ambulante, changarín, mucama, ayudante de cocina, ayudantes en fábricas o construcción…"
+ar_nse_cs7[4].name=ar_nse_vars.CS7
+ar_nse_cs7[4].type="radio"
+ar_nse_cs7.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Qué tipo de conocimiento exige ese trabajo?  <span class='surveyInstruction'>Por favor si tienes dudas lee atentamente las aclaraciones.</span>\""},{"id":"4","code":"1","label":"\"<strong>Profesional</strong><br>Casi siempre con título universitario de carrera universitaria larga, o con conocimientos de alta complejidad, también altos oficiales de las FFAA y de Seguridad, Directores de cine y artistas destacados… \"","name":"=ar_nse_vars.CS7","type":"\"radio\""},{"id":"7","code":"2","label":"\"<strong>Técnico</strong><br>Casi siempre con título terciario, profesorado o universitario de carreras cortas: docente primario y secundario, técnico informático o electromecánico, oficiales medios de las FFAA y de seguridad, kinesiólogo, partero, enfermero, diseñador…\"","name":"=ar_nse_vars.CS7","type":"\"radio\""},{"id":"10","code":"3","label":"\"<strong>Especializado</strong><br>Tareas operativas o administrativas que demandan un conocimiento específico para su desarrollo, adquirido por educación formal o por experiencia: empleado administrativo, vendedor especializado en un rubro que requiere conocimientos específicos, suboficial de las FFAA y de seguridad o agentes, auxiliares de la salud, plomero, electricista, yesero, soldador, tornero…\"","name":"=ar_nse_vars.CS7","type":"\"radio\""},{"id":"13","code":"4","label":"\"<strong>No especializado</strong><br>Tareas que no requieren conocimiento previo, o no más que una breve instrucción inicial: tareas de limpieza en cualquier ámbito, peón, carga, vendedor no especializado o ambulante, changarín, mucama, ayudante de cocina, ayudantes en fábricas o construcción…\"","name":"=ar_nse_vars.CS7","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs7" target="ar_nse_cs8"/><node id="ar_nse_cs8"><desc>CS8</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs8 = new Task()
+ar_nse_cs8[0].label="¿Cuántas personas trabajan a su cargo? <span class='surveyInstruction'>Si no lo sabe con exactitud no importa, marque lo que más se aproxime.</span>"
+ar_nse_cs8[1].code=1
+ar_nse_cs8[1].label="Hasta 5 personas"
+ar_nse_cs8[1].name=ar_nse_vars.CS8
+ar_nse_cs8[1].type="radio"
+ar_nse_cs8[2].code=2
+ar_nse_cs8[2].label="Entre 6 y 40"
+ar_nse_cs8[2].name=ar_nse_vars.CS8
+ar_nse_cs8[2].type="radio"
+ar_nse_cs8[3].code=3
+ar_nse_cs8[3].label="Entre 41 y 200"
+ar_nse_cs8[3].name=ar_nse_vars.CS8
+ar_nse_cs8[3].type="radio"
+ar_nse_cs8[4].code=4
+ar_nse_cs8[4].label="Más de 200 personas"
+ar_nse_cs8[4].name=ar_nse_vars.CS8
+ar_nse_cs8[4].type="radio"
+ar_nse_cs8.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"¿Cuántas personas trabajan a su cargo? <span class='surveyInstruction'>Si no lo sabe con exactitud no importa, marque lo que más se aproxime.</span>\""},{"id":"2","code":"1","label":"\"Hasta 5 personas\"","name":"=ar_nse_vars.CS8","type":"\"radio\""},{"id":"3","code":"2","label":"\"Entre 6 y 40\"","name":"=ar_nse_vars.CS8","type":"\"radio\""},{"id":"4","code":"3","label":"\"Entre 41 y 200\"","name":"=ar_nse_vars.CS8","type":"\"radio\""},{"id":"5","code":"4","label":"\"Más de 200 personas\"","name":"=ar_nse_vars.CS8","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs8" target="ar_nse_cs9"/><node id="ar_nse_cs9"><desc>CS9</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs9 = new Task()
+ar_nse_cs9[0].label="Por lo que usted sabe, entre todas las ocupaciones o actividades laborales que el principal aportante del hogar tiene actualmente ¿trabaja más o menos de 35 horas en la semana?"
+ar_nse_cs9[1].code=1
+ar_nse_cs9[1].label="MÁS de 35 horas a la semana"
+ar_nse_cs9[1].name=ar_nse_vars.CS9
+ar_nse_cs9[1].type="radio"
+ar_nse_cs9[2].code=2
+ar_nse_cs9[2].label="MENOS de 35 horas a la semana"
+ar_nse_cs9[2].name=ar_nse_vars.CS9
+ar_nse_cs9[2].type="radio"
+ar_nse_cs9.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"Por lo que usted sabe, entre todas las ocupaciones o actividades laborales que el principal aportante del hogar tiene actualmente ¿trabaja más o menos de 35 horas en la semana?\""},{"id":"2","code":"1","label":"\"MÁS de 35 horas a la semana\"","name":"=ar_nse_vars.CS9","type":"\"radio\""},{"id":"3","code":"2","label":"\"MENOS de 35 horas a la semana\"","name":"=ar_nse_vars.CS9","type":"\"radio\""}]}]]$NOT_DEFINED></data></node><edge source="ar_nse_cs9" target="ar_nse_cs10"/><node id="ar_nse_cs10"><desc>CS10</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_cs10 = new Task()
+ar_nse_cs10[0].label="La persona que más aporta para los gastos del hogar ¿tiene actualmente algún tipo de cobertura médica asegurada, una obra social o medicina prepaga, o, en caso de ser necesario, se atiende en hospitales o con un profesional privado que busca en el momento?"
+ar_nse_cs10[1].code=1
+ar_nse_cs10[1].label="<strong>Sí</strong> Tiene la cobertura de una obra social, mutual o medicina prepaga"
+ar_nse_cs10[1].name=ar_nse_vars.CS10
+ar_nse_cs10[1].type="radio"
+ar_nse_cs10[2].code=2
+ar_nse_cs10[2].label="<strong>No</strong> En caso de ser necesario se atiende en hospital público o con un profesional privado que busca en el momento"
+ar_nse_cs10[2].name=ar_nse_vars.CS10
+ar_nse_cs10[2].type="radio"
+ar_nse_cs10[3].code=3
+ar_nse_cs10[3].label="No sabe"
+ar_nse_cs10[3].name=ar_nse_vars.CS10
+ar_nse_cs10[3].type="radio"
+ar_nse_cs10.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"1","label":"\"La persona que más aporta para los gastos del hogar ¿tiene actualmente algún tipo de cobertura médica asegurada, una obra social o medicina prepaga, o, en caso de ser necesario, se atiende en hospitales o con un profesional privado que busca en el momento?\""},{"id":"2","code":"1","label":"\"<strong>Sí</strong> Tiene la cobertura de una obra social, mutual o medicina prepaga\"","name":"=ar_nse_vars.CS10","type":"\"radio\""},{"id":"3","code":"2","label":"\"<strong>No</strong> En caso de ser necesario se atiende en hospital público o con un profesional privado que busca en el momento\"","name":"=ar_nse_vars.CS10","type":"\"radio\""},{"id":"4","code":"3","label":"\"No sabe\"","name":"=ar_nse_vars.CS10","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node><edge source="ar_nse_script" target="ar_nse_ifelse"/><node id="ar_nse_ifelse"><data key="type">if-else</data><data key="code"><![CDATA[if (!participation.isRdgMode) {
+\${ar_nse_ms}
+} else {
+\${ar_nse_rdg}
+}]]$NOT_DEFINED></data><data key="condition"><![CDATA[!participation.isRdgMode]]$NOT_DEFINED></data><graph edgedefault="directed" id="ar_nse_ifelse_graph"><node id="ar_nse_ifelse_if-true"><desc>ar_nse_ifelse_if-true</desc><data key="type">if-true</data><graph edgedefault="directed" id="ar_nse_ifelse_if-true_graph"><data key="start">ar_nse_ms</data><node id="ar_nse_ms"><desc>NSE</desc><data key="type">mixedSet</data><data key="code"><![CDATA[var \$opts_ar_nse_ms = [{"code":1,"label":"ABC1","type":"radio"},{"code":2,"label":"C2","type":"radio"},{"code":3,"label":"C3","type":"radio"},{"code":4,"label":"D1","type":"radio"},{"code":5,"label":"D2 - E","type":"radio"}]
+var msNSE = new MixedSet(\$opts_ar_nse_ms)
+if (!ar_nse_do) {
+    var ar_nse_ppi_value = parseInt(participation[ar_nse_ppi], 10) || 0;
+    // Recodificamos el valor de PPI en este MixedSet (asegurandonos que exista
+    // el codigo
+    if (msNSE.getCodes().contains(ar_nse_ppi_value)) {
+        msNSE.setSelected(ar_nse_ppi_value);
+    }
+} else {
+    var Personas          = participation[ar_nse_vars.CS1],
+        PersonasIngresos  = participation[ar_nse_vars.CS2],
+        Estudios          = participation.getMixedSet(ar_nse_vars.CS3).getSelectedCode(),
+        Trabajo           = participation.getMixedSet(ar_nse_vars.CS4).getSelectedCode(),
+        Ocupacion         = participation.getMixedSet(ar_nse_vars.CS5a).getSelectedCode(),
+        OcupacionAnterior = participation.getMixedSet(ar_nse_vars.CS5b).getSelectedCode(),
+        Posicion          = participation.getMixedSet(ar_nse_vars.CS6).getSelectedCode(),
+        Calificacion      = participation.getMixedSet(ar_nse_vars.CS7).getSelectedCode(),
+        Empleados         = participation.getMixedSet(ar_nse_vars.CS8).getSelectedCode(),
+        HorasLaborales    = participation.getMixedSet(ar_nse_vars.CS9).getSelectedCode(),
+        CoberturaMedica   = participation.getMixedSet(ar_nse_vars.CS10).getSelectedCode(),
+        algortimo         = participation[ar_nse_vars.CSAL],
+        AL_EMPLEADOS_ACTUALMENTE_OCUPADOS    = 1,
+        AL_EMPLEADORES_ACTUALMENTE_OCUPADOS  = 2,
+        AL_CUENTAPROPIA_ACTUALMENTE_OCUPADOS = 3,
+        AL_DESOCUPADOS                       = 4,
+        AL_INACTIVOS                         = 5;
+    // MATRIZ 1: Determinación de relación de aportantes
+    var aportantes = [
+            [3,0,0,0,0,0,0,0],
+            [2,3,0,0,0,0,0,0],
+            [1,2,3,0,0,0,0,0],
+            [1,2,3,3,0,0,0,0],
+            [1,1,2,3,3,0,0,0],
+            [1,1,2,2,3,3,0,0],
+            [1,1,2,2,3,3,3,0],
+            [1,1,1,2,2,3,3,3],
+            [1,1,1,2,2,2,3,3],
+            [1,1,1,1,2,2,3,3],
+            [1,1,1,1,2,2,2,3],
+            [1,1,1,1,2,2,2,2],
+            [1,1,1,1,1,2,2,2],
+            [1,1,1,1,1,2,2,2],
+            [1,1,1,1,1,1,2,2]
+        ][(Personas - 1)][(PersonasIngresos - 1)],
+        educacion = [1,1,2,2,3,3,4,4,4][(Estudios - 1)];
+    var col = -1;
+    if (educacion === 4) {
+        col = -1 + aportantes;
+    } else if (educacion === 3) {
+        col = 2 + aportantes;
+    } else if (educacion === 2) {
+        col = 5 + aportantes;
+    } else if (educacion === 1) {
+        col = 8 + aportantes;
+    }
+    // Diferencial de cobertura medica utilizado en la matriz
+    var diff = CoberturaMedica === 1 ? 0 : 1;
+    // Empleados actualmente ocupados [P4-1 y P5a–2]
+    if (algoritmo === AL_EMPLEADOS_ACTUALMENTE_OCUPADOS) {
+        var matriz = [
+            [2,1,1,2,2,1,3,2,2,3,3,2],
+            [2,1,1,2,2,1,3,2,2,3,2,2],
+            [1,1,1,2,1,1,2,2,1,3,2,2],
+            [3,2,2,3,3,2,4,3,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,4,4,3],
+            [2,2,1,3,2,2,3,3,2,4,3,3],
+            [3,2,2,3,3,2,4,3,3,4,4,3],
+            [2,2,1,3,2,2,3,2,2,3,3,2],
+            [2,2,1,3,2,2,3,3,2,4,3,3],
+            [2,1,1,2,2,1,3,2,2,3,3,2],
+            [2,2,1,3,2,2,3,3,2,4,3,3],
+            [2,2,1,3,2,2,3,2,2,3,3,2],
+            [2,2,1,3,2,2,3,3,2,4,3,3],
+            [3,2,2,3,3,2,4,3,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,4,4,3],
+            [3,3,2,4,3,3,4,3,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,5,4,4],
+            [4,4,3,5,4,4,5,4,4,5,5,4],
+            [4,4,3,5,4,4,5,5,4,5,5,5]
+        ];
+        // Directivo
+        if (Posicion === 1) {
+            msNSE.setSelected(matriz[(-1 + (Empleados > 3 ? 3 : Empleados))][col]);
+        } else if (Posicion === 2) {
+            msNSE.setSelected(matriz[(2 + (Empleados * 2) + diff - 1)][col]);
+        } else if (Posicion === 3) {
+            msNSE.setSelected(matriz[(10 + (Calificacion * 2) + diff - 1)][col]);
+        }
+    }
+    // Empleadores actualmente ocupados [P4-1 y P5a-1]
+    else if (algoritmo === AL_EMPLEADORES_ACTUALMENTE_OCUPADOS) {
+        var matriz = [
+            [2,1,1,2,2,1,3,2,2,3,3,2],
+            [2,1,1,2,2,1,3,2,2,3,2,2],
+            [1,1,1,2,1,1,2,2,1,3,2,2],
+            [1,1,1,2,1,1,2,2,1,3,2,2]
+        ];
+        msNSE.setSelected(matriz[(-1 + Empleados)][col]);
+    }
+    // Cuenta propia actualmente ocupados  [P4-1 y P5-3]
+    else if (algoritmo === AL_CUENTAPROPIA_ACTUALMENTE_OCUPADOS) {
+        var matriz = [
+            [1,1,1,2,1,1,2,2,1,3,2,2],
+            [2,1,1,2,2,1,3,2,2,3,2,2],
+            [2,2,1,3,2,2,3,2,2,3,3,2],
+            [2,2,1,3,2,2,3,3,4,4,3,3],
+            [2,2,1,3,2,2,3,2,4,3,3,2],
+            [2,2,1,3,2,2,3,3,4,4,3,3],
+            [3,2,2,3,3,2,4,3,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,5,4,4],
+            [4,3,3,4,4,3,5,4,4,5,5,4],
+            [4,4,3,5,4,4,5,5,4,5,5,4],
+            [5,4,4,5,5,4,5,5,4,5,5,5],
+            [4,3,3,4,4,3,5,4,4,5,4,4],
+            [4,4,3,5,4,4,5,4,4,5,5,4],
+            [4,4,3,5,4,4,5,5,4,5,5,5],
+            [5,4,4,5,5,4,5,5,5,5,5,5]
+        ], index = -1;
+        if (Calificacion === 2) {
+            index = 3;
+        } else if (Calificacion === 3) {
+            index = 7;
+        } else if (Calificacion === 4) {
+            index = 11;
+        }
+        msNSE.setSelected(matriz[(index + (HorasLaborales * 2) + diff - 1)][col]);
+    }
+    // Desocupados [P4-2]
+    else if (algortimo === AL_DESOCUPADOS) {
+        var matriz = [
+            [2,2,1,3,2,2,3,3,2,3,3,2],
+            [3,3,2,4,3,3,4,4,3,5,4,4],
+            [4,4,3,5,4,4,5,5,4,5,5,5],
+            [5,5,4,5,5,5,5,5,5,5,5,5],
+            [2,2,1,3,2,2,3,3,2,3,3,2],
+            [4,3,3,4,4,3,5,4,4,5,4,4],
+            [5,4,4,5,5,4,5,5,5,5,5,5],
+            [2,2,1,3,2,2,3,3,2,3,3,2]
+        ];
+        if (OcupacionAnterior === 3) {
+            msNSE.setSelected(matriz[(-1 + (Calificacion))][col]);
+        } else if (OcupacionAnterior === 2) {
+            msNSE.setSelected(matriz[(3 + (Posicion))][col]);
+        } else if (OcupacionAnterior === 1) {
+            msNSE.setSelected(matriz[7][col]);
+        }
+    }
+    // Inactivos  [P4 – 3 y 4]
+    else if (algoritmo === AL_INACTIVOS) {
+        var matriz = [
+            [3,2,2,4,3,3,5,4,4,5,5,5],
+            [2,2,1,3,3,2,3,3,2,4,4,3],
+            [3,3,2,3,3,2,4,4,3,5,5,4]
+        ];
+        if (Trabajo === 3) {
+            msNSE.setSelected(matriz[0][col]);
+        } else {
+            msNSE.setSelected(matriz[(1 + diff)][col]);
+        }
+    }
+}
+participation[ar_nse_varname] = msNSE]]$NOT_DEFINED></data><data key="variable">msNSE</data><data key="labels"><![CDATA[code	label	type]]$NOT_DEFINED></data><data key="elements"><![CDATA[1	ABC1	radio
+2	C2	radio
+3	C3	radio
+4	D1	radio
+5	D2 - E	radio
+]]$NOT_DEFINED></data><data key="shuffle">false</data><data key="name">=ar_nse_varname</data><data key="label">Nivel Socioeconómico</data><data key="customCode"><![CDATA[if (!ar_nse_do) {
+    var ar_nse_ppi_value = parseInt(participation[ar_nse_ppi], 10) || 0;
+    
+    // Recodificamos el valor de PPI en este MixedSet (asegurandonos que exista
+    // el codigo
+    if (msNSE.getCodes().contains(ar_nse_ppi_value)) {
+        msNSE.setSelected(ar_nse_ppi_value);
+    }
+} else {
+    var Personas          = participation[ar_nse_vars.CS1],
+        PersonasIngresos  = participation[ar_nse_vars.CS2],
+        Estudios          = participation.getMixedSet(ar_nse_vars.CS3).getSelectedCode(),
+        Trabajo           = participation.getMixedSet(ar_nse_vars.CS4).getSelectedCode(),
+        Ocupacion         = participation.getMixedSet(ar_nse_vars.CS5a).getSelectedCode(),
+        OcupacionAnterior = participation.getMixedSet(ar_nse_vars.CS5b).getSelectedCode(),
+        Posicion          = participation.getMixedSet(ar_nse_vars.CS6).getSelectedCode(),
+        Calificacion      = participation.getMixedSet(ar_nse_vars.CS7).getSelectedCode(),
+        Empleados         = participation.getMixedSet(ar_nse_vars.CS8).getSelectedCode(),
+        HorasLaborales    = participation.getMixedSet(ar_nse_vars.CS9).getSelectedCode(),
+        CoberturaMedica   = participation.getMixedSet(ar_nse_vars.CS10).getSelectedCode(),
+        algortimo         = participation[ar_nse_vars.CSAL],
+
+        AL_EMPLEADOS_ACTUALMENTE_OCUPADOS    = 1,
+        AL_EMPLEADORES_ACTUALMENTE_OCUPADOS  = 2,
+        AL_CUENTAPROPIA_ACTUALMENTE_OCUPADOS = 3,
+        AL_DESOCUPADOS                       = 4,
+        AL_INACTIVOS                         = 5;
+
+    // MATRIZ 1: Determinación de relación de aportantes 
+    var aportantes = [
+            [3,0,0,0,0,0,0,0],
+            [2,3,0,0,0,0,0,0],
+            [1,2,3,0,0,0,0,0],
+            [1,2,3,3,0,0,0,0],
+            [1,1,2,3,3,0,0,0],
+            [1,1,2,2,3,3,0,0],
+            [1,1,2,2,3,3,3,0],
+            [1,1,1,2,2,3,3,3],
+            [1,1,1,2,2,2,3,3],
+            [1,1,1,1,2,2,3,3],
+            [1,1,1,1,2,2,2,3],
+            [1,1,1,1,2,2,2,2],
+            [1,1,1,1,1,2,2,2],
+            [1,1,1,1,1,2,2,2],
+            [1,1,1,1,1,1,2,2]
+        ][(Personas - 1)][(PersonasIngresos - 1)],
+        educacion = [1,1,2,2,3,3,4,4,4][(Estudios - 1)];
+    
+    var col = -1;
+    if (educacion === 4) {
+        col = -1 + aportantes;
+    } else if (educacion === 3) {
+        col = 2 + aportantes;
+    } else if (educacion === 2) {
+        col = 5 + aportantes;
+    } else if (educacion === 1) {
+        col = 8 + aportantes;
+    }
+    
+    // Diferencial de cobertura medica utilizado en la matriz
+    var diff = CoberturaMedica === 1 ? 0 : 1;
+    
+    // Empleados actualmente ocupados [P4-1 y P5a–2]
+    if (algoritmo === AL_EMPLEADOS_ACTUALMENTE_OCUPADOS) {
+        var matriz = [
+            [2,1,1,2,2,1,3,2,2,3,3,2],
+            [2,1,1,2,2,1,3,2,2,3,2,2],
+            [1,1,1,2,1,1,2,2,1,3,2,2],
+            [3,2,2,3,3,2,4,3,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,4,4,3],
+            [2,2,1,3,2,2,3,3,2,4,3,3],
+            [3,2,2,3,3,2,4,3,3,4,4,3],
+            [2,2,1,3,2,2,3,2,2,3,3,2],
+            [2,2,1,3,2,2,3,3,2,4,3,3],
+            [2,1,1,2,2,1,3,2,2,3,3,2],
+            [2,2,1,3,2,2,3,3,2,4,3,3],
+            [2,2,1,3,2,2,3,2,2,3,3,2],
+            [2,2,1,3,2,2,3,3,2,4,3,3],
+            [3,2,2,3,3,2,4,3,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,4,4,3],
+            [3,3,2,4,3,3,4,3,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,5,4,4],
+            [4,4,3,5,4,4,5,4,4,5,5,4],
+            [4,4,3,5,4,4,5,5,4,5,5,5]
+        ];
+        // Directivo
+        if (Posicion === 1) {
+            msNSE.setSelected(matriz[(-1 + (Empleados > 3 ? 3 : Empleados))][col]);
+        } else if (Posicion === 2) {
+            msNSE.setSelected(matriz[(2 + (Empleados * 2) + diff - 1)][col]);
+        } else if (Posicion === 3) {            
+            msNSE.setSelected(matriz[(10 + (Calificacion * 2) + diff - 1)][col]);
+        }
+    }
+    // Empleadores actualmente ocupados [P4-1 y P5a-1]
+    else if (algoritmo === AL_EMPLEADORES_ACTUALMENTE_OCUPADOS) {
+        var matriz = [
+            [2,1,1,2,2,1,3,2,2,3,3,2],
+            [2,1,1,2,2,1,3,2,2,3,2,2],
+            [1,1,1,2,1,1,2,2,1,3,2,2],
+            [1,1,1,2,1,1,2,2,1,3,2,2]
+        ];
+        
+        msNSE.setSelected(matriz[(-1 + Empleados)][col]);
+    }
+    // Cuenta propia actualmente ocupados  [P4-1 y P5-3]
+    else if (algoritmo === AL_CUENTAPROPIA_ACTUALMENTE_OCUPADOS) {
+        var matriz = [
+            [1,1,1,2,1,1,2,2,1,3,2,2],
+            [2,1,1,2,2,1,3,2,2,3,2,2],
+            [2,2,1,3,2,2,3,2,2,3,3,2],
+            [2,2,1,3,2,2,3,3,4,4,3,3],
+            [2,2,1,3,2,2,3,2,4,3,3,2],
+            [2,2,1,3,2,2,3,3,4,4,3,3],
+            [3,2,2,3,3,2,4,3,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,4,4,3],
+            [3,3,2,4,3,3,4,4,3,5,4,4],
+            [4,3,3,4,4,3,5,4,4,5,5,4],
+            [4,4,3,5,4,4,5,5,4,5,5,4],
+            [5,4,4,5,5,4,5,5,4,5,5,5],
+            [4,3,3,4,4,3,5,4,4,5,4,4],
+            [4,4,3,5,4,4,5,4,4,5,5,4],
+            [4,4,3,5,4,4,5,5,4,5,5,5],
+            [5,4,4,5,5,4,5,5,5,5,5,5]
+        ], index = -1;
+
+        if (Calificacion === 2) {
+            index = 3;
+        } else if (Calificacion === 3) {
+            index = 7;
+        } else if (Calificacion === 4) {
+            index = 11;
+        }
+        
+        msNSE.setSelected(matriz[(index + (HorasLaborales * 2) + diff - 1)][col]);
+    }
+    // Desocupados [P4-2]
+    else if (algortimo === AL_DESOCUPADOS) {
+        var matriz = [
+            [2,2,1,3,2,2,3,3,2,3,3,2],
+            [3,3,2,4,3,3,4,4,3,5,4,4],
+            [4,4,3,5,4,4,5,5,4,5,5,5],
+            [5,5,4,5,5,5,5,5,5,5,5,5],
+            [2,2,1,3,2,2,3,3,2,3,3,2],
+            [4,3,3,4,4,3,5,4,4,5,4,4],
+            [5,4,4,5,5,4,5,5,5,5,5,5],
+            [2,2,1,3,2,2,3,3,2,3,3,2]
+        ];
+        
+        if (OcupacionAnterior === 3) {
+            msNSE.setSelected(matriz[(-1 + (Calificacion))][col]);
+        } else if (OcupacionAnterior === 2) {
+            msNSE.setSelected(matriz[(3 + (Posicion))][col]);
+        } else if (OcupacionAnterior === 1) {
+            msNSE.setSelected(matriz[7][col]);
+        }
+    }
+    // Inactivos  [P4 – 3 y 4]
+    else if (algoritmo === AL_INACTIVOS) {
+        var matriz = [
+            [3,2,2,4,3,3,5,4,4,5,5,5],
+            [2,2,1,3,3,2,3,3,2,4,4,3],
+            [3,3,2,3,3,2,4,4,3,5,5,4]
+        ];
+        
+        if (Trabajo === 3) {
+            msNSE.setSelected(matriz[0][col]);
+        } else {
+            msNSE.setSelected(matriz[(1 + diff)][col]);
+        }
+    }
+}]]$NOT_DEFINED></data></node></graph></node><node id="ar_nse_ifelse_if-false"><desc>ar_nse_ifelse_if-false</desc><data key="type">if-false</data><graph edgedefault="directed" id="ar_nse_ifelse_if-false_graph"><data key="start">ar_nse_rdg</data><node id="ar_nse_rdg"><desc>NSE</desc><data key="type">task</data><data key="code"><![CDATA[var ar_nse_rdg = new Task()
+ar_nse_rdg[0].label=" <strong>(Modo Test)</strong>"
+ar_nse_rdg[1].label="Nivel socioeconómico"
+ar_nse_rdg[2].code=1
+ar_nse_rdg[2].label="ABC1"
+ar_nse_rdg[2].name=ar_nse_varname
+ar_nse_rdg[2].type="radio"
+ar_nse_rdg[3].code=2
+ar_nse_rdg[3].label="C2"
+ar_nse_rdg[3].name=ar_nse_varname
+ar_nse_rdg[3].type="radio"
+ar_nse_rdg[4].code=3
+ar_nse_rdg[4].label="C3"
+ar_nse_rdg[4].name=ar_nse_varname
+ar_nse_rdg[4].type="radio"
+ar_nse_rdg[5].code=4
+ar_nse_rdg[5].label="D1"
+ar_nse_rdg[5].name=ar_nse_varname
+ar_nse_rdg[5].type="radio"
+ar_nse_rdg[6].code=5
+ar_nse_rdg[6].label="D2 - E"
+ar_nse_rdg[6].name=ar_nse_varname
+ar_nse_rdg[6].type="radio"
+ar_nse_rdg.run()]]$NOT_DEFINED></data><data key="content"><![CDATA[{"items":[{"id":"2","label":"\" <strong>(Modo Test)</strong>\""},{"id":"1","label":"\"Nivel socioeconómico\""},{"id":"3","code":"1","label":"\"ABC1\"","name":"=ar_nse_varname","type":"\"radio\""},{"id":"4","code":"2","label":"\"C2\"","name":"=ar_nse_varname","type":"\"radio\""},{"id":"5","code":"3","label":"\"C3\"","name":"=ar_nse_varname","type":"\"radio\""},{"id":"6","code":"4","label":"\"D1\"","name":"=ar_nse_varname","type":"\"radio\""},{"id":"7","code":"5","label":"\"D2 - E\"","name":"=ar_nse_varname","type":"\"radio\""}]}]]$NOT_DEFINED></data></node></graph></node></graph></node></graph></node></graph></node></graph></node></graph></graphml>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cs_ar_2015</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

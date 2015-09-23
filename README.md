@@ -12,6 +12,7 @@
 * CS CL -> tabTrigger: <strong>cs_cl</strong>
 * CS BR -> tabTrigger: <strong>cs_br</strong>
 * CS AR -> tabTrigger: <strong>cs_ar</strong>
+* CS AR 2015 -> tabTrigger: <strong>cs_ar_2015</strong>
 * CS CRIT 2 (Tramos de ingreso) -> tabTrigger: <strong>cs_crit2</strong>
 * RDG Syntax -> tabTrigger: <strong>rdg</strong>
 * Schema -> tabTrigger: <strong>schema</strong>
