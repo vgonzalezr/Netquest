@@ -13,7 +13,7 @@
         {
             console.log("El elemento no existe");
         }
-    }, 100);
+    }, 300);
 
     shortcut.add("Ctrl+Shift+c", function() {
         console.log("shortcut");
